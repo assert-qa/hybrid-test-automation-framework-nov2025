@@ -26,10 +26,6 @@ public class ConfigManager {
         // Private constructor to prevent instantiation
     }
 
-    /**
-     * Load configuration from base config.properties and environment-specific properties
-     * Priority: System Property > Environment Properties > Base Properties
-     */
     private static void loadConfiguration() {
         try {
             // Get environment from system property or use default
@@ -79,10 +75,6 @@ public class ConfigManager {
         return getProperty("BROWSER", "chrome");
     }
 
-    /**
-     * Check if headless mode is enabled
-     * @return true if headless, false otherwise
-     */
     public static boolean isHeadless() {
         return Boolean.parseBoolean(getProperty("HEADLESS", "false"));
     }
@@ -117,67 +109,36 @@ public class ConfigManager {
         return getProperty("RECORD_VIDEO_PATH", "./exports/videos/");
     }
 
-    /**
-     * Check if video recording is enabled
-     * @return true if enabled, false otherwise
-     */
     public static boolean isRecordVideoEnabled() {
         return "yes".equalsIgnoreCase(getProperty("RECORD_VIDEO", "no"));
     }
 
-    /**
-     * Check if screenshot for all steps is enabled
-     * @return true if enabled, false otherwise
-     */
     public static boolean isScreenshotStepAllEnabled() {
         return "yes".equalsIgnoreCase(getProperty("SCREENSHOT_STEP_ALL", "no"));
     }
 
-    /**
-     * Get extent report path
-     * @return Extent report file path
-     */
+
     public static String getExtentReportPath() {
         return getProperty("EXTENT_REPORT_PATH", "exports/ExtentReport/ExtentReport.html");
     }
 
-    /**
-     * Get author name
-     * @return Author name
-     */
     public static String getAuthor() {
         return getProperty("AUTHOR", "Test Automation Team");
     }
 
-    /**
-     * Get locale
-     * @return Locale (e.g., en, id)
-     */
     public static String getLocale() {
         return getProperty("LOCATE", "en");
     }
 
-    /**
-     * Get valid login email
-     * @return Valid login email for current environment
-     */
+
     public static String getValidLoginEmail() {
         return getProperty("VALID_LOGIN_EMAIL");
     }
 
-    /**
-     * Get valid login password
-     * @return Valid login password for current environment
-     */
     public static String getValidLoginPassword() {
         return getProperty("VALID_LOGIN_PASSWORD");
     }
 
-    /**
-     * Get property value by key
-     * @param key Property key
-     * @return Property value or null if not found
-     */
     public static String getProperty(String key) {
         // Priority: System Property > Config Property
         String systemValue = System.getProperty(key);
@@ -187,12 +148,6 @@ public class ConfigManager {
         return config.getProperty(key);
     }
 
-    /**
-     * Get property value by key with default value
-     * @param key Property key
-     * @param defaultValue Default value if key not found
-     * @return Property value or default value
-     */
     public static String getProperty(String key, String defaultValue) {
         String value = getProperty(key);
         return value != null ? value : defaultValue;

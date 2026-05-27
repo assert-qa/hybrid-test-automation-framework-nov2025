@@ -14,9 +14,10 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="View Event Detail Test">
+    <test name="Not Found Search
+    Event Test">
         <classes>
-            <class name="runner.TestRunnerViewEventDetail"/>
+            <class name="runner.TestRunnerSearchEventNotFound"/>
         </classes>
     </test>
 

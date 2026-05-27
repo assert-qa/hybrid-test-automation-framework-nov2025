@@ -1,8 +1,11 @@
 package steps;
 
+import helpers.DataFakerHelper;
 import hooks.TestContext;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pages.EventPage;
+import pages.models.NewEventDataObject;
 
 public class StepsAddNewEvent {
     private TestContext testContext;
@@ -22,5 +25,21 @@ public class StepsAddNewEvent {
         eventPage.createEventPage();
     }
 
+    @When("I fill all event information")
+    public void i_fill_all_event_information() {
+        NewEventDataObject eventData =
+                NewEventDataObject.builder()
+                        .eventTitle(DataFakerHelper.getFaker().book().title() + " Event")
+                        .eventDescription(DataFakerHelper.getFaker().lorem().paragraph())
+                        .eventCategory("Conference")
+                        .eventCity(DataFakerHelper.getFaker().address().city())
+                        .eventVenue(DataFakerHelper.getFaker().company().name() + " Hall")
+                        .eventStartDate("25 December 2026")
+                        .eventPrice(String.valueOf(DataFakerHelper.getFaker().number().numberBetween(100, 5000)))
+                        .totalSeats(DataFakerHelper.getFaker().number().numberBetween(50, 1000))
+                        .eventImageURLPath("C:\\images\\event.png")
+                        .build();
 
+        eventPage.createNewEventForm(eventData);
+    }
 }

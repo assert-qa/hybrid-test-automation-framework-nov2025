@@ -13,4 +13,4 @@ Feature: Search Events
 
     When I enter "Diwali" in search field
     And I press enter
-    Then I should see events related to "Diwali"
+    Then I should see event related to "Diwali"

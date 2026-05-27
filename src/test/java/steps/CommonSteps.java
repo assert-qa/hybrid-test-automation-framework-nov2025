@@ -80,4 +80,14 @@ public class CommonSteps {
             default -> throw new IllegalArgumentException("Unsupported menu in common step: " + menuName);
         }
     }
+
+    @When("I enter {string} in search field")
+    public void i_enter_in_search_field(String keyword) {
+        eventPage.searchEvent(keyword);
+    }
+
+    @When("I press enter")
+    public void i_press_enter() {
+        eventPage.pressEnter();
+    }
 }

@@ -5,6 +5,7 @@ import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import pages.models.NewEventDataObject;
 import utils.LogUtils;
 
 import java.util.ArrayList;
@@ -26,21 +27,30 @@ public class EventPage extends DriverFactory {
     String selectEventCity = setUp.getProperty("SELECT_EVENT_CITY");
     String clearFilterButton = setUp.getProperty("CLEAR_FILTER");
     String addNewEventButton = setUp.getProperty("ADD_NEW_EVENT");
+
     String createEventPage = setUp.getProperty("CREATE_EVENT_PAGE");
+    String eventTitle = setUp.getProperty("EVENT_TITLE");
+    String eventDescription = setUp.getProperty("EVENT_DESCRIPTION");
+    String eventCategory = setUp.getProperty("EVENT_CATEGORY");
+    String eventCity = setUp.getProperty("EVENT_CITY");
+    String eventVenue = setUp.getProperty("EVENT_VENUE");
+    String eventDate = setUp.getProperty("EVENT_DATE");
+    String eventPrice = setUp.getProperty("EVENT_PRICE");
+    String eventSeat = setUp.getProperty("EVENT_SEAT");
+    String eventImageURL = setUp.getProperty("EVENT_IMAGE_URL");
+    String addEventButton = setUp.getProperty("ADD_EVENT_BUTTON");
+    String eventNotFoundMessage = setUp.getProperty("NO_EVENT_FOUND_MESSAGE");
+
+
     String confirmBookingButton = setUp.getProperty("CONFIRM_BOOKING_BUTTON");
     String totalEventPrice = setUp.getProperty("TOTAL_PRICE_TICKET");
-    String addEventButton = setUp.getProperty("ADD_EVENT_BUTTON");
 
     String eventInformationDetail = setUp.getProperty("EVENT_INFORMATION_DETAIL");
     String aboutEventDetail = setUp.getProperty("ABOUT_EVENT_DETAIL");
 
-
+    // Event Page
     public void goToEventPage(){
         WebUI.clickElement(By.xpath(eventPage));
-    }
-
-    public void searchEvent(String eventName){
-        WebUI.setText(By.xpath(searchEvent), eventName);
     }
 
     public void listOfEvents(){
@@ -63,10 +73,6 @@ public class EventPage extends DriverFactory {
     public void selectEventCity(String city){
         Select dropDown = new Select(WebUI.getWebElement(By.cssSelector(selectEventCity)));
         dropDown.selectByVisibleText(city);
-    }
-
-    public void clearFilterButton(){
-        WebUI.clickElement(By.xpath(clearFilterButton));
     }
 
     public List<WebElement> getEvents(){
@@ -105,8 +111,37 @@ public class EventPage extends DriverFactory {
         WebUI.clickElement(By.xpath(addEventButton));
     }
 
+    public void createNewEventForm(NewEventDataObject data){
+        WebUI.setText(By.xpath(eventTitle), data.getEventTitle());
+        WebUI.setText(By.xpath(eventDescription), data.getEventDescription());
 
+        Select dropDown = new Select(WebUI.getWebElement(By.xpath(eventCategory)));
+        dropDown.selectByVisibleText(data.getEventCategory());
 
+        WebUI.setText(By.xpath(eventCity), data.getEventCity());
+        WebUI.setText(By.xpath(eventVenue), data.getEventVenue());
+        WebUI.setText(By.xpath(eventDate), data.getEventStartDate());
+        WebUI.setText(By.xpath(eventPrice), data.getEventPrice());
+        WebUI.setText(By.xpath(eventSeat), String.valueOf(data.getTotalSeats()));
+        WebUI.setText(By.xpath(eventImageURL), data.getEventImageURLPath());
+    }
 
+    // Search Event
+    public void searchEvent(String eventName){
+        WebUI.setText(By.xpath(searchEvent), eventName);
+    }
+
+    public void pressEnter(){
+        WebUI.pressENTER();
+    }
+
+    public void clearFilterButton(){
+        WebUI.clickElement(By.xpath(clearFilterButton));
+    }
+
+    public String searchNotFound(){
+        WebUI.waitForElementVisible(By.xpath(eventNotFoundMessage));
+        return WebUI.getWebElement(By.xpath(eventNotFoundMessage)).getText();
+    }
 
 }

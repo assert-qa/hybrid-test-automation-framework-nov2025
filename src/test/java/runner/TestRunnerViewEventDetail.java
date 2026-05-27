@@ -9,8 +9,8 @@ import io.cucumber.testng.CucumberOptions;
         monochrome = true,
         plugin = {
                 "pretty",
-                "html:target/cucumber-reports/register-user.html",
-                "json:target/cucumber-reports/register-user.json",
+                "html:target/cucumber-reports/view-event-detail.html",
+                "json:target/cucumber-reports/view-event-detail.json",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "hooks.CucumberReportListener"
