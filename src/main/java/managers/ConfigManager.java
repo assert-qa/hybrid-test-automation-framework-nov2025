@@ -117,7 +117,6 @@ public class ConfigManager {
         return "yes".equalsIgnoreCase(getProperty("SCREENSHOT_STEP_ALL", "no"));
     }
 
-
     public static String getExtentReportPath() {
         return getProperty("EXTENT_REPORT_PATH", "exports/ExtentReport/ExtentReport.html");
     }
@@ -129,7 +128,6 @@ public class ConfigManager {
     public static String getLocale() {
         return getProperty("LOCATE", "en");
     }
-
 
     public static String getValidLoginEmail() {
         return getProperty("VALID_LOGIN_EMAIL");
@@ -153,16 +151,10 @@ public class ConfigManager {
         return value != null ? value : defaultValue;
     }
 
-    /**
-     * Reload configuration (useful for testing)
-     */
     public static void reload() {
         loadConfiguration();
     }
 
-    /**
-     * Print all configuration properties (for debugging)
-     */
     public static void printConfiguration() {
         System.out.println("========== Configuration Properties ==========");
         System.out.println("Environment: " + environment);

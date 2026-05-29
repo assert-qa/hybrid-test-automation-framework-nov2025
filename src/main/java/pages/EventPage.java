@@ -23,8 +23,6 @@ public class EventPage extends DriverFactory {
     String eventPage = setUp.getProperty("NAVIGATE_TO_EVENT_PAGE");
     String searchEvent = setUp.getProperty("SEARCH_EVENT_INPUT");
     String eventList = setUp.getProperty("EVENT_LIST");
-    String selectEventCategory = setUp.getProperty("SELECT_EVENT_CATEGORY");
-    String selectEventCity = setUp.getProperty("SELECT_EVENT_CITY");
     String clearFilterButton = setUp.getProperty("CLEAR_FILTER");
     String addNewEventButton = setUp.getProperty("ADD_NEW_EVENT");
 
@@ -41,12 +39,14 @@ public class EventPage extends DriverFactory {
     String addEventButton = setUp.getProperty("ADD_EVENT_BUTTON");
     String eventNotFoundMessage = setUp.getProperty("NO_EVENT_FOUND_MESSAGE");
 
-
     String confirmBookingButton = setUp.getProperty("CONFIRM_BOOKING_BUTTON");
     String totalEventPrice = setUp.getProperty("TOTAL_PRICE_TICKET");
 
     String eventInformationDetail = setUp.getProperty("EVENT_INFORMATION_DETAIL");
     String aboutEventDetail = setUp.getProperty("ABOUT_EVENT_DETAIL");
+
+    String selectEventCategory = setUp.getProperty("SELECT_EVENT_CATEGORY");
+    String selectEventCity = setUp.getProperty("SELECT_EVENT_CITY");
 
     // Event Page
     public void goToEventPage(){
@@ -65,17 +65,8 @@ public class EventPage extends DriverFactory {
         }
     }
 
-    public void selectEventCategory(String category){
-         Select dropDown = new Select(WebUI.getWebElement(By.cssSelector(selectEventCategory)));
-         dropDown.selectByVisibleText(category);
-    }
-
-    public void selectEventCity(String city){
-        Select dropDown = new Select(WebUI.getWebElement(By.cssSelector(selectEventCity)));
-        dropDown.selectByVisibleText(city);
-    }
-
     public List<WebElement> getEvents(){
+        WebUI.waitForElementVisible(By.cssSelector(eventList));
         return WebUI.getWebElements(By.cssSelector(eventList));
     }
 
@@ -142,6 +133,23 @@ public class EventPage extends DriverFactory {
     public String searchNotFound(){
         WebUI.waitForElementVisible(By.xpath(eventNotFoundMessage));
         return WebUI.getWebElement(By.xpath(eventNotFoundMessage)).getText();
+    }
+
+    // Filter Event
+    public void selectEventCategory(String category){
+        Select dropDown = new Select(WebUI.getWebElement(By.cssSelector(selectEventCategory)));
+        for (WebElement option : dropDown.getOptions()) {
+            String optionText = option.getText().trim();
+            if (optionText.contains(category)) {
+                option.click();
+                return;
+            }
+        }
+    }
+
+    public void selectEventCity(String city){
+        Select dropDown = new Select(WebUI.getWebElement(By.cssSelector(selectEventCity)));
+        dropDown.selectByVisibleText(city);
     }
 
 }

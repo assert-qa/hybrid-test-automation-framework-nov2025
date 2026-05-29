@@ -68,7 +68,8 @@
         <project.lombok.ver>1.18.42</project.lombok.ver>
         <mysql.conn.ver>9.4.0</mysql.conn.ver>
         <aspectj.weaver.ver>1.9.25.1</aspectj.weaver.ver>
-
+        <rest.assured.ver>6.0.0</rest.assured.ver>
+        <json.schema.validator.ver>6.0.0</json.schema.validator.ver>
     </properties>
 
     <dependencies>
@@ -273,6 +274,21 @@
             <version>${allure.cucumber7.ver}</version>
         </dependency>
 
+        <!-- Source: https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest.assured.ver}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Source: https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${json.schema.validator.ver}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -289,7 +305,7 @@
                     </systemPropertyVariables>
 
                     <includes>
-                        <include>**/runner/*Runner.java</include>
+                        <include>**/runner/**/*.java</include>
                     </includes>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
@@ -342,4 +358,3 @@
         </dependencies>
     </dependencyManagement>
 </project>
-

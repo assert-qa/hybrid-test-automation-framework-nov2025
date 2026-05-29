@@ -10,25 +10,24 @@
 
 <!--    <test name="View Event Page Test">-->
 <!--        <classes>-->
-<!--            <class name="runner.TestRunnerViewEventsPage"/>-->
+<!--            <class name="runner.ui.TestRunnerViewEventsPage"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Not Found Search
-    Event Test">
+    <test name="Filter Event By Category Test">
         <classes>
-            <class name="runner.TestRunnerSearchEventNotFound"/>
+            <class name="runner.ui.TestRunnerFilterEventsByCategory"/>
         </classes>
     </test>
 
 <!--    <test name="Logout User Test">-->
 <!--        <classes>-->
-<!--            <class name="runner.TestRunnerLogoutUser"/>-->
+<!--            <class name="runner.ui.TestRunnerLogoutUser"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="Register User Test">-->
 <!--        <classes>-->
-<!--            <class name="runner.TestRunnerRegisterUser"/>-->
+<!--            <class name="runner.ui.TestRunnerRegisterUser"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>
