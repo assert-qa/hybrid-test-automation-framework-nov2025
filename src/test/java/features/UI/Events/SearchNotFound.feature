@@ -13,4 +13,4 @@ Feature: Search Events
 
     When I enter "XYZ123" in search field
     And I press enter
-    Then I should see "No events found" message
+    Then I should see "No events found" search message

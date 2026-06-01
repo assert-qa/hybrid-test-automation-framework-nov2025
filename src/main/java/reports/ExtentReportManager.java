@@ -70,9 +70,9 @@ public class ExtentReportManager {
                 extentReports.setSystemInfo("Headless Mode", ConstantGlobal.HEADLESS != null ? ConstantGlobal.HEADLESS.toString() : "N/A");
                 extentReports.setSystemInfo("Page Load Timeout (seconds)", ConstantGlobal.PAGE_LOAD_TIMEOUT != null ? ConstantGlobal.PAGE_LOAD_TIMEOUT : "N/A");
 
-                System.out.println("✅ ExtentReport initialized at: " + reportPath);
+                System.out.println("ExtentReport initialized at: " + reportPath);
             }catch (Exception e){
-                System.err.println("❌ Failed to initialize ExtentReport: " + e.getMessage());
+                System.err.println("Failed to initialize ExtentReport: " + e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -86,7 +86,7 @@ public class ExtentReportManager {
             ConfigManager.getEnvironment() : ConstantGlobal.ENV;
 
         if (env == null) {
-            System.err.println("⚠️  WARNING: Environment is NULL! Check if properties are loaded correctly.");
+            System.err.println("WARNING: Environment is NULL! Check if properties are loaded correctly.");
             return "Unknown Account";
         }
 

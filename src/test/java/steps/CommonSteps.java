@@ -10,6 +10,7 @@ import keywords.WebUI;
 import org.openqa.selenium.By;
 import pages.EventPage;
 import pages.LoginPage;
+import pages.MyBookingPage;
 import pages.RegisterPage;
 
 import java.util.Locale;
@@ -22,6 +23,7 @@ public class CommonSteps {
     private final LoginPage loginPage = new LoginPage();
     private final RegisterPage registerPage = new RegisterPage();
     private final EventPage eventPage = new EventPage();
+    private final MyBookingPage myBookingPage  = new MyBookingPage();
     private final Properties setUp = loadAllFiles();
 
     @Given("I launch the browser")
@@ -77,6 +79,7 @@ public class CommonSteps {
                 WebUI.sleep(1);
                 eventPage.goToEventPage();
             }
+            case "my bookings" -> myBookingPage.goToMyBookingPage();
             default -> throw new IllegalArgumentException("Unsupported menu in common step: " + menuName);
         }
     }
@@ -100,5 +103,4 @@ public class CommonSteps {
     public void i_select_from_city_dropdown(String city) {
         eventPage.selectEventCity(city);
     }
-
 }

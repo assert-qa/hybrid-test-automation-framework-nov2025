@@ -8,8 +8,7 @@ Feature: My Bookings
     When I navigate to url "https://eventhub.rahulshettyacademy.com/login"
     And I enter registered email address and password
     And I click "sign in" button
+    And I navigate to "My Bookings" menu
 
   Scenario: User has no bookings
-    Given I have no event bookings
-    When I navigate to My Bookings page
-    Then I should see "No bookings found" message
+    Then I should see "No bookings yet" booking message

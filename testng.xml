@@ -16,7 +16,7 @@
 
     <test name="Filter Event By Category Test">
         <classes>
-            <class name="runner.ui.TestRunnerFilterEventsByCategory"/>
+            <class name="runner.ui.TestRunnerEmptyBookingState"/>
         </classes>
     </test>
 

@@ -11,4 +11,3 @@ Feature: Login With Registered Credentials
     When I enter registered email address and password
     And I click "sign in" button
     Then I verify that "Logged in as user email" is visible
-

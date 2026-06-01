@@ -11,4 +11,3 @@ Feature: Login with Unregister Credentials
     When I enter unregister email address and password
     And I click "sign in" button
     Then I verify error "Invalid email or password" is visible
-

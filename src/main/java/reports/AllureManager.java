@@ -122,7 +122,7 @@ public class AllureManager {
     private static String getAccountType() {
         // ========== FIXED: Add null check ==========
         if (ConstantGlobal.ENV == null) {
-            System.err.println("⚠️  WARNING: ConstantGlobal.ENV is NULL!");
+            System.err.println("WARNING: ConstantGlobal.ENV is NULL!");
             return "Unknown Account";
         }
 

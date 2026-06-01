@@ -18,7 +18,7 @@ public class StepsEventSearchNotFound {
         this(new TestContext());
     }
 
-    @Then("I should see {string} message")
+    @Then("I should see {string} search message")
     public void i_should_see_message(String expectedMessage) {
         WebUI.verifyEquals(eventPage.searchNotFound(), expectedMessage);
     }
