@@ -10,36 +10,31 @@ Feature: My Bookings
     And I click "sign in" button
 
     And I navigate to "Events" menu
-    And I click on any "Hollywood Monsoon Night — Los Angeles" card
+    And I click on any available event card
     And I enter booking information
 
     And I click "Confirm Booking" button
     Then I should see the "Your tickets are reserved" message
 
-    When I click "My Bookings" menu
+    When I navigate to "My Bookings" menu
 
   Scenario: View Booking List
-    Then I should see the "My Bookings" page
+    Then I verify that "My Bookings" is visible successfully
     And my booked events should be displayed
 
   Scenario: View Booking Details
-    When I click on any booked event
+    When I click "View Details" button
     Then I should be redirected to booking detail page
-    And I should see complete booking information
+    And I should see the "confirmed" message
 
   Scenario: Verify Booking Information
-    Then I should see booking information:
-      | Event            |
-      | Category         |
-      | Date             |
-      | Venue            |
-      | City             |
-      | Name             |
-      | Email            |
-      | Phone            |
-      | Tickets          |
-      | Price per ticket |
-      | Total Price      |
+    Then I should see customer information:
+      | Name    |
+      | Email   |
+      | Phone   |
+      | Tickets |
+
+  Scenario: Verify Total Paid
 
   Scenario: Cancel Booking
     When I click "Cancel Booking" button

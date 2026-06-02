@@ -8,9 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import pages.models.NewEventDataObject;
 import utils.LogUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 import static helpers.PropertiesHelper.loadAllFiles;
 
@@ -39,9 +37,6 @@ public class EventPage extends DriverFactory {
     String addEventButton = setUp.getProperty("ADD_EVENT_BUTTON");
     String eventNotFoundMessage = setUp.getProperty("NO_EVENT_FOUND_MESSAGE");
 
-    String confirmBookingButton = setUp.getProperty("CONFIRM_BOOKING_BUTTON");
-    String totalEventPrice = setUp.getProperty("TOTAL_PRICE_TICKET");
-
     String eventInformationDetail = setUp.getProperty("EVENT_INFORMATION_DETAIL");
     String aboutEventDetail = setUp.getProperty("ABOUT_EVENT_DETAIL");
 
@@ -68,6 +63,22 @@ public class EventPage extends DriverFactory {
     public List<WebElement> getEvents(){
         WebUI.waitForElementVisible(By.cssSelector(eventList));
         return WebUI.getWebElements(By.cssSelector(eventList));
+    }
+
+    // Event Information
+    public Map<String, String> getEventInformation(List<String> expectedFields) {
+        Map<String, String> eventInfo = new HashMap<>();
+
+        for (String field : expectedFields) {
+            By valueLocator = By.xpath(
+                    "//p[normalize-space()='" + field + "']/following-sibling::p"
+            );
+
+            String value = WebUI.getElementText(valueLocator);
+            eventInfo.put(field, value);
+        }
+
+        return eventInfo;
     }
 
     // Event detail
@@ -143,4 +154,5 @@ public class EventPage extends DriverFactory {
     public void selectEventCity(String city){
         WebUI.selectDropDown(By.cssSelector(selectEventCity), city);
     }
+
 }

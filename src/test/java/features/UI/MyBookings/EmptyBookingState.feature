@@ -11,4 +11,4 @@ Feature: My Bookings
     And I navigate to "My Bookings" menu
 
   Scenario: User has no bookings
-    Then I should see "No bookings yet" booking message
+    Then I should see the "No bookings yet" message

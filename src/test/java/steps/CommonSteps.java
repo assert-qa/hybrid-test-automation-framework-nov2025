@@ -45,6 +45,7 @@ public class CommonSteps {
             case "sign in to eventhub" -> WebUI.verifyElementVisible(By.xpath(setUp.getProperty("LOGIN_PAGE_LABEL")), "Sign in to EventHub is not visible.");
             case "create your account" -> WebUI.verifyElementVisible(By.xpath(setUp.getProperty("REGISTER_PAGE_LABEL")), "Register page label is not visible.");
             case "upcoming events" -> WebUI.verifyElementVisible(By.xpath(setUp.getProperty("EVENT_PAGE_LABEL")), "Event page label is not visible.");
+            case "my bookings" -> WebUI.verifyElementVisible(By.xpath(setUp.getProperty("MY_BOOKING_PAGE_LABEL")), "My Bookings page label is not visible");
             default -> throw new IllegalArgumentException("unsupported page title in common step: " + pageTitle);
         }
     }
@@ -65,6 +66,7 @@ public class CommonSteps {
             case "create account" -> registerPage.createAccountButton();
             case "add new event" -> eventPage.clickAddNewEventButton();
             case "add event" -> eventPage.clickAddEventButton();
+            case "confirm booking" -> myBookingPage.clickConfirmBookingButton();
             default -> throw new IllegalArgumentException("Unsupported button in common step: " + buttonName);
         }
     }
@@ -103,4 +105,10 @@ public class CommonSteps {
     public void i_select_from_city_dropdown(String city) {
         eventPage.selectEventCity(city);
     }
+
+    @Then("I should see the {string} message")
+    public void i_should_see_the_message(String message) {
+        WebUI.verifyTextVisible(message);
+    }
+
 }

@@ -16,18 +16,7 @@
 
     <test name="Filter Event By Category Test">
         <classes>
-            <class name="runner.ui.TestRunnerEmptyBookingState"/>
+            <class name="runner.ui.TestRunnerBookEvent"/>
         </classes>
     </test>
-
-<!--    <test name="Logout User Test">-->
-<!--        <classes>-->
-<!--            <class name="runner.ui.TestRunnerLogoutUser"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Register User Test">-->
-<!--        <classes>-->
-<!--            <class name="runner.ui.TestRunnerRegisterUser"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>

@@ -2,10 +2,14 @@ package pages;
 
 import factory.DriverFactory;
 import keywords.WebUI;
+import lombok.NonNull;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import pages.models.EventBookDetailDataObject;
-import utils.LogUtils;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import static helpers.PropertiesHelper.loadAllFiles;
@@ -24,7 +28,10 @@ public class MyBookingPage extends DriverFactory {
     String customerName = setUp.getProperty("CUSTOMER_NAME");
     String customerEmail = setUp.getProperty("CUSTOMER_EMAIL");
     String customerPhone = setUp.getProperty("CUSTOMER_PHONE");
+    String confirmBookingButton = setUp.getProperty("CONFIRM_BOOKING_BUTTON");
     String successBookingLabel = setUp.getProperty("SUCCESS_BOOKING_LABEL");
+    String totalEventPrice = setUp.getProperty("TOTAL_PRICE_TICKET");
+    String listOfBookedEvents = setUp.getProperty("LIST_OF_BOOKED_EVENT");
 
 
     public void goToMyBookingPage(){
@@ -85,8 +92,39 @@ public class MyBookingPage extends DriverFactory {
         enterPhoneNumber(String.valueOf(data.getPhoneNumber()));
     }
 
-    public void
+    public void clickConfirmBookingButton(){
+        WebUI.clickElement(By.xpath(confirmBookingButton));
+    }
 
+    public String successBookingLabel(){
+        return WebUI.getElementText(By.xpath(successBookingLabel));
+    }
+
+    public List<WebElement> getBookingList(){
+        return WebUI.getWebElements(By.xpath(listOfBookedEvents));
+    }
+
+    public Map<String, String> getEventInformation(List<String> expectedFields){
+        return getInformation(expectedFields);
+    }
+
+    public Map<String, String> getCustomerInformation(List<String> expectedFields){
+        return getInformation(expectedFields);
+    }
+
+    @NonNull
+    private Map<String, String> getInformation(List<String> expectedFields) {
+        Map<String, String> information = new HashMap<>();
+
+        for (String field : expectedFields) {
+            By valueLocator = By.xpath(
+                    "//span[normalize-space()='" + field + "']/following-sibling::span"
+            );
+
+            information.put(field, WebUI.getElementText(valueLocator));
+        }
+        return information;
+    }
 
 
 
