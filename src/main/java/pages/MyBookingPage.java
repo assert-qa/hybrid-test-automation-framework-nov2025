@@ -31,6 +31,7 @@ public class MyBookingPage extends DriverFactory {
     String confirmBookingButton = setUp.getProperty("CONFIRM_BOOKING_BUTTON");
     String successBookingLabel = setUp.getProperty("SUCCESS_BOOKING_LABEL");
     String totalEventPrice = setUp.getProperty("TOTAL_PRICE_TICKET");
+    String viewMyBookingButton = setUp.getProperty("VIEW_MY_BOOKINGS");
     String listOfBookedEvents = setUp.getProperty("LIST_OF_BOOKED_EVENT");
 
 
@@ -42,6 +43,11 @@ public class MyBookingPage extends DriverFactory {
         return WebUI.getElementText(By.xpath(emptyStateLabel));
     }
 
+    public String getCurrentURL(){
+        return WebUI.getCurrentUrl();
+    }
+
+    // Book Information
     public int getCurrentTicketQuantity(){
         return Integer.parseInt(WebUI.getElementText(By.xpath(currentTicketQty)));
     }
@@ -85,6 +91,13 @@ public class MyBookingPage extends DriverFactory {
     }
 
     // Book method
+    public void waitForBookingFormDisplayed(){
+        WebUI.waitForElementVisible(By.xpath(currentTicketQty));
+        WebUI.waitForElementVisible(By.xpath(customerName));
+        WebUI.waitForElementVisible(By.xpath(customerEmail));
+        WebUI.waitForElementVisible(By.xpath(customerPhone));
+    }
+
     public void fillBookingInformation(EventBookDetailDataObject data){
         enterNumOfTickets(data.getNumOfTickets());
         enterFullName(data.getFullName());
@@ -96,12 +109,12 @@ public class MyBookingPage extends DriverFactory {
         WebUI.clickElement(By.xpath(confirmBookingButton));
     }
 
-    public String successBookingLabel(){
+    public String verifyBookingSuccess(){
         return WebUI.getElementText(By.xpath(successBookingLabel));
     }
 
     public List<WebElement> getBookingList(){
-        return WebUI.getWebElements(By.xpath(listOfBookedEvents));
+        return WebUI.getWebElements(By.cssSelector(listOfBookedEvents));
     }
 
     public Map<String, String> getEventInformation(List<String> expectedFields){
@@ -126,6 +139,9 @@ public class MyBookingPage extends DriverFactory {
         return information;
     }
 
+    public void clickViewMyBookingsButton(){
+        WebUI.clickElement(By.xpath(viewMyBookingButton));
+    }
 
 
 }

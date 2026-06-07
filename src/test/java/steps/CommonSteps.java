@@ -1,7 +1,9 @@
 package steps;
 
+import factory.BookingDataFactory;
 import factory.DriverManager;
 import helpers.PopupHelper;
+import hooks.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +14,7 @@ import pages.EventPage;
 import pages.LoginPage;
 import pages.MyBookingPage;
 import pages.RegisterPage;
+import pages.models.EventBookDetailDataObject;
 
 import java.util.Locale;
 import java.util.Properties;
@@ -20,11 +23,20 @@ import static helpers.PropertiesHelper.loadAllFiles;
 
 public class CommonSteps {
 
+    private final TestContext testContext;
     private final LoginPage loginPage = new LoginPage();
     private final RegisterPage registerPage = new RegisterPage();
     private final EventPage eventPage = new EventPage();
     private final MyBookingPage myBookingPage  = new MyBookingPage();
     private final Properties setUp = loadAllFiles();
+
+    public CommonSteps(TestContext testContext) {
+        this.testContext = testContext;
+    }
+
+    public CommonSteps() {
+        this(new TestContext());
+    }
 
     @Given("I launch the browser")
     public void iLaunchTheBrowser() {
@@ -111,4 +123,21 @@ public class CommonSteps {
         WebUI.verifyTextVisible(message);
     }
 
+    // Booking
+    @Given("I have an existing booking")
+    public void i_have_an_existing_booking(){
+        eventPage.goToEventPage();
+        testContext.setSelectedEventName(eventPage.clickAnyAvailableEventAndGetName());
+
+        createAndFillBookingInformation();
+
+        myBookingPage.clickConfirmBookingButton();
+        WebUI.verifyEquals(myBookingPage.verifyBookingSuccess(), "Your tickets are reserved.");
+    }
+
+    private void createAndFillBookingInformation() {
+        EventBookDetailDataObject bookingData = BookingDataFactory.createBooking();
+        testContext.setBookingData(bookingData);
+        myBookingPage.fillBookingInformation(bookingData);
+    }
 }

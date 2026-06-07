@@ -18,6 +18,14 @@ public class EventPage extends DriverFactory {
     public EventPage(){
     }
 
+    private static final Random RANDOM = new Random();
+
+    private static final List<String> AVAILABLE_EVENTS = List.of(
+            "Dilli Diwali Mela",
+            "Hollywood Monsoon Night — Los Angeles",
+            "World Tech Summit"
+    );
+
     String eventPage = setUp.getProperty("NAVIGATE_TO_EVENT_PAGE");
     String searchEvent = setUp.getProperty("SEARCH_EVENT_INPUT");
     String eventList = setUp.getProperty("EVENT_LIST");
@@ -43,6 +51,8 @@ public class EventPage extends DriverFactory {
     String selectEventCategory = setUp.getProperty("SELECT_EVENT_CATEGORY");
     String selectEventCity = setUp.getProperty("SELECT_EVENT_CITY");
 
+    String bookNowButton = setUp.getProperty("BOOK_NOW_BUTTON");
+
     // Event Page
     public void goToEventPage(){
         WebUI.clickElement(By.xpath(eventPage));
@@ -63,6 +73,27 @@ public class EventPage extends DriverFactory {
     public List<WebElement> getEvents(){
         WebUI.waitForElementVisible(By.cssSelector(eventList));
         return WebUI.getWebElements(By.cssSelector(eventList));
+    }
+
+//    public void clickAnyAvailableEvent() {
+//        clickAnyAvailableEventAndGetName();
+//    }
+    public String clickAnyAvailableEventAndGetName() {
+        String selectedEvent = AVAILABLE_EVENTS.get(
+                RANDOM.nextInt(AVAILABLE_EVENTS.size())
+        );
+
+        for (WebElement card : getEvents()){
+            String actualEventName = card.findElement(By.tagName("h3")).getText().trim();
+
+            if (actualEventName.equalsIgnoreCase(selectedEvent)){
+                card.findElement(By.xpath(bookNowButton)).click();
+                LogUtils.info("Selected event for booking: " + actualEventName);
+                return actualEventName;
+            }
+        }
+
+        throw new IllegalStateException("No available event card found for selected event: " + selectedEvent);
     }
 
     // Event Information

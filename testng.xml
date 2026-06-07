@@ -14,7 +14,7 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Filter Event By Category Test">
+    <test name="Booking an Event">
         <classes>
             <class name="runner.ui.TestRunnerBookEvent"/>
         </classes>

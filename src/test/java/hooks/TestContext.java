@@ -4,8 +4,12 @@ import factory.DriverManager;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 import pages.RegisterPage;
+import pages.models.EventBookDetailDataObject;
 
 public class TestContext {
+    private static final ThreadLocal<EventBookDetailDataObject> bookingData = new ThreadLocal<>();
+    private static final ThreadLocal<String> selectedEventName = new ThreadLocal<>();
+
     private LoginPage loginPage;
     private RegisterPage registerPage;
 
@@ -24,7 +28,24 @@ public class TestContext {
         return (registerPage == null) ? registerPage = new RegisterPage() : registerPage;
     }
 
+    public EventBookDetailDataObject getBookingData() {
+        return bookingData.get();
+    }
+
+    public void setBookingData(EventBookDetailDataObject data) {
+        bookingData.set(data);
+    }
+
+    public String getSelectedEventName() {
+        return selectedEventName.get();
+    }
+
+    public void setSelectedEventName(String eventName) {
+        selectedEventName.set(eventName);
+    }
+
     public static void reset() {
-        // No-op: context is scenario object, cleanup is handled by hooks and DriverManager.
+        bookingData.remove();
+        selectedEventName.remove();
     }
 }
