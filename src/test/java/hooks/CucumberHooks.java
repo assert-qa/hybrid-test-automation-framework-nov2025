@@ -9,6 +9,7 @@ import helpers.UserInfoHelper;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import pages.MyBookingPage;
 import reports.AllureManager;
 import reports.ExtentTestManager;
 import utils.LogUtils;
@@ -135,10 +136,37 @@ public class CucumberHooks {
         LogUtils.info("SCENARIO FINISHED: " + scenario.getName());
         LogUtils.info("SCENARIO STATUS: " + status);
 
+        clearTestBookingsIfCreated();
+
         DriverManager.quit();
         LogUtils.info(SEPARATOR + "\n");
 
         TestContext.reset();
+    }
+
+    private void clearTestBookingsIfCreated() {
+        if (DriverManager.getDriver() == null) {
+            return;
+        }
+
+        if (new TestContext().getBookingData() == null) {
+            return;
+        }
+
+        try {
+            MyBookingPage myBookingPage = new MyBookingPage();
+            myBookingPage.goToMyBookingPage();
+
+            if (myBookingPage.isClearAllBookingsTextButtonDisplayed()) {
+                myBookingPage.clickClearAllBookingsTextButton();
+                myBookingPage.confirmBookingDeletion();
+                LogUtils.info("Test bookings cleaned up successfully.");
+            } else {
+                LogUtils.info("No clear all bookings button displayed. Skipping booking cleanup.");
+            }
+        } catch (Exception e) {
+            LogUtils.warn("Failed to clean up test bookings: " + e.getMessage());
+        }
     }
 
 }

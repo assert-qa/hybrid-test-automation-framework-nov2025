@@ -15,6 +15,7 @@ import pages.LoginPage;
 import pages.MyBookingPage;
 import pages.RegisterPage;
 import pages.models.EventBookDetailDataObject;
+import pages.models.SelectedEventDataObject;
 
 import java.util.Locale;
 import java.util.Properties;
@@ -79,6 +80,8 @@ public class CommonSteps {
             case "add new event" -> eventPage.clickAddNewEventButton();
             case "add event" -> eventPage.clickAddEventButton();
             case "confirm booking" -> myBookingPage.clickConfirmBookingButton();
+            case "view details" -> myBookingPage.clickViewDetailsButton();
+            case "clear all bookings" -> myBookingPage.clickClearAllBookingsTextButton();
             default -> throw new IllegalArgumentException("Unsupported button in common step: " + buttonName);
         }
     }
@@ -127,7 +130,10 @@ public class CommonSteps {
     @Given("I have an existing booking")
     public void i_have_an_existing_booking(){
         eventPage.goToEventPage();
-        testContext.setSelectedEventName(eventPage.clickAnyAvailableEventAndGetName());
+        SelectedEventDataObject selectedEvent = eventPage.clickAnyAvailableEventAndGetData();
+        // get selected event and it's price in TestContext
+        testContext.setSelectedEventName(selectedEvent.getEventName());
+        testContext.setSelectedEventPrice(selectedEvent.getEventPrice());
 
         createAndFillBookingInformation();
 

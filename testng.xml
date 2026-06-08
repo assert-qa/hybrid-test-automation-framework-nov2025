@@ -14,9 +14,15 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Booking an Event">
+<!--    <test name="Booking an Event">-->
+<!--        <classes>-->
+<!--            <class name="runner.ui.TestRunnerBookEvent"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Delete Booked Event">
         <classes>
-            <class name="runner.ui.TestRunnerBookEvent"/>
+            <class name="runner.ui.TestRunnerDeleteBookedEvent"/>
         </classes>
     </test>
 </suite>

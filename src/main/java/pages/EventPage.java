@@ -9,6 +9,7 @@ import pages.models.NewEventDataObject;
 import utils.LogUtils;
 
 import java.util.*;
+import pages.models.SelectedEventDataObject;
 
 import static helpers.PropertiesHelper.loadAllFiles;
 
@@ -78,7 +79,7 @@ public class EventPage extends DriverFactory {
 //    public void clickAnyAvailableEvent() {
 //        clickAnyAvailableEventAndGetName();
 //    }
-    public String clickAnyAvailableEventAndGetName() {
+    public SelectedEventDataObject clickAnyAvailableEventAndGetData() {
         String selectedEvent = AVAILABLE_EVENTS.get(
                 RANDOM.nextInt(AVAILABLE_EVENTS.size())
         );
@@ -87,13 +88,27 @@ public class EventPage extends DriverFactory {
             String actualEventName = card.findElement(By.tagName("h3")).getText().trim();
 
             if (actualEventName.equalsIgnoreCase(selectedEvent)){
+                String priceText = card.findElement(By.cssSelector("p.text-lg.font-bold.text-indigo-700")).getText();
+                int eventPrice = Integer.parseInt(priceText.replaceAll("[^\\d]", ""));
+
                 card.findElement(By.xpath(bookNowButton)).click();
                 LogUtils.info("Selected event for booking: " + actualEventName);
-                return actualEventName;
+                return new SelectedEventDataObject(actualEventName, eventPrice);
             }
         }
-
         throw new IllegalStateException("No available event card found for selected event: " + selectedEvent);
+    }
+
+    public int getAnyEventPrice(String eventName) {
+        for (WebElement card : getEvents()) {
+            String actualEvent = card.findElement(By.tagName("h3")).getText().trim();
+
+            if (actualEvent.equalsIgnoreCase(eventName)) {
+                String priceText = card.findElement(By.tagName("p")).getText().replaceAll("[^\\d]", "");
+                return Integer.parseInt(priceText);
+            }
+        }
+        throw new NoSuchElementException("Event not found: " + eventName);
     }
 
     // Event Information

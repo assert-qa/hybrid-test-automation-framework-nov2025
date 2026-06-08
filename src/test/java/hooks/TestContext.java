@@ -9,6 +9,8 @@ import pages.models.EventBookDetailDataObject;
 public class TestContext {
     private static final ThreadLocal<EventBookDetailDataObject> bookingData = new ThreadLocal<>();
     private static final ThreadLocal<String> selectedEventName = new ThreadLocal<>();
+    private static final ThreadLocal<Integer> selectedEventPrice = new ThreadLocal<>();
+    private static final ThreadLocal<String> notedBookedEventName = new ThreadLocal<>();
 
     private LoginPage loginPage;
     private RegisterPage registerPage;
@@ -44,8 +46,26 @@ public class TestContext {
         selectedEventName.set(eventName);
     }
 
+    public Integer getSelectedEventPrice() {
+        return selectedEventPrice.get();
+    }
+
+    public void setSelectedEventPrice(Integer price){
+        selectedEventPrice.set(price);
+    }
+
+    public String getNotedBookedEventName() {
+        return notedBookedEventName.get();
+    }
+
+    public void setNotedBookedEventName(String eventName) {
+        notedBookedEventName.set(eventName);
+    }
+
     public static void reset() {
         bookingData.remove();
         selectedEventName.remove();
+        selectedEventPrice.remove();
+        notedBookedEventName.remove();
     }
 }

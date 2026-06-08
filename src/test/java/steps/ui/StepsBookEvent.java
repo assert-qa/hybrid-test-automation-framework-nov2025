@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import pages.EventPage;
 import pages.MyBookingPage;
 import pages.models.EventBookDetailDataObject;
+import pages.models.SelectedEventDataObject;
 import utils.LogUtils;
 
 import java.util.List;
@@ -33,7 +34,8 @@ public class StepsBookEvent {
 
     @And("I click on any available event card")
     public void i_click_on_any_available_event_card() {
-       testContext.setSelectedEventName(eventPage.clickAnyAvailableEventAndGetName());
+       SelectedEventDataObject selectedEvent = eventPage.clickAnyAvailableEventAndGetData();
+       testContext.setSelectedEventName(selectedEvent.getEventName());
        myBookingPage.waitForBookingFormDisplayed();
     }
 

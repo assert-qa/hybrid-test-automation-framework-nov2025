@@ -1,17 +1,24 @@
 package pages;
 
+import constants.ConstantGlobal;
 import factory.DriverFactory;
+import factory.DriverManager;
 import keywords.WebUI;
 import lombok.NonNull;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.models.EventBookDetailDataObject;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import static constants.ConstantGlobal.EXPLICIT_TIMEOUT;
 import static helpers.PropertiesHelper.loadAllFiles;
 
 public class MyBookingPage extends DriverFactory {
@@ -30,9 +37,11 @@ public class MyBookingPage extends DriverFactory {
     String customerPhone = setUp.getProperty("CUSTOMER_PHONE");
     String confirmBookingButton = setUp.getProperty("CONFIRM_BOOKING_BUTTON");
     String successBookingLabel = setUp.getProperty("SUCCESS_BOOKING_LABEL");
-    String totalEventPrice = setUp.getProperty("TOTAL_PRICE_TICKET");
     String viewMyBookingButton = setUp.getProperty("VIEW_MY_BOOKINGS");
     String listOfBookedEvents = setUp.getProperty("LIST_OF_BOOKED_EVENT");
+    String viewDetailsButton = setUp.getProperty("VIEW_DETAILS_BUTTON");
+    String currentTotalPaidLabel = setUp.getProperty("ACTUAL_TOTAL_PRICE");
+    String clearAllBookingsTextButton = setUp.getProperty("DELETE_BOOKING_BUTTON");
 
 
     public void goToMyBookingPage(){
@@ -141,6 +150,55 @@ public class MyBookingPage extends DriverFactory {
 
     public void clickViewMyBookingsButton(){
         WebUI.clickElement(By.xpath(viewMyBookingButton));
+    }
+
+    public void clickViewDetailsButton(){
+        WebUI.clickElement(By.xpath(viewDetailsButton));
+    }
+
+    public int getCurrentTotalPaidAmount(){
+        String totalPaidText = WebUI.getElementText(By.cssSelector(currentTotalPaidLabel));
+        String numericText = totalPaidText.replaceAll("[^\\d]", "");
+
+        if (numericText.isEmpty()){
+            throw new IllegalStateException("Total paid amount is not numeric: " + totalPaidText);
+        }
+        return Integer.parseInt(numericText);
+    }
+
+    public void clickClearAllBookingsTextButton(){
+        WebUI.clickElement(By.xpath(clearAllBookingsTextButton));
+    }
+
+    public void confirmBookingDeletion(){
+        WebUI.acceptConfirmationAlert();
+    }
+
+    public void waitUntilBookingsCleared(){
+        By bookingCardLocator = By.cssSelector(listOfBookedEvents);
+
+        new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(Long.parseLong(ConstantGlobal.EXPLICIT_TIMEOUT)))
+                .until(driver -> WebUI.getWebElements(bookingCardLocator).isEmpty()
+                        || WebUI.isElementDisplayed(By.xpath(emptyStateLabel)));
+    }
+
+    public boolean isClearAllBookingsTextButtonDisplayed(){
+        return WebUI.isElementDisplayed(By.xpath(clearAllBookingsTextButton));
+    }
+
+    public String getFirstBookedEventName(){
+        List<WebElement> bookings = getBookingList();
+
+        if (bookings.isEmpty()) {
+            throw new IllegalStateException("No booked events are displayed.");
+        }
+
+        return bookings.get(0).findElement(By.tagName("h3")).getText().trim();
+    }
+
+    public boolean isBookedEventDisplayed(String bookedEventName){
+        return getBookingList().stream()
+                .anyMatch(booking -> booking.getText().contains(bookedEventName));
     }
 
 
