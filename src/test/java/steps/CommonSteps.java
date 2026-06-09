@@ -82,6 +82,8 @@ public class CommonSteps {
             case "confirm booking" -> myBookingPage.clickConfirmBookingButton();
             case "view details" -> myBookingPage.clickViewDetailsButton();
             case "clear all bookings" -> myBookingPage.clickClearAllBookingsTextButton();
+            case "cancel booking" -> myBookingPage.clickCancelButton();
+            case "yes, cancel it" -> myBookingPage.clickConfirmBookingCancellationButton();
             default -> throw new IllegalArgumentException("Unsupported button in common step: " + buttonName);
         }
     }
@@ -145,5 +147,13 @@ public class CommonSteps {
         EventBookDetailDataObject bookingData = BookingDataFactory.createBooking();
         testContext.setBookingData(bookingData);
         myBookingPage.fillBookingInformation(bookingData);
+    }
+
+    @Then("no booked event should no longer appear in My Bookings")
+    public void no_booked_event_should_no_longer_appear_in_my_bookings() {
+        myBookingPage.waitUntilBookingsCleared();
+
+        WebUI.verifyTrue(myBookingPage.getBookingList().isEmpty(),
+                "Bookings are still displayed after clearing all bookings.");
     }
 }

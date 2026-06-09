@@ -37,12 +37,4 @@ public class StepsDeleteBookedEvent {
     public void i_confirm_booking_deletion() {
         myBookingPage.confirmBookingDeletion();
     }
-
-    @Then("no booked event should no longer appear in My Bookings")
-    public void no_booked_event_should_no_longer_appear_in_my_bookings() {
-        myBookingPage.waitUntilBookingsCleared();
-
-        WebUI.verifyTrue(myBookingPage.getBookingList().isEmpty(),
-                "Bookings are still displayed after clearing all bookings.");
-    }
 }

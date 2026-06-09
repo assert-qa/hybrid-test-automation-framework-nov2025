@@ -42,6 +42,8 @@ public class MyBookingPage extends DriverFactory {
     String viewDetailsButton = setUp.getProperty("VIEW_DETAILS_BUTTON");
     String currentTotalPaidLabel = setUp.getProperty("ACTUAL_TOTAL_PRICE");
     String clearAllBookingsTextButton = setUp.getProperty("DELETE_BOOKING_BUTTON");
+    String cancelBookingButton = setUp.getProperty("CANCEL_BOOKING_BUTTON");
+    String cancelConfirmButton = setUp.getProperty("CANCEL_CONFIRM_BUTTON");
 
 
     public void goToMyBookingPage(){
@@ -171,7 +173,9 @@ public class MyBookingPage extends DriverFactory {
     }
 
     public void confirmBookingDeletion(){
-        WebUI.acceptConfirmationAlert();
+        Alert alert = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(Long.parseLong(ConstantGlobal.EXPLICIT_TIMEOUT)))
+                .until(ExpectedConditions.alertIsPresent());
+        alert.accept();
     }
 
     public void waitUntilBookingsCleared(){
@@ -201,5 +205,13 @@ public class MyBookingPage extends DriverFactory {
                 .anyMatch(booking -> booking.getText().contains(bookedEventName));
     }
 
+    public void clickCancelButton(){
+        WebUI.clickElement(By.xpath(cancelBookingButton));
+    }
+
+    public void clickConfirmBookingCancellationButton(){
+        WebUI.waitForElementClickable(By.xpath(cancelConfirmButton));
+        WebUI.clickElement(By.xpath(cancelConfirmButton));
+    }
 
 }

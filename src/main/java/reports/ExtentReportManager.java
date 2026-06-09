@@ -67,7 +67,7 @@ public class ExtentReportManager {
                 extentReports.setSystemInfo("Java Version", System.getProperty("java.version"));
                 extentReports.setSystemInfo("Report Generated", LocalDateTime.now().format(
                         DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
-                extentReports.setSystemInfo("Headless Mode", ConstantGlobal.HEADLESS != null ? ConstantGlobal.HEADLESS.toString() : "N/A");
+                extentReports.setSystemInfo("Headless Mode", ConfigManager.isHeadless() ? "On" : "Off");
                 extentReports.setSystemInfo("Page Load Timeout (seconds)", ConstantGlobal.PAGE_LOAD_TIMEOUT != null ? ConstantGlobal.PAGE_LOAD_TIMEOUT : "N/A");
 
                 System.out.println("ExtentReport initialized at: " + reportPath);

@@ -1,7 +1,7 @@
 package factory;
 
-import constants.ConstantGlobal;
 import helpers.PropertiesHelper;
+import managers.ConfigManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import utils.LogUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,7 +46,7 @@ public class DriverFactory {
 
     private WebDriver initChromeDriver() {
         WebDriver driver;
-        System.out.println("Launching Chrome browser...");
+        LogUtils.info("Launching Chrome browser...");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-password-manager-reauthentication");
@@ -58,11 +59,13 @@ public class DriverFactory {
         prefs.put("password_manager_enabled", false);
         options.setExperimentalOption("prefs", prefs);
 
-        if (ConstantGlobal.HEADLESS) { // default: false
+        if (ConfigManager.isHeadless()) {
             options.addArguments("--headless=new");
-            options.addArguments("window-size=1800,900");
+            options.addArguments("--window-size=1800,900");
+            LogUtils.info("Headless mode On");
         } else {
             options.addArguments("--start-maximized");
+            LogUtils.info("Headless mode Off");
         }
         driver = new ChromeDriver(options);
         return driver;
@@ -70,7 +73,7 @@ public class DriverFactory {
 
     private WebDriver initEdgeDriver() {
         WebDriver driver;
-        System.out.println("Launching Edge browser...");
+        LogUtils.info("Launching Edge browser...");
 
         EdgeOptions options = new EdgeOptions();
         options.addArguments("--disable-password-manager-reauthentication");
@@ -83,11 +86,13 @@ public class DriverFactory {
         prefs.put("password_manager_enabled", false);
         options.setExperimentalOption("prefs", prefs);
 
-        if (ConstantGlobal.HEADLESS) { // default: false
+        if (ConfigManager.isHeadless()) {
             options.addArguments("--headless=new");
-            options.addArguments("window-size=1800,900");
+            options.addArguments("--window-size=1800,900");
+            LogUtils.info("Headless mode On");
         } else {
             options.addArguments("--start-maximized");
+            LogUtils.info("Headless mode Off");
         }
 
         driver = new EdgeDriver(options);
@@ -97,7 +102,7 @@ public class DriverFactory {
 
     private WebDriver initFirefoxDriver() {
         WebDriver driver;
-        System.out.println("Launching Firefox browser...");
+        LogUtils.info("Launching Firefox browser...");
 
         FirefoxOptions options = new FirefoxOptions();
         options.addPreference("signon.rememberSignons", false);
@@ -108,14 +113,18 @@ public class DriverFactory {
         // Disable notifications
         options.addPreference("permissions.default.desktop-notification", 2);
 
-        if (ConstantGlobal.HEADLESS) { // default: false
-            options.addArguments("--headless=new");
-            options.addArguments("window-size=1800,900");
+        if (ConfigManager.isHeadless()) {
+            options.addArguments("--headless");
+            LogUtils.info("Headless mode On");
         } else {
             options.addArguments("--start-maximized");
+            LogUtils.info("Headless mode Off");
         }
 
         driver = new FirefoxDriver(options);
+        if (ConfigManager.isHeadless()) {
+            driver.manage().window().setSize(new org.openqa.selenium.Dimension(1800, 900));
+        }
 
         return driver;
     }

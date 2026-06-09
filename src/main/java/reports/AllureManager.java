@@ -45,7 +45,7 @@ public class AllureManager {
         info.append("Environment: ").append(environment).append("\n");
         info.append("Base URL: ").append(ConfigManager.getBaseUrl() != null ? ConfigManager.getBaseUrl() : "N/A").append("\n");
         info.append("Browser: ").append(ConfigManager.getBrowser() != null ? ConfigManager.getBrowser() : "N/A").append("\n");
-        info.append("Headless Mode: ").append(ConfigManager.isHeadless()).append("\n");
+        info.append("Headless Mode: ").append(ConfigManager.isHeadless() ? "On" : "Off").append("\n");
         info.append("Execution Time: ").append(LocalDateTime.now().format(
                 DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"))).append("\n");
         return info.toString();

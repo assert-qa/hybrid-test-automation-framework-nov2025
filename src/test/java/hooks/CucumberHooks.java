@@ -34,6 +34,7 @@ public class CucumberHooks {
             LogUtils.info("Environment: " + environment);
             LogUtils.info("Base URL: " + baseUrl);
             LogUtils.info("Test User Email: " + email);
+            LogUtils.info("Headless mode " + (ConfigManager.isHeadless() ? "On" : "Off"));
         } catch (Exception e) {
             LogUtils.warn("⚠️  Failed to load configuration: " + e.getMessage());
         }
