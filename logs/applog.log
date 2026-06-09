@@ -1,143 +1,240 @@
-[INFO] 09-06-2026 15:01:53 [main] [LogUtils] - TestNG parameter applied: HEADLESS=true
-[INFO] 09-06-2026 15:01:53 [main] [LogUtils] - TestNG parameter applied: BROWSER=chrome
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - 
+[INFO] 09-06-2026 18:13:28 [main] [LogUtils] - TestNG parameter applied: HEADLESS=true
+[INFO] 09-06-2026 18:13:28 [main] [LogUtils] - TestNG parameter applied: BROWSER=chrome
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - 
 ========================================
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - TEST RUN STARTED
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - Time: 2026-06-09T08:01:53.870821400Z
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - ========================================
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - Loaded: src/main/resources/config.properties
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - Loaded: src/main/resources/env/dev.properties
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - Loaded: src/main/java/objects/event_hub.properties
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - Loaded: src/main/resources/cucumber.properties
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - Total properties loaded: 73
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - Environment found: dev
-[INFO] 09-06-2026 15:01:53 [TestNG-tests-1] [LogUtils] - Properties loaded successfully!
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - ExtentReport initialized successfully
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - ========================================
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - STARTING TEST SUITE
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - ========================================
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - ✅ Configuration loaded successfully
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - Environment: dev
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - Base URL: https://eventhub.rahulshettyacademy.com/login
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - Test User Email: chieko.gibson@gmail.com
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - Headless mode On
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - 
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - TEST RUN STARTED
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - Time: 2026-06-09T11:13:29.958006Z
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - ========================================
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - Loaded: src/main/resources/config.properties
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - Loaded: src/main/resources/env/dev.properties
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - Loaded: src/main/java/objects/event_hub.properties
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - Loaded: src/main/resources/cucumber.properties
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - Total properties loaded: 75
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - Environment found: dev
+[INFO] 09-06-2026 18:13:29 [TestNG-tests-1] [LogUtils] - Properties loaded successfully!
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - ExtentReport initialized successfully
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - ========================================
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - STARTING TEST SUITE
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - ========================================
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - ✅ Configuration loaded successfully
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - Environment: dev
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - Base URL: https://eventhub.rahulshettyacademy.com/login
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - Test User Email: chieko.gibson@gmail.com
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - Headless mode On
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - 
 ==================================================
 Testing as: chieko.gibson@gmail.com (Development Account)
 Environment: dev
 ==================================================
 
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - 
-TEST CASE STARTED: Cancel booking successfully
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] -   Feature: file:///D:/CodeProject/Java/MyProject/CucumberBDDProject/CucumberMiniFramework/cucumber_hybrid_framework/src/test/java/features/UI/MyBookings/CancelBooking.feature
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] -   Line: 15
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - SCENARIO START: Cancel booking successfully
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - Launching Chrome browser...
-[INFO] 09-06-2026 15:01:54 [TestNG-tests-1] [LogUtils] - Headless mode On
-[INFO] 09-06-2026 15:01:55 [TestNG-tests-1] [LogUtils] - Driver initialized for scenario: Cancel booking successfully
-[INFO] 09-06-2026 15:01:55 [TestNG-tests-1] [LogUtils] - ExtentTest initialized for: Cancel booking successfully
-[INFO] 09-06-2026 15:01:55 [TestNG-tests-1] [LogUtils] -   Step: I launch the browser
-[INFO] 09-06-2026 15:01:56 [TestNG-tests-1] [LogUtils] - Verify true: true
-[INFO] 09-06-2026 15:01:56 [TestNG-tests-1] [LogUtils] -   Step Completed: I launch the browser
-[INFO] 09-06-2026 15:01:56 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:01:56 [TestNG-tests-1] [LogUtils] -     Duration: 1098 ms
-[INFO] 09-06-2026 15:01:56 [TestNG-tests-1] [LogUtils] -   Step: I navigate to url "https://eventhub.rahulshettyacademy.com/login"
-[INFO] 09-06-2026 15:02:01 [TestNG-tests-1] [LogUtils] - Open URL: https://eventhub.rahulshettyacademy.com/login
-[INFO] 09-06-2026 15:02:01 [TestNG-tests-1] [LogUtils] -   Step Completed: I navigate to url "https://eventhub.rahulshettyacademy.com/login"
-[INFO] 09-06-2026 15:02:01 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:01 [TestNG-tests-1] [LogUtils] -     Duration: 4212 ms
-[INFO] 09-06-2026 15:02:01 [TestNG-tests-1] [LogUtils] -   Step: I enter registered email address and password
-[INFO] 09-06-2026 15:02:01 [TestNG-tests-1] [LogUtils] - Logging in with account: chieko.gibson@gmail.com
-[INFO] 09-06-2026 15:02:01 [TestNG-tests-1] [LogUtils] - Account Type: Development Account
-[INFO] 09-06-2026 15:02:01 [TestNG-tests-1] [LogUtils] - Environment: dev
-[INFO] 09-06-2026 15:02:02 [TestNG-tests-1] [LogUtils] - Set text: chieko.gibson@gmail.com on element By.xpath: //input[@id='email']
-[INFO] 09-06-2026 15:02:03 [TestNG-tests-1] [LogUtils] - Set text: Of3%BGOK on element By.xpath: //input[@id='password']
-[INFO] 09-06-2026 15:02:03 [TestNG-tests-1] [LogUtils] -   Step Completed: I enter registered email address and password
-[INFO] 09-06-2026 15:02:03 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:03 [TestNG-tests-1] [LogUtils] -     Duration: 2170 ms
-[INFO] 09-06-2026 15:02:03 [TestNG-tests-1] [LogUtils] -   Step: I click "sign in" button
-[INFO] 09-06-2026 15:02:04 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='login-btn']
-[INFO] 09-06-2026 15:02:04 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup with combined method (ESC + Click)
-[INFO] 09-06-2026 15:02:04 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup by pressing ESC
-[INFO] 09-06-2026 15:02:05 [TestNG-tests-1] [LogUtils] - Password Manager popup closed successfully with ESC
-[INFO] 09-06-2026 15:02:06 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup by clicking close button
-[WARN] 09-06-2026 15:02:12 [TestNG-tests-1] [LogUtils] - Failed to close popup by clicking button: invalid selector: Unable to locate an element with the xpath expression //button[@class*='close'] because of the following error:
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - 
+TEST CASE STARTED: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] -   Feature: file:///D:/CodeProject/Java/MyProject/CucumberBDDProject/CucumberMiniFramework/cucumber_hybrid_framework/src/test/java/features/UI/MyBookings/EligibleRefundBookedEvent.feature
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] -   Line: 23
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - SCENARIO START: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - Launching Chrome browser...
+[INFO] 09-06-2026 18:13:30 [TestNG-tests-1] [LogUtils] - Headless mode On
+[INFO] 09-06-2026 18:13:31 [TestNG-tests-1] [LogUtils] - Driver initialized for scenario: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:13:31 [TestNG-tests-1] [LogUtils] - ExtentTest initialized for: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:13:31 [TestNG-tests-1] [LogUtils] -   Step: I launch the browser
+[INFO] 09-06-2026 18:13:33 [TestNG-tests-1] [LogUtils] - Verify true: true
+[INFO] 09-06-2026 18:13:33 [TestNG-tests-1] [LogUtils] -   Step Completed: I launch the browser
+[INFO] 09-06-2026 18:13:33 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:13:33 [TestNG-tests-1] [LogUtils] -     Duration: 1109 ms
+[INFO] 09-06-2026 18:13:33 [TestNG-tests-1] [LogUtils] -   Step: I navigate to url "https://eventhub.rahulshettyacademy.com/login"
+[INFO] 09-06-2026 18:13:38 [TestNG-tests-1] [LogUtils] - Open URL: https://eventhub.rahulshettyacademy.com/login
+[INFO] 09-06-2026 18:13:38 [TestNG-tests-1] [LogUtils] -   Step Completed: I navigate to url "https://eventhub.rahulshettyacademy.com/login"
+[INFO] 09-06-2026 18:13:38 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:13:38 [TestNG-tests-1] [LogUtils] -     Duration: 5269 ms
+[INFO] 09-06-2026 18:13:38 [TestNG-tests-1] [LogUtils] -   Step: I enter registered email address and password
+[INFO] 09-06-2026 18:13:38 [TestNG-tests-1] [LogUtils] - Logging in with account: chieko.gibson@gmail.com
+[INFO] 09-06-2026 18:13:38 [TestNG-tests-1] [LogUtils] - Account Type: Development Account
+[INFO] 09-06-2026 18:13:38 [TestNG-tests-1] [LogUtils] - Environment: dev
+[INFO] 09-06-2026 18:13:39 [TestNG-tests-1] [LogUtils] - Set text: chieko.gibson@gmail.com on element By.xpath: //input[@id='email']
+[INFO] 09-06-2026 18:13:40 [TestNG-tests-1] [LogUtils] - Set text: Of3%BGOK on element By.xpath: //input[@id='password']
+[INFO] 09-06-2026 18:13:40 [TestNG-tests-1] [LogUtils] -   Step Completed: I enter registered email address and password
+[INFO] 09-06-2026 18:13:40 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:13:40 [TestNG-tests-1] [LogUtils] -     Duration: 2192 ms
+[INFO] 09-06-2026 18:13:40 [TestNG-tests-1] [LogUtils] -   Step: I click "sign in" button
+[INFO] 09-06-2026 18:13:41 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='login-btn']
+[INFO] 09-06-2026 18:13:41 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup with combined method (ESC + Click)
+[INFO] 09-06-2026 18:13:41 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup by pressing ESC
+[INFO] 09-06-2026 18:13:42 [TestNG-tests-1] [LogUtils] - Password Manager popup closed successfully with ESC
+[INFO] 09-06-2026 18:13:43 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup by clicking close button
+[WARN] 09-06-2026 18:13:49 [TestNG-tests-1] [LogUtils] - Failed to close popup by clicking button: invalid selector: Unable to locate an element with the xpath expression //button[@class*='close'] because of the following error:
 SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//button[@class*='close']' is not a valid XPath expression.
   (Session info: chrome=148.0.7778.218)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
 Build info: version: '4.32.0', revision: 'd17c8aa950'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7bbba85ea2da749ca83f85137fb24d17, findElement {value=//button[@class*='close'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.218, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\injas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64043}, goog:processID: 41992, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64043/devtoo..., se:cdpVersion: 148.0.7778.218, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7bbba85ea2da749ca83f85137fb24d17
-[INFO] 09-06-2026 15:02:12 [TestNG-tests-1] [LogUtils] - Password Manager popup handling completed
-[INFO] 09-06-2026 15:02:12 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "sign in" button
-[INFO] 09-06-2026 15:02:12 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:12 [TestNG-tests-1] [LogUtils] -     Duration: 9203 ms
-[INFO] 09-06-2026 15:02:12 [TestNG-tests-1] [LogUtils] -   Step: I have an existing booking
-[INFO] 09-06-2026 15:02:13 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-events']
-[INFO] 09-06-2026 15:02:15 [TestNG-tests-1] [LogUtils] - Selected event for booking: World Tech Summit
-[INFO] 09-06-2026 15:02:17 [TestNG-tests-1] [LogUtils] - Get text: 1
-[INFO] 09-06-2026 15:02:18 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[normalize-space()='+']
-[INFO] 09-06-2026 15:02:19 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[normalize-space()='+']
-[INFO] 09-06-2026 15:02:20 [TestNG-tests-1] [LogUtils] - Set text: Domitila Kub on element By.xpath: //input[@id='customerName']
-[INFO] 09-06-2026 15:02:21 [TestNG-tests-1] [LogUtils] - Set text: otelia.reichel@hotmail.com on element By.xpath: //input[@id='customer-email']
-[INFO] 09-06-2026 15:02:22 [TestNG-tests-1] [LogUtils] - Set text: +6241278711038 on element By.xpath: //input[@id='phone']
-[INFO] 09-06-2026 15:02:23 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='confirm-booking']
-[INFO] 09-06-2026 15:02:25 [TestNG-tests-1] [LogUtils] - Get text: Your tickets are reserved.
-[INFO] 09-06-2026 15:02:26 [TestNG-tests-1] [LogUtils] - Verify equals: Your tickets are reserved. and Your tickets are reserved.
-[INFO] 09-06-2026 15:02:26 [TestNG-tests-1] [LogUtils] -   Step Completed: I have an existing booking
-[INFO] 09-06-2026 15:02:26 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:26 [TestNG-tests-1] [LogUtils] -     Duration: 14258 ms
-[INFO] 09-06-2026 15:02:26 [TestNG-tests-1] [LogUtils] -   Step: I navigate to "My Bookings" menu
-[INFO] 09-06-2026 15:02:27 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-bookings']
-[INFO] 09-06-2026 15:02:27 [TestNG-tests-1] [LogUtils] -   Step Completed: I navigate to "My Bookings" menu
-[INFO] 09-06-2026 15:02:27 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:27 [TestNG-tests-1] [LogUtils] -     Duration: 1101 ms
-[INFO] 09-06-2026 15:02:27 [TestNG-tests-1] [LogUtils] -   Step: I click "Cancel Booking" button
-[INFO] 09-06-2026 15:02:29 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='cancel-booking-btn']
-[INFO] 09-06-2026 15:02:29 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "Cancel Booking" button
-[INFO] 09-06-2026 15:02:29 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:29 [TestNG-tests-1] [LogUtils] -     Duration: 1647 ms
-[INFO] 09-06-2026 15:02:29 [TestNG-tests-1] [LogUtils] -   Step: I click "Yes, cancel it" button
-[INFO] 09-06-2026 15:02:30 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='confirm-dialog-yes']
-[INFO] 09-06-2026 15:02:30 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "Yes, cancel it" button
-[INFO] 09-06-2026 15:02:30 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:30 [TestNG-tests-1] [LogUtils] -     Duration: 1180 ms
-[INFO] 09-06-2026 15:02:30 [TestNG-tests-1] [LogUtils] -   Step: I should see the "Booking cancelled successfully" message
-[INFO] 09-06-2026 15:02:32 [TestNG-tests-1] [LogUtils] - Get text: Booking cancelled successfully
-[INFO] 09-06-2026 15:02:32 [TestNG-tests-1] [LogUtils] -   Step Completed: I should see the "Booking cancelled successfully" message
-[INFO] 09-06-2026 15:02:32 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:32 [TestNG-tests-1] [LogUtils] -     Duration: 1631 ms
-[INFO] 09-06-2026 15:02:32 [TestNG-tests-1] [LogUtils] -   Step: no booked event should no longer appear in My Bookings
-[INFO] 09-06-2026 15:02:33 [TestNG-tests-1] [LogUtils] - Verify true: true
-[INFO] 09-06-2026 15:02:33 [TestNG-tests-1] [LogUtils] -   Step Completed: no booked event should no longer appear in My Bookings
-[INFO] 09-06-2026 15:02:33 [TestNG-tests-1] [LogUtils] -     Status: PASSED
-[INFO] 09-06-2026 15:02:33 [TestNG-tests-1] [LogUtils] -     Duration: 1025 ms
-[INFO] 09-06-2026 15:02:33 [TestNG-tests-1] [LogUtils] - SCENARIO FINISHED: Cancel booking successfully
-[INFO] 09-06-2026 15:02:33 [TestNG-tests-1] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 09-06-2026 15:02:34 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-bookings']
-[INFO] 09-06-2026 15:02:34 [TestNG-tests-1] [LogUtils] - Verify By.xpath: //button[normalize-space()='Clear all bookings'] is displayed
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[normalize-space()='Clear all bookings']
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - Test bookings cleaned up successfully.
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - ========================================
+Command: [96bc1012d41a2c9337210d1ae5dff851, findElement {value=//button[@class*='close'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.218, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\injas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53513}, goog:processID: 45532, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53513/devtoo..., se:cdpVersion: 148.0.7778.218, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96bc1012d41a2c9337210d1ae5dff851
+[INFO] 09-06-2026 18:13:49 [TestNG-tests-1] [LogUtils] - Password Manager popup handling completed
+[INFO] 09-06-2026 18:13:49 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "sign in" button
+[INFO] 09-06-2026 18:13:49 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:13:49 [TestNG-tests-1] [LogUtils] -     Duration: 9214 ms
+[INFO] 09-06-2026 18:13:49 [TestNG-tests-1] [LogUtils] -   Step: I have an existing booking with 1 ticket(s)
+[INFO] 09-06-2026 18:13:50 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-events']
+[INFO] 09-06-2026 18:13:52 [TestNG-tests-1] [LogUtils] - Selected event for booking: Hollywood Monsoon Night — Los Angeles
+[INFO] 09-06-2026 18:13:53 [TestNG-tests-1] [LogUtils] - Get text: 1
+[INFO] 09-06-2026 18:13:54 [TestNG-tests-1] [LogUtils] - Set text: Chasity Bartell PhD on element By.xpath: //input[@id='customerName']
+[INFO] 09-06-2026 18:13:56 [TestNG-tests-1] [LogUtils] - Set text: long.kuhlman@gmail.com on element By.xpath: //input[@id='customer-email']
+[INFO] 09-06-2026 18:13:57 [TestNG-tests-1] [LogUtils] - Set text: +6227039884263 on element By.xpath: //input[@id='phone']
+[INFO] 09-06-2026 18:13:58 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='confirm-booking']
+[INFO] 09-06-2026 18:14:00 [TestNG-tests-1] [LogUtils] - Get text: Your tickets are reserved.
+[INFO] 09-06-2026 18:14:01 [TestNG-tests-1] [LogUtils] - Verify equals: Your tickets are reserved. and Your tickets are reserved.
+[INFO] 09-06-2026 18:14:01 [TestNG-tests-1] [LogUtils] -   Step Completed: I have an existing booking with 1 ticket(s)
+[INFO] 09-06-2026 18:14:01 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:01 [TestNG-tests-1] [LogUtils] -     Duration: 11635 ms
+[INFO] 09-06-2026 18:14:01 [TestNG-tests-1] [LogUtils] -   Step: I navigate to "My Bookings" menu
+[INFO] 09-06-2026 18:14:02 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-bookings']
+[INFO] 09-06-2026 18:14:02 [TestNG-tests-1] [LogUtils] -   Step Completed: I navigate to "My Bookings" menu
+[INFO] 09-06-2026 18:14:02 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:02 [TestNG-tests-1] [LogUtils] -     Duration: 1106 ms
+[INFO] 09-06-2026 18:14:02 [TestNG-tests-1] [LogUtils] -   Step: I click "View Details" button
+[INFO] 09-06-2026 18:14:04 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[normalize-space()='View Details']
+[INFO] 09-06-2026 18:14:04 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "View Details" button
+[INFO] 09-06-2026 18:14:04 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:04 [TestNG-tests-1] [LogUtils] -     Duration: 1591 ms
+[INFO] 09-06-2026 18:14:04 [TestNG-tests-1] [LogUtils] -   Step: I should see refund section
+[INFO] 09-06-2026 18:14:05 [TestNG-tests-1] [LogUtils] -   Step Completed: I should see refund section
+[INFO] 09-06-2026 18:14:05 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:05 [TestNG-tests-1] [LogUtils] -     Duration: 1059 ms
+[INFO] 09-06-2026 18:14:05 [TestNG-tests-1] [LogUtils] -   Step: I click "Check eligibility for refund?" button
+[INFO] 09-06-2026 18:14:06 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='check-refund-btn']
+[INFO] 09-06-2026 18:14:06 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "Check eligibility for refund?" button
+[INFO] 09-06-2026 18:14:06 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:06 [TestNG-tests-1] [LogUtils] -     Duration: 1077 ms
+[INFO] 09-06-2026 18:14:06 [TestNG-tests-1] [LogUtils] -   Step: I should see the "Eligible for refund" message
+[INFO] 09-06-2026 18:14:11 [TestNG-tests-1] [LogUtils] - Get text: Eligible for refund.
+[INFO] 09-06-2026 18:14:11 [TestNG-tests-1] [LogUtils] -   Step Completed: I should see the "Eligible for refund" message
+[INFO] 09-06-2026 18:14:11 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:11 [TestNG-tests-1] [LogUtils] -     Duration: 5196 ms
+[INFO] 09-06-2026 18:14:11 [TestNG-tests-1] [LogUtils] - SCENARIO FINISHED: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:14:11 [TestNG-tests-1] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 09-06-2026 18:14:12 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-bookings']
+[INFO] 09-06-2026 18:14:12 [TestNG-tests-1] [LogUtils] - Verify By.xpath: //button[normalize-space()='Clear all bookings'] is displayed
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[normalize-space()='Clear all bookings']
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - Test bookings cleaned up successfully.
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - ========================================
 
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - 
-TEST CASE FINISHED: Cancel booking successfully
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] -   Status: PASSED
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] -   Duration: 41631 ms
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - ----------------------------------------
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - ========================================
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - TEST SUITE COMPLETED
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - ========================================
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - 
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - 
+TEST CASE FINISHED: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] -   Status: PASSED
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] -   Duration: 43410 ms
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - ----------------------------------------
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - 
+TEST CASE STARTED: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] -   Feature: file:///D:/CodeProject/Java/MyProject/CucumberBDDProject/CucumberMiniFramework/cucumber_hybrid_framework/src/test/java/features/UI/MyBookings/EligibleRefundBookedEvent.feature
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] -   Line: 24
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - SCENARIO START: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - Launching Chrome browser...
+[INFO] 09-06-2026 18:14:13 [TestNG-tests-1] [LogUtils] - Headless mode On
+[INFO] 09-06-2026 18:14:14 [TestNG-tests-1] [LogUtils] - Driver initialized for scenario: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:14:14 [TestNG-tests-1] [LogUtils] - ExtentTest initialized for: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:14:14 [TestNG-tests-1] [LogUtils] -   Step: I launch the browser
+[INFO] 09-06-2026 18:14:15 [TestNG-tests-1] [LogUtils] - Verify true: true
+[INFO] 09-06-2026 18:14:15 [TestNG-tests-1] [LogUtils] -   Step Completed: I launch the browser
+[INFO] 09-06-2026 18:14:15 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:15 [TestNG-tests-1] [LogUtils] -     Duration: 1020 ms
+[INFO] 09-06-2026 18:14:15 [TestNG-tests-1] [LogUtils] -   Step: I navigate to url "https://eventhub.rahulshettyacademy.com/login"
+[INFO] 09-06-2026 18:14:18 [TestNG-tests-1] [LogUtils] - Open URL: https://eventhub.rahulshettyacademy.com/login
+[INFO] 09-06-2026 18:14:18 [TestNG-tests-1] [LogUtils] -   Step Completed: I navigate to url "https://eventhub.rahulshettyacademy.com/login"
+[INFO] 09-06-2026 18:14:18 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:18 [TestNG-tests-1] [LogUtils] -     Duration: 2485 ms
+[INFO] 09-06-2026 18:14:18 [TestNG-tests-1] [LogUtils] -   Step: I enter registered email address and password
+[INFO] 09-06-2026 18:14:18 [TestNG-tests-1] [LogUtils] - Logging in with account: chieko.gibson@gmail.com
+[INFO] 09-06-2026 18:14:18 [TestNG-tests-1] [LogUtils] - Account Type: Development Account
+[INFO] 09-06-2026 18:14:18 [TestNG-tests-1] [LogUtils] - Environment: dev
+[INFO] 09-06-2026 18:14:19 [TestNG-tests-1] [LogUtils] - Set text: chieko.gibson@gmail.com on element By.xpath: //input[@id='email']
+[INFO] 09-06-2026 18:14:20 [TestNG-tests-1] [LogUtils] - Set text: Of3%BGOK on element By.xpath: //input[@id='password']
+[INFO] 09-06-2026 18:14:20 [TestNG-tests-1] [LogUtils] -   Step Completed: I enter registered email address and password
+[INFO] 09-06-2026 18:14:20 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:20 [TestNG-tests-1] [LogUtils] -     Duration: 2178 ms
+[INFO] 09-06-2026 18:14:20 [TestNG-tests-1] [LogUtils] -   Step: I click "sign in" button
+[INFO] 09-06-2026 18:14:21 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='login-btn']
+[INFO] 09-06-2026 18:14:21 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup with combined method (ESC + Click)
+[INFO] 09-06-2026 18:14:21 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup by pressing ESC
+[INFO] 09-06-2026 18:14:22 [TestNG-tests-1] [LogUtils] - Password Manager popup closed successfully with ESC
+[INFO] 09-06-2026 18:14:23 [TestNG-tests-1] [LogUtils] - Attempting to handle Password Manager popup by clicking close button
+[WARN] 09-06-2026 18:14:29 [TestNG-tests-1] [LogUtils] - Failed to close popup by clicking button: invalid selector: Unable to locate an element with the xpath expression //button[@class*='close'] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//button[@class*='close']' is not a valid XPath expression.
+  (Session info: chrome=148.0.7778.218)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.32.0', revision: 'd17c8aa950'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0efe4fa7fd4390d4aac691573ec88d23, findElement {value=//button[@class*='close'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.218, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\injas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52176}, goog:processID: 37604, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52176/devtoo..., se:cdpVersion: 148.0.7778.218, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0efe4fa7fd4390d4aac691573ec88d23
+[INFO] 09-06-2026 18:14:29 [TestNG-tests-1] [LogUtils] - Password Manager popup handling completed
+[INFO] 09-06-2026 18:14:29 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "sign in" button
+[INFO] 09-06-2026 18:14:29 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:29 [TestNG-tests-1] [LogUtils] -     Duration: 9194 ms
+[INFO] 09-06-2026 18:14:29 [TestNG-tests-1] [LogUtils] -   Step: I have an existing booking with 2 ticket(s)
+[INFO] 09-06-2026 18:14:30 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-events']
+[INFO] 09-06-2026 18:14:32 [TestNG-tests-1] [LogUtils] - Selected event for booking: World Tech Summit
+[INFO] 09-06-2026 18:14:34 [TestNG-tests-1] [LogUtils] - Get text: 1
+[INFO] 09-06-2026 18:14:35 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[normalize-space()='+']
+[INFO] 09-06-2026 18:14:36 [TestNG-tests-1] [LogUtils] - Set text: Courtney Quigley on element By.xpath: //input[@id='customerName']
+[INFO] 09-06-2026 18:14:37 [TestNG-tests-1] [LogUtils] - Set text: bernie.balistreri@yahoo.com on element By.xpath: //input[@id='customer-email']
+[INFO] 09-06-2026 18:14:38 [TestNG-tests-1] [LogUtils] - Set text: +6264349764364 on element By.xpath: //input[@id='phone']
+[INFO] 09-06-2026 18:14:39 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='confirm-booking']
+[INFO] 09-06-2026 18:14:41 [TestNG-tests-1] [LogUtils] - Get text: Your tickets are reserved.
+[INFO] 09-06-2026 18:14:42 [TestNG-tests-1] [LogUtils] - Verify equals: Your tickets are reserved. and Your tickets are reserved.
+[INFO] 09-06-2026 18:14:42 [TestNG-tests-1] [LogUtils] -   Step Completed: I have an existing booking with 2 ticket(s)
+[INFO] 09-06-2026 18:14:42 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:42 [TestNG-tests-1] [LogUtils] -     Duration: 12800 ms
+[INFO] 09-06-2026 18:14:42 [TestNG-tests-1] [LogUtils] -   Step: I navigate to "My Bookings" menu
+[INFO] 09-06-2026 18:14:43 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-bookings']
+[INFO] 09-06-2026 18:14:43 [TestNG-tests-1] [LogUtils] -   Step Completed: I navigate to "My Bookings" menu
+[INFO] 09-06-2026 18:14:43 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:43 [TestNG-tests-1] [LogUtils] -     Duration: 1070 ms
+[INFO] 09-06-2026 18:14:43 [TestNG-tests-1] [LogUtils] -   Step: I click "View Details" button
+[INFO] 09-06-2026 18:14:45 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[normalize-space()='View Details']
+[INFO] 09-06-2026 18:14:45 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "View Details" button
+[INFO] 09-06-2026 18:14:45 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:45 [TestNG-tests-1] [LogUtils] -     Duration: 1586 ms
+[INFO] 09-06-2026 18:14:45 [TestNG-tests-1] [LogUtils] -   Step: I should see refund section
+[INFO] 09-06-2026 18:14:46 [TestNG-tests-1] [LogUtils] -   Step Completed: I should see refund section
+[INFO] 09-06-2026 18:14:46 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:46 [TestNG-tests-1] [LogUtils] -     Duration: 1062 ms
+[INFO] 09-06-2026 18:14:46 [TestNG-tests-1] [LogUtils] -   Step: I click "Check eligibility for refund?" button
+[INFO] 09-06-2026 18:14:47 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[@id='check-refund-btn']
+[INFO] 09-06-2026 18:14:47 [TestNG-tests-1] [LogUtils] -   Step Completed: I click "Check eligibility for refund?" button
+[INFO] 09-06-2026 18:14:47 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:47 [TestNG-tests-1] [LogUtils] -     Duration: 1089 ms
+[INFO] 09-06-2026 18:14:47 [TestNG-tests-1] [LogUtils] -   Step: I should see the "Not eligible for refund" message
+[INFO] 09-06-2026 18:14:52 [TestNG-tests-1] [LogUtils] - Get text: Not eligible for refund.
+[INFO] 09-06-2026 18:14:52 [TestNG-tests-1] [LogUtils] -   Step Completed: I should see the "Not eligible for refund" message
+[INFO] 09-06-2026 18:14:52 [TestNG-tests-1] [LogUtils] -     Status: PASSED
+[INFO] 09-06-2026 18:14:52 [TestNG-tests-1] [LogUtils] -     Duration: 5214 ms
+[INFO] 09-06-2026 18:14:52 [TestNG-tests-1] [LogUtils] - SCENARIO FINISHED: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:14:52 [TestNG-tests-1] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 09-06-2026 18:14:53 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //a[@id='nav-bookings']
+[INFO] 09-06-2026 18:14:53 [TestNG-tests-1] [LogUtils] - Verify By.xpath: //button[normalize-space()='Clear all bookings'] is displayed
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - Click element By.xpath: //button[normalize-space()='Clear all bookings']
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - Test bookings cleaned up successfully.
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - ========================================
+
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - 
+TEST CASE FINISHED: Verify refund eligibility based on ticket quantity
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] -   Status: PASSED
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] -   Duration: 41040 ms
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - ----------------------------------------
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - ========================================
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - TEST SUITE COMPLETED
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - ========================================
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - 
 ========================================
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - TEST RUN FINISHED
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - Time: 2026-06-09T08:02:35.879870200Z
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - ========================================
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - TEST RUN FINISHED
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - Time: 2026-06-09T11:14:54.827152400Z
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - ========================================
 
-[INFO] 09-06-2026 15:02:35 [TestNG-tests-1] [LogUtils] - Flushing Extent Report...
-[INFO] 09-06-2026 15:02:36 [TestNG-tests-1] [LogUtils] - Extent Report flushed successfully
-[INFO] 09-06-2026 15:02:36 [TestNG-tests-1] [LogUtils] - Please check the exports/ExtentReport folder for the HTML report
+[INFO] 09-06-2026 18:14:54 [TestNG-tests-1] [LogUtils] - Flushing Extent Report...
+[INFO] 09-06-2026 18:14:55 [TestNG-tests-1] [LogUtils] - Extent Report flushed successfully
+[INFO] 09-06-2026 18:14:55 [TestNG-tests-1] [LogUtils] - Please check the exports/ExtentReport folder for the HTML report

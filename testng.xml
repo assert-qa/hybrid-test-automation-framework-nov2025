@@ -28,7 +28,7 @@
 
     <test name="Cancel Booked Event">
         <classes>
-            <class name="runner.ui.TestRunnerCancelBookedEvent"/>
+            <class name="runner.ui.TestRunnerEligibleRefundBookedEvent"/>
         </classes>
     </test>
 </suite>

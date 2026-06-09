@@ -14,6 +14,7 @@ import pages.models.SelectedEventDataObject;
 import utils.LogUtils;
 
 import java.util.List;
+import java.util.Random;
 
 public class StepsBookEvent {
     private TestContext testContext;
@@ -41,7 +42,9 @@ public class StepsBookEvent {
 
     @And("I enter booking information")
     public void i_enter_booking_information() {
-        bookingData = BookingDataFactory.createBooking();
+        Random genTicketNum = new Random();
+        // non-eligible is when booking more than 1 ticket
+        bookingData = BookingDataFactory.createBooking(genTicketNum.nextInt(9) + 2);
         testContext.setBookingData(bookingData);
         myBookingPage.fillBookingInformation(bookingData);
     }

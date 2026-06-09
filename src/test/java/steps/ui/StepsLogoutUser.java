@@ -2,6 +2,7 @@ package steps.ui;
 
 import constants.ConstantGlobal;
 import hooks.TestContext;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import keywords.WebUI;
 import pages.LoginPage;
@@ -27,4 +28,5 @@ public class StepsLogoutUser {
         WebUI.verifyEquals(actualUrl, expectedUrl,
                 "User is NOT redirected to Login Page");
     }
+
 }

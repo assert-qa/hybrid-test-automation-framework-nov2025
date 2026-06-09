@@ -44,6 +44,8 @@ public class MyBookingPage extends DriverFactory {
     String clearAllBookingsTextButton = setUp.getProperty("DELETE_BOOKING_BUTTON");
     String cancelBookingButton = setUp.getProperty("CANCEL_BOOKING_BUTTON");
     String cancelConfirmButton = setUp.getProperty("CANCEL_CONFIRM_BUTTON");
+    String refundSection = setUp.getProperty("REFUND_SECTION");
+    String checkEligibleOrNoEligibleTextButton = setUp.getProperty("CHECK_ELIGIBLE_OR_NO_ELIGIBLE_BUTTON");
 
 
     public void goToMyBookingPage(){
@@ -200,10 +202,10 @@ public class MyBookingPage extends DriverFactory {
         return bookings.get(0).findElement(By.tagName("h3")).getText().trim();
     }
 
-    public boolean isBookedEventDisplayed(String bookedEventName){
-        return getBookingList().stream()
-                .anyMatch(booking -> booking.getText().contains(bookedEventName));
-    }
+//    public boolean isBookedEventDisplayed(String bookedEventName){
+//        return getBookingList().stream()
+//                .anyMatch(booking -> booking.getText().contains(bookedEventName));
+//    }
 
     public void clickCancelButton(){
         WebUI.clickElement(By.xpath(cancelBookingButton));
@@ -212,6 +214,19 @@ public class MyBookingPage extends DriverFactory {
     public void clickConfirmBookingCancellationButton(){
         WebUI.waitForElementClickable(By.xpath(cancelConfirmButton));
         WebUI.clickElement(By.xpath(cancelConfirmButton));
+    }
+
+    public void waitForRefundSectionDisplayed(){
+        WebUI.scrollToPosition(0, 99999);
+        WebUI.waitForElementVisible(By.xpath(refundSection));
+    }
+
+    public void clickCheckEligible(){
+        By checkEligibleButton = By.xpath(checkEligibleOrNoEligibleTextButton);
+        WebUI.scrollToPosition(0, 99999);
+        WebUI.waitForElementVisible(checkEligibleButton);
+
+        WebUI.clickElement(By.xpath(checkEligibleOrNoEligibleTextButton));
     }
 
 }

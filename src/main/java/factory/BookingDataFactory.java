@@ -4,10 +4,10 @@ import helpers.DataFakerHelper;
 import pages.models.EventBookDetailDataObject;
 
 public class BookingDataFactory {
-
-    public static EventBookDetailDataObject createBooking() {
+  // Business rule for this website is, if booked ticket = 1 (Eligible) and booked ticket > 1 (Non Eligible)
+    public static EventBookDetailDataObject createBooking(int tickets) {
         return EventBookDetailDataObject.builder()
-                .numOfTickets(DataFakerHelper.getFaker().number().numberBetween(1, 10))
+                .numOfTickets(tickets)
                 .fullName(DataFakerHelper.getFaker().name().fullName())
                 .email(DataFakerHelper.getFaker().internet().emailAddress())
                 .phoneNumber("+62" + DataFakerHelper.getFaker().number().digits(11))

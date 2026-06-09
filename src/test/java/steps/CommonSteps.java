@@ -19,6 +19,7 @@ import pages.models.SelectedEventDataObject;
 
 import java.util.Locale;
 import java.util.Properties;
+import java.util.Random;
 
 import static helpers.PropertiesHelper.loadAllFiles;
 
@@ -84,6 +85,7 @@ public class CommonSteps {
             case "clear all bookings" -> myBookingPage.clickClearAllBookingsTextButton();
             case "cancel booking" -> myBookingPage.clickCancelButton();
             case "yes, cancel it" -> myBookingPage.clickConfirmBookingCancellationButton();
+            case "check eligibility for refund?" -> myBookingPage.clickCheckEligible();
             default -> throw new IllegalArgumentException("Unsupported button in common step: " + buttonName);
         }
     }
@@ -131,20 +133,28 @@ public class CommonSteps {
     // Booking
     @Given("I have an existing booking")
     public void i_have_an_existing_booking(){
+        Random genTicketNum = new Random();
+        i_have_an_existing_booking_with_ticket(genTicketNum.nextInt(9) + 2); // 2 - 10 tickets
+    }
+
+    @Given("I have an existing booking with {int} ticket\\(s)")
+    public void i_have_an_existing_booking_with_ticket(int tickets) {
         eventPage.goToEventPage();
         SelectedEventDataObject selectedEvent = eventPage.clickAnyAvailableEventAndGetData();
+
         // get selected event and it's price in TestContext
         testContext.setSelectedEventName(selectedEvent.getEventName());
         testContext.setSelectedEventPrice(selectedEvent.getEventPrice());
 
-        createAndFillBookingInformation();
+        createAndFillBookingInformation(tickets);
 
         myBookingPage.clickConfirmBookingButton();
         WebUI.verifyEquals(myBookingPage.verifyBookingSuccess(), "Your tickets are reserved.");
     }
 
-    private void createAndFillBookingInformation() {
-        EventBookDetailDataObject bookingData = BookingDataFactory.createBooking();
+    private void createAndFillBookingInformation(int tickets) {
+        // non eligible is when booking more than 1 ticket
+        EventBookDetailDataObject bookingData = BookingDataFactory.createBooking(tickets);
         testContext.setBookingData(bookingData);
         myBookingPage.fillBookingInformation(bookingData);
     }
