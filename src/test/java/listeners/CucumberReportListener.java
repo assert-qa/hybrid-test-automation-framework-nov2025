@@ -1,10 +1,10 @@
-package hooks;
+package listeners;
 
 import io.cucumber.plugin.ConcurrentEventListener;
 import io.cucumber.plugin.event.*;
+import managers.ConfigManager;
 import reports.ExtentTestManager;
 import utils.LogUtils;
-import com.aventstack.extentreports.Status;
 import factory.DriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -36,6 +36,11 @@ public class CucumberReportListener implements ConcurrentEventListener {
         LogUtils.info("Time: " + event.getInstant());
         LogUtils.info(SEPARATOR);
 
+        if (!ConfigManager.isExtentReportEnabled()) {
+            LogUtils.info("ExtentReport disabled by config");
+            return;
+        }
+
         // Initialize ExtentReport
         try {
             ExtentTestManager.getExtentReports();
@@ -51,10 +56,14 @@ public class CucumberReportListener implements ConcurrentEventListener {
         LogUtils.info("Time: " + event.getInstant());
         LogUtils.info(SEPARATOR + "\n");
 
+        if (!ConfigManager.isExtentReportEnabled()) {
+            return;
+        }
+
         // Flush Extent Report
         try {
-            LogUtils.info("Flushing Extent Report...");
             if (ExtentTestManager.getExtentReports() != null) {
+                LogUtils.info("Flushing Extent Report...");
                 ExtentTestManager.getExtentReports().flush();
                 LogUtils.info("Extent Report flushed successfully");
                 LogUtils.info("Please check the exports/ExtentReport folder for the HTML report");
@@ -113,6 +122,10 @@ public class CucumberReportListener implements ConcurrentEventListener {
             LogUtils.info("  Step Completed: " + stepText);
             LogUtils.info("    Status: " + status.name());
             LogUtils.info("    Duration: " + event.getResult().getDuration().toMillis() + " ms");
+
+            if (!ConfigManager.isExtentReportEnabled()) {
+                return;
+            }
 
             // Log step result to ExtentReport
             try {

@@ -5,38 +5,65 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import factory.DriverManager;
+import managers.ConfigManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ExtentTestManager {
-    static Map<Integer, ExtentTest> extentTestMap = new HashMap<>();
+    // Use ConcurrentHashMap if UI and API operations run in parallel.
+    // Use HashMap if only one of them (UI or API) is used.
+    static Map<Integer, ExtentTest> extentTestMap = new ConcurrentHashMap<>();
 
     public static ExtentTest getTest() {
         return extentTestMap.get((int) Thread.currentThread().getId());
     }
 
     public static synchronized ExtentTest createTest(String testName) {
-        ExtentTest test = ExtentReportManager.getExtentReports().createTest(testName);
+        if (!ConfigManager.isExtentReportEnabled()) {
+            return null;
+        }
+        ExtentReports extentReports = ExtentReportManager.getExtentReports();
+        if (extentReports == null) {
+            return null;
+        }
+        ExtentTest test = extentReports.createTest(testName);
         extentTestMap.put((int) Thread.currentThread().getId(), test);
         return test;
     }
 
     public static synchronized ExtentTest createTest(String testName, String desc) {
-        ExtentTest test = ExtentReportManager.getExtentReports().createTest(testName, desc);
+        if (!ConfigManager.isExtentReportEnabled()) {
+            return null;
+        }
+        ExtentReports extentReports = ExtentReportManager.getExtentReports();
+        if (extentReports == null) {
+            return null;
+        }
+        ExtentTest test = extentReports.createTest(testName, desc);
         extentTestMap.put((int) Thread.currentThread().getId(), test);
         return test;
     }
 
     public static synchronized ExtentTest saveToReport(String testName, String desc) {
-        ExtentTest test = ExtentReportManager.getExtentReports().createTest(testName, desc);
+        if (!ConfigManager.isExtentReportEnabled()) {
+            return null;
+        }
+        ExtentReports extentReports = ExtentReportManager.getExtentReports();
+        if (extentReports == null) {
+            return null;
+        }
+        ExtentTest test = extentReports.createTest(testName, desc);
         extentTestMap.put((int) Thread.currentThread().getId(), test);
         return test;
     }
 
     public static void addScreenShot(String message) {
+        if (!ConfigManager.isExtentReportEnabled() || getTest() == null) {
+            return;
+        }
         String base64Image = "data:image/png;base64,"
                 + ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
 
@@ -45,6 +72,9 @@ public class ExtentTestManager {
     }
 
     public static void addScreenShot(Status status, String message) {
+        if (!ConfigManager.isExtentReportEnabled() || getTest() == null) {
+            return;
+        }
         String base64Image = "data:image/png;base64,"
                 + ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
 
@@ -53,10 +83,16 @@ public class ExtentTestManager {
     }
 
     public static void logMessage(String message) {
+        if (!ConfigManager.isExtentReportEnabled() || getTest() == null) {
+            return;
+        }
         getTest().log(Status.INFO, message);
     }
 
     public static void logMessage(Status status, String message) {
+        if (!ConfigManager.isExtentReportEnabled() || getTest() == null) {
+            return;
+        }
         getTest().log(status, message);
     }
 

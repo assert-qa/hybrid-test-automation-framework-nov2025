@@ -16,6 +16,7 @@ import utils.LogUtils;
 
 public class CucumberHooks {
     private static final String SEPARATOR = "=".repeat(40);
+    private static final String API_TAG = "@api";
 
     @BeforeAll
     public static void beforeAll() {
@@ -30,13 +31,13 @@ public class CucumberHooks {
             String baseUrl = ConfigManager.getBaseUrl();
             String email = ConfigManager.getValidLoginEmail();
 
-            LogUtils.info("✅ Configuration loaded successfully");
+            LogUtils.info("Configuration loaded successfully");
             LogUtils.info("Environment: " + environment);
             LogUtils.info("Base URL: " + baseUrl);
             LogUtils.info("Test User Email: " + email);
             LogUtils.info("Headless mode " + (ConfigManager.isHeadless() ? "On" : "Off"));
         } catch (Exception e) {
-            LogUtils.warn("⚠️  Failed to load configuration: " + e.getMessage());
+            LogUtils.warn("Failed to load configuration: " + e.getMessage());
         }
 
         // Log user info at suite level
@@ -55,18 +56,23 @@ public class CucumberHooks {
         LogUtils.info("SCENARIO START: " + scenario.getName());
         LogUtils.info("SCENARIO STATUS: Starting");
 
-        if (DriverManager.getDriver() == null) {
+        boolean apiScenario = isApiScenario(scenario);
+        if (!apiScenario && DriverManager.getDriver() == null) {
             new DriverFactory().createDriver();
             LogUtils.info("Driver initialized for scenario: " + scenario.getName());
+        } else if (apiScenario) {
+            LogUtils.info("API scenario detected. Skipping browser initialization.");
         }
 
         try {
             String testName = scenario.getName();
-            ExtentTestManager.createTest(testName);
-            LogUtils.info("ExtentTest initialized for: " + testName);
+            if (ConfigManager.isExtentReportEnabled()) {
+                ExtentTestManager.createTest(testName);
+                LogUtils.info("ExtentTest initialized for: " + testName);
+            }
 
             // Log scenario info to ExtentReport
-            if (ExtentTestManager.getTest() != null) {
+            if (ConfigManager.isExtentReportEnabled() && ExtentTestManager.getTest() != null) {
                 ExtentTestManager.getTest().info("Starting scenario: " + testName);
 
                 // Log user info from ConfigManager
@@ -82,11 +88,13 @@ public class CucumberHooks {
             }
 
             // Attach user info to Allure Report
-            AllureManager.attachEnvironmentInfo();
-            AllureManager.attachUserAccountInfo();
+            if (ConfigManager.isAllureReportEnabled()) {
+                AllureManager.attachEnvironmentInfo();
+                AllureManager.attachUserAccountInfo();
+            }
 
         } catch (Exception e) {
-            LogUtils.info("Failed to create ExtentTest: " + e.getMessage());
+            LogUtils.info("Failed to initialize scenario report data: " + e.getMessage());
         }
     }
 
@@ -107,31 +115,41 @@ public class CucumberHooks {
         }
 
         try {
-            if (ExtentTestManager.getTest() != null) {
+            if ("FAILED".equalsIgnoreCase(status) && DriverManager.getDriver() != null) {
+                byte[] screenshot = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", "Failed Screenshot");
+
+                if (ConfigManager.isAllureReportEnabled()) {
+                    AllureManager.saveScreenshotPNG();
+                }
+
+                LogUtils.error("Screenshot captured for failed scenario: " + scenario.getName());
+            } else if ("FAILED".equalsIgnoreCase(status)) {
+                LogUtils.info("No WebDriver active. Skipping failed scenario screenshot.");
+            }
+
+            if (ConfigManager.isExtentReportEnabled() && ExtentTestManager.getTest() != null) {
                 if ("FAILED".equalsIgnoreCase(status)) {
                     ExtentTestManager.getTest().fail("Scenario Failed: " + scenario.getName());
 
-                    // Capture screenshot on failure
-                    byte[] screenshot = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
-                    scenario.attach(screenshot, "image/png", "Failed Screenshot");
-
-                    // Attach to Allure
-                    AllureManager.saveScreenshotPNG();
-
                     // Attach summary on failure
-                    AllureManager.attachTestResultSummary(scenario.getName(), "FAILED");
-
-                    LogUtils.error("Screenshot captured for failed scenario: " + scenario.getName());
+                    if (ConfigManager.isAllureReportEnabled()) {
+                        AllureManager.attachTestResultSummary(scenario.getName(), "FAILED");
+                    }
                 } else if ("SKIPPED".equalsIgnoreCase(status) || "UNKNOWN".equalsIgnoreCase(status)) {
                     ExtentTestManager.getTest().skip("Scenario Skipped: " + scenario.getName());
                 } else {
                     ExtentTestManager.getTest().pass("Scenario Passed: " + scenario.getName());
-                    // Attach summary on pass
-                    AllureManager.attachTestResultSummary(scenario.getName(), "PASSED");
+                    if (ConfigManager.isAllureReportEnabled()) {
+                        AllureManager.attachTestResultSummary(scenario.getName(), "PASSED");
+                    }
                 }
+            } else if (ConfigManager.isAllureReportEnabled()) {
+                String resultStatus = "FAILED".equalsIgnoreCase(status) ? "FAILED" : "PASSED";
+                AllureManager.attachTestResultSummary(scenario.getName(), resultStatus);
             }
         } catch (Exception e) {
-            LogUtils.error("Failed to log scenario status to ExtentReport: " + e.getMessage());
+            LogUtils.error("Failed to log scenario status to report: " + e.getMessage());
         }
 
         LogUtils.info("SCENARIO FINISHED: " + scenario.getName());
@@ -143,6 +161,10 @@ public class CucumberHooks {
         LogUtils.info(SEPARATOR + "\n");
 
         TestContext.reset();
+    }
+
+    private boolean isApiScenario(Scenario scenario) {
+        return scenario.getSourceTagNames().contains(API_TAG);
     }
 
     private void clearTestBookingsIfCreated() {
@@ -169,5 +191,4 @@ public class CucumberHooks {
             LogUtils.warn("Failed to clean up test bookings: " + e.getMessage());
         }
     }
-
 }

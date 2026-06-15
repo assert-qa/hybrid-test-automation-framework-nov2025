@@ -42,7 +42,9 @@ public class StepsLoginWithRegisteredCredentials {
         loginPage.loginAccount(credentialsData);
 
         // Attach user action to Allure
-        AllureManager.attachUserAccountInfo();
+        if (ConfigManager.isAllureReportEnabled()) {
+            AllureManager.attachUserAccountInfo();
+        }
     }
 
     @Then("I verify that {string} is visible")

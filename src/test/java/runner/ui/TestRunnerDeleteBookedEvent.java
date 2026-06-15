@@ -11,9 +11,7 @@ import io.cucumber.testng.CucumberOptions;
                 "pretty",
                 "html:target/cucumber-reports/delete-booked-event.html",
                 "json:target/cucumber-reports/delete-booked-event.json",
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "hooks.CucumberReportListener"
+                "hooks.ReportHandler"
         }
 )
 public class TestRunnerDeleteBookedEvent extends AbstractTestNGCucumberTests {

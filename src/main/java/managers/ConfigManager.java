@@ -121,6 +121,14 @@ public class ConfigManager {
         return getProperty("EXTENT_REPORT_PATH", "exports/ExtentReport/ExtentReport.html");
     }
 
+    public static boolean isAllureReportEnabled() {
+        return getBooleanProperty("REPORT.ALLURE.ENABLED", true);
+    }
+
+    public static boolean isExtentReportEnabled() {
+        return getBooleanProperty("REPORT.EXTENT.ENABLED", false);
+    }
+
     public static String getAuthor() {
         return getProperty("AUTHOR", "Test Automation Team");
     }
@@ -149,6 +157,11 @@ public class ConfigManager {
     public static String getProperty(String key, String defaultValue) {
         String value = getProperty(key);
         return value != null ? value : defaultValue;
+    }
+
+    private static boolean getBooleanProperty(String key, boolean defaultValue) {
+        String value = getProperty(key);
+        return value != null ? Boolean.parseBoolean(value.trim()) : defaultValue;
     }
 
     public static void reload() {

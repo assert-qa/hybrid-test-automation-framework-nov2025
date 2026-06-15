@@ -11,9 +11,7 @@ import io.cucumber.testng.CucumberOptions;
                 "pretty",
                 "html:target/cucumber-reports/filter-event-by-category.html",
                 "json:target/cucumber-reports/filter-event-by-category.json",
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "hooks.CucumberReportListener"
+                "hooks.ReportHandler"
         }
 )
 public class TestRunnerFilterEventsByCategory extends AbstractTestNGCucumberTests {

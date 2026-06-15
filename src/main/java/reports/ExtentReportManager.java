@@ -14,6 +14,10 @@ public class ExtentReportManager {
     private static ExtentReports extentReports = null;
 
     public synchronized static ExtentReports getExtentReports() {
+        if (!ConfigManager.isExtentReportEnabled()) {
+            return null;
+        }
+
         if (extentReports == null) {
             try{
                 // Generate timestamp for unique report filename

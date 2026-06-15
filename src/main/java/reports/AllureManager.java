@@ -15,18 +15,27 @@ public class AllureManager {
     // Text attachment
     @Attachment(value = "{0}", type = "text/plain")
     public static String saveTextLog(String message) {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return null;
+        }
         return message;
     }
 
     // HTML attachment
     @Attachment(value = "{0}", type = "text/html")
     public static String attachHtml(String html) {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return null;
+        }
         return html;
     }
 
     //Text attachments for Allure
     @Attachment(value = "Page screenshot", type = "image/png")
     public static byte[] saveScreenshotPNG() {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return new byte[0];
+        }
         return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
@@ -35,6 +44,9 @@ public class AllureManager {
     // ========== ENHANCEMENT: Environment Information ==========
     @Attachment(value = "Test Environment Information", type = "text/plain")
     public static String attachEnvironmentInfo() {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return null;
+        }
         StringBuilder info = new StringBuilder();
         info.append("=== TEST ENVIRONMENT INFORMATION ===\n\n");
 
@@ -54,6 +66,9 @@ public class AllureManager {
     // ========== ENHANCEMENT: User Account Information ==========
     @Attachment(value = "Test User Account Information", type = "text/plain")
     public static String attachUserAccountInfo() {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return null;
+        }
         StringBuilder userInfo = new StringBuilder();
         userInfo.append("=== TEST USER ACCOUNT INFORMATION ===\n\n");
 
@@ -74,6 +89,9 @@ public class AllureManager {
     // ========== ENHANCEMENT: System Configuration ==========
     @Attachment(value = "System Configuration", type = "text/plain")
     public static String attachSystemConfig() {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return null;
+        }
         StringBuilder config = new StringBuilder();
         config.append("=== SYSTEM CONFIGURATION ===\n\n");
         config.append("Operating System: ").append(SystemHelper.getOSName()).append("\n");
@@ -88,6 +106,9 @@ public class AllureManager {
     // ========== ENHANCEMENT: Complete Test Context ==========
     @Attachment(value = "Complete Test Context Information", type = "text/plain")
     public static String attachCompleteTestContext() {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return null;
+        }
         StringBuilder context = new StringBuilder();
         context.append("=== COMPLETE TEST CONTEXT ===\n\n");
         context.append(attachEnvironmentInfo()).append("\n");
@@ -99,6 +120,9 @@ public class AllureManager {
     // ========== ENHANCEMENT: Test Result Summary ==========
     @Attachment(value = "Test Result Summary", type = "text/plain")
     public static String attachTestResultSummary(String testName, String status) {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return null;
+        }
         StringBuilder summary = new StringBuilder();
         summary.append("=== TEST RESULT SUMMARY ===\n\n");
         summary.append("Test Name: ").append(testName).append("\n");

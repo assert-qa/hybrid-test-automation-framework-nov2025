@@ -11,9 +11,7 @@ import io.cucumber.testng.CucumberOptions;
                 "pretty",
                 "html:target/cucumber-reports/login-with-registered-credentials.html",
                 "json:target/cucumber-reports/login-with-registered-credentials.json",
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "hooks.CucumberReportListener"
+                "hooks.ReportHandler"
         }
 )
 public class TestRunnerLoginWithRegisteredCredentials extends AbstractTestNGCucumberTests {
