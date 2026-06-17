@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import keywords.WebUI;
 import pages.LoginPage;
-import pages.models.CredentialsDataObject;
+import pages.dto.CredentialsDataObject;
 
 public class StepsLoginWithUnregisterCredentials {
     private TestContext testContext;

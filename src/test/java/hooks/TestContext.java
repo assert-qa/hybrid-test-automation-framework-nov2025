@@ -4,8 +4,9 @@ import factory.DriverManager;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 import pages.RegisterPage;
-import pages.models.EventBookDetailDataObject;
+import pages.dto.EventBookDetailDataObject;
 
+// Maintain the state during scenario execution
 public class TestContext {
     private static final ThreadLocal<EventBookDetailDataObject> bookingData = new ThreadLocal<>();
     private static final ThreadLocal<String> selectedEventName = new ThreadLocal<>();

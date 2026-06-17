@@ -1,4 +1,4 @@
-package pages.models;
+package pages.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

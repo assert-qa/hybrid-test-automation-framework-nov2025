@@ -1,7 +1,7 @@
 package factory;
 
 import helpers.DataFakerHelper;
-import pages.models.EventBookDetailDataObject;
+import pages.dto.EventBookDetailDataObject;
 
 public class BookingDataFactory {
   // Business rule for this website is, if booked ticket = 1 (Eligible) and booked ticket > 1 (Non Eligible)

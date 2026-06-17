@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import keywords.WebUI;
 import pages.EventPage;
 import pages.MyBookingPage;
-import pages.models.EventBookDetailDataObject;
+import pages.dto.EventBookDetailDataObject;
 
 import java.util.HashMap;
 import java.util.List;

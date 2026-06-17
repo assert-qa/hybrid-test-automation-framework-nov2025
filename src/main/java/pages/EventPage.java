@@ -5,11 +5,11 @@ import keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import pages.models.NewEventDataObject;
+import pages.dto.NewEventDataObject;
 import utils.LogUtils;
 
 import java.util.*;
-import pages.models.SelectedEventDataObject;
+import pages.dto.SelectedEventDataObject;
 
 import static helpers.PropertiesHelper.loadAllFiles;
 

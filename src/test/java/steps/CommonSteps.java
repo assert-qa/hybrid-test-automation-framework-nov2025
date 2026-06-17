@@ -14,8 +14,8 @@ import pages.EventPage;
 import pages.LoginPage;
 import pages.MyBookingPage;
 import pages.RegisterPage;
-import pages.models.EventBookDetailDataObject;
-import pages.models.SelectedEventDataObject;
+import pages.dto.EventBookDetailDataObject;
+import pages.dto.SelectedEventDataObject;
 
 import java.util.Locale;
 import java.util.Properties;

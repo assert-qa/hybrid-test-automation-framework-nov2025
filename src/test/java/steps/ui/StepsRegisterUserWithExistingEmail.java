@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import keywords.WebUI;
 import pages.RegisterPage;
-import pages.models.RegisterFormDataObject;
+import pages.dto.RegisterFormDataObject;
 
 
 public class StepsRegisterUserWithExistingEmail {

@@ -9,8 +9,8 @@ import keywords.WebUI;
 import org.openqa.selenium.WebElement;
 import pages.EventPage;
 import pages.MyBookingPage;
-import pages.models.EventBookDetailDataObject;
-import pages.models.SelectedEventDataObject;
+import pages.dto.EventBookDetailDataObject;
+import pages.dto.SelectedEventDataObject;
 import utils.LogUtils;
 
 import java.util.List;

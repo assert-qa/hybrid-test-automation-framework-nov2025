@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import keywords.WebUI;
 import pages.LoginPage;
-import pages.models.CredentialsDataObject;
+import pages.dto.CredentialsDataObject;
 import reports.AllureManager;
 import utils.LogUtils;
 

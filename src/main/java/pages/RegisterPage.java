@@ -3,7 +3,7 @@ package pages;
 import factory.DriverFactory;
 import keywords.WebUI;
 import org.openqa.selenium.By;
-import pages.models.RegisterFormDataObject;
+import pages.dto.RegisterFormDataObject;
 
 import java.util.Properties;
 

@@ -8,7 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import keywords.WebUI;
 import pages.RegisterPage;
-import pages.models.RegisterFormDataObject;
+import pages.dto.RegisterFormDataObject;
 
 public class StepsRegisterUser {
     private static final String REGISTERED_USER_EXCEL_PATH = "data/DataUser.xlsx";

@@ -5,7 +5,7 @@ import hooks.TestContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.EventPage;
-import pages.models.NewEventDataObject;
+import pages.dto.NewEventDataObject;
 
 public class StepsAddNewEvent {
     private TestContext testContext;

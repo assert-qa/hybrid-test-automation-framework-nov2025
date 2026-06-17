@@ -14,12 +14,6 @@
         <listener class-name="listeners.RetryListener"/>
     </listeners>
 
-    <test name="API Tests">
-        <classes>
-            <class name="runner.api.TestRunnerAPI"/>
-        </classes>
-    </test>
-
     <test name="UI Tests">
         <classes>
             <class name="runner.ui.TestRunnerLoginWithRegisteredCredentials"/>

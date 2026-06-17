@@ -3,7 +3,7 @@ package pages;
 import factory.DriverFactory;
 import keywords.WebUI;
 import org.openqa.selenium.By;
-import pages.models.CredentialsDataObject;
+import pages.dto.CredentialsDataObject;
 
 import java.util.Properties;
 

@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.models.EventBookDetailDataObject;
+import pages.dto.EventBookDetailDataObject;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import static constants.ConstantGlobal.EXPLICIT_TIMEOUT;
 import static helpers.PropertiesHelper.loadAllFiles;
 
 public class MyBookingPage extends DriverFactory {
