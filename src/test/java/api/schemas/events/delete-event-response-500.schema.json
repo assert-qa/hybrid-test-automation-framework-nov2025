@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "const": false
+    },
+    "error": {
+      "type": "string",
+      "const": "Resource not found"
+    }
+  },
+  "required": ["success", "error"],
+  "additionalProperties": false
+}

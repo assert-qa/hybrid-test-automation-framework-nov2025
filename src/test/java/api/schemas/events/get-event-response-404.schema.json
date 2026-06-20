@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "const": false
+    },
+    "error": {
+      "type": "string",
+      "pattern": "Event with id [0-9]+ not found"
+    }
+  },
+  "additionalProperties": false
+}

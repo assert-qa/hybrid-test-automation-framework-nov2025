@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "required": [
+    "eventId",
+    "customerName",
+    "customerEmail",
+    "customerPhone",
+    "quantity"
+  ],
+  "properties": {
+    "eventId": {
+      "type": "integer"
+    },
+    "customerName": {
+      "type": "string"
+    },
+    "customerEmail": {
+      "type": "string"
+    },
+    "customerPhone": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": false
+}
