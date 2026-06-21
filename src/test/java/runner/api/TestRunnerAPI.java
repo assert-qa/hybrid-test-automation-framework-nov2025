@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/java/features/API",
-        glue = {"steps.api", "hooks"},
+        glue = {"steps", "hooks"},
         tags = "@api",
         plugin = {
                 "pretty",

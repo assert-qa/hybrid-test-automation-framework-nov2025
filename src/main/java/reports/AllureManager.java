@@ -21,6 +21,14 @@ public class AllureManager {
         return message;
     }
 
+    @Attachment(value = "{0}", type = "text/plain")
+    public static String attachText(String attachmentName, String content) {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return null;
+        }
+        return content;
+    }
+
     // HTML attachment
     @Attachment(value = "{0}", type = "text/html")
     public static String attachHtml(String html) {

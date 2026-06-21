@@ -12,9 +12,6 @@
         <!-- DEV Profile -->
         <profile>
             <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <env>dev</env>
             </properties>
@@ -31,6 +28,9 @@
         <!-- PROD Profile -->
         <profile>
             <id>prod</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <env>prod</env>
             </properties>

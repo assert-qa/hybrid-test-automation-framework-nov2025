@@ -106,7 +106,7 @@ public class ApiClient {
                 .append("Headers: ").append(formatHeaders(requestSpec.getHeaders()));
         Object body = requestSpec.getBody();
         if (body != null) {
-            logMessage.append(System.lineSeparator()).append("Body: ").append(body);
+            logMessage.append(System.lineSeparator()).append("Body: ").append(maskSensitiveValues(body.toString()));
         }
         LogUtils.error(logMessage.toString());
     }
@@ -119,7 +119,7 @@ public class ApiClient {
                 + System.lineSeparator()
                 + "Headers: " + response.getHeaders()
                 + System.lineSeparator()
-                + "Body: " + response.asPrettyString();
+                + "Body: " + maskSensitiveValues(response.asPrettyString());
         LogUtils.error(logMessage);
     }
 
@@ -137,5 +137,12 @@ public class ApiClient {
             }
         }
         return formattedHeaders.append("]").toString();
+    }
+
+    private static String maskSensitiveValues(String value) {
+        if (value == null) {
+            return null;
+        }
+        return value.replaceAll("(?i)(\"(?:password|token)\"\\s*:\\s*\")([^\"]*)(\")", "$1****$3");
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Cucumber Automation Test Suite" verbose="1" parallel="false" thread-count="1">
-    <!-- If want to change mode to open browser, just change this value to false -->
+    <!-- If you want to change mode to open browser, just change this value to false -->
     <parameter name="HEADLESS" value="true"/>
     <parameter name="BROWSER" value="chrome"/>
 

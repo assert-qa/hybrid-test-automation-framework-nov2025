@@ -1,6 +1,7 @@
 package hooks;
 
 import constants.ConstantGlobal;
+import api.context.ApiTestContext;
 import factory.DriverFactory;
 import factory.DriverManager;
 import managers.ConfigManager;
@@ -161,6 +162,7 @@ public class CucumberHooks {
         LogUtils.info(SEPARATOR + "\n");
 
         TestContext.reset();
+        ApiTestContext.reset();
     }
 
     private boolean isApiScenario(Scenario scenario) {
