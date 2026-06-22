@@ -1,0 +1,129 @@
+[INFO] 22-06-2026 12:22:13 [main] [LogUtils] - TestNG parameter applied: HEADLESS=true
+[INFO] 22-06-2026 12:22:13 [main] [LogUtils] - TestNG parameter applied: BROWSER=chrome
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Allure Cucumber report plugin enabled
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Extent Cucumber report plugin disabled by config
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - ========================================
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - STARTING TEST SUITE
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - ========================================
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Loaded: src/main/resources/config.properties
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Loaded: src/main/resources/env/prod.properties
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Loaded: src/main/java/objects/event_hub.properties
+[WARN] 22-06-2026 12:22:14 [main] [LogUtils] - File not found or error loading: src/main/resources/cucumber.properties
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Total properties loaded: 77
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Environment found: production
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Properties loaded successfully!
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Configuration loaded successfully
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Environment: prod
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Base URL: https://eventhub.rahulshettyacademy.com/login
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Test User Email: creola.vendervort@gmail.com
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - Headless mode On
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - ==================================================
+Testing as: creola.vendervort@gmail.com (Production Account)
+Environment: production
+==================================================
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - SCENARIO START: User cannot login with invalid credentials via API
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 22-06-2026 12:22:14 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 22-06-2026 12:22:15 [main] [LogUtils] - Prepared invalid login payload: {email=creola.vendervort@gmail.com, password=****}
+[INFO] 22-06-2026 12:22:16 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Token Available: false
+Payload: {email=creola.vendervort@gmail.com, password=******}
+[INFO] 22-06-2026 12:22:18 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Mon, 22 Jun 2026 05:22:14 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=66
+ETag=W/"42-z8wtlMslpO5GJFeO5U+WeaHR1mM"
+Connection=close
+Body: {
+    "success": false,
+    "error": "Invalid email or password",
+    "details": [
+        
+    ]
+}
+[INFO] 22-06-2026 12:22:18 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with invalid credentials via API
+[INFO] 22-06-2026 12:22:18 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 22-06-2026 12:22:18 [main] [LogUtils] - ========================================
+[INFO] 22-06-2026 12:22:18 [main] [LogUtils] - SCENARIO START: User can login with valid credentials via API
+[INFO] 22-06-2026 12:22:18 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 22-06-2026 12:22:18 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 22-06-2026 12:22:18 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Token Available: false
+Payload: {email=creola.vendervort@gmail.com, password=******}
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Mon, 22 Jun 2026 05:22:16 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=284
+ETag=W/"11c-FL36ZB7TL0bAGhYvT1SfloDdoo8"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body: {
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - SCENARIO FINISHED: User can login with valid credentials via API
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - ========================================
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - SCENARIO START: User cannot login with unregistered account via API
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - Prepared unregistered login payload: {email=unregistered-f5b00c6c-1c0b-4177-82aa-d0d54cda82fb@example.com, password=****}
+[INFO] 22-06-2026 12:22:19 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Token Available: false
+Payload: {email=unregistered-f5b00c6c-1c0b-4177-82aa-d0d54cda82fb@example.com, password=******}
+[INFO] 22-06-2026 12:22:20 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Mon, 22 Jun 2026 05:22:16 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=66
+ETag=W/"42-z8wtlMslpO5GJFeO5U+WeaHR1mM"
+Connection=close
+Body: {
+    "success": false,
+    "error": "Invalid email or password",
+    "details": [
+        
+    ]
+}
+[INFO] 22-06-2026 12:22:20 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with unregistered account via API
+[INFO] 22-06-2026 12:22:20 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 22-06-2026 12:22:20 [main] [LogUtils] - ========================================
+[INFO] 22-06-2026 12:22:20 [main] [LogUtils] - ========================================
+[INFO] 22-06-2026 12:22:20 [main] [LogUtils] - TEST SUITE COMPLETED
+[INFO] 22-06-2026 12:22:20 [main] [LogUtils] - ========================================

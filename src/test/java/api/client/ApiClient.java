@@ -86,7 +86,7 @@ public class ApiClient {
                 FilterableResponseSpecification responseSpec,
                 FilterContext context) -> {
             Response response = context.next(requestSpec, responseSpec);
-            if (response.statusCode() >= 400) {
+            if (response.statusCode() >= 500) {
                 logFailedRequest(requestSpec);
                 logFailedResponse(response);
             }
@@ -96,7 +96,6 @@ public class ApiClient {
 
     private static void logFailedRequest(FilterableRequestSpecification requestSpec) {
         StringBuilder logMessage = new StringBuilder()
-                .append(System.lineSeparator())
                 .append("========== API REQUEST FAILED ==========")
                 .append(System.lineSeparator())
                 .append("Method: ").append(requestSpec.getMethod())
@@ -112,8 +111,7 @@ public class ApiClient {
     }
 
     private static void logFailedResponse(Response response) {
-        String logMessage = System.lineSeparator()
-                + "========== API RESPONSE FAILED =========="
+        String logMessage = "========== API RESPONSE FAILED =========="
                 + System.lineSeparator()
                 + "Status: " + response.statusLine()
                 + System.lineSeparator()

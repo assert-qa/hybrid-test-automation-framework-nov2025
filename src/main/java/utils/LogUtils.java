@@ -3,47 +3,74 @@ package utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 public class LogUtils {
     private static final Logger log = LogManager.getLogger(LogUtils.class);
 
     public static void info(String message){
-        log.info(message);
+        String normalized = normalize(message);
+        if (normalized != null) {
+            log.info(normalized);
+        }
     }
 
     public static void info(Object object){
-        log.info(object);
+        info(normalize(object));
     }
 
     public static void warn(String message){
-        log.warn(message);
+        String normalized = normalize(message);
+        if (normalized != null) {
+            log.warn(normalized);
+        }
     }
 
     public static void warn(Object object){
-        log.warn(object);
+        warn(normalize(object));
     }
 
     public static void error(String message){
-        log.error(message);
+        String normalized = normalize(message);
+        if (normalized != null) {
+            log.error(normalized);
+        }
     }
 
     public static void error(Object object){
-        log.error(object);
+        error(normalize(object));
     }
 
     public static void fatal(String message){
-        log.fatal(message);
+        String normalized = normalize(message);
+        if (normalized != null) {
+            log.fatal(normalized);
+        }
     }
 
     public static void fatal(Object object){
-        log.fatal(object);
+        fatal(normalize(object));
     }
 
     public static void debug(String message){
-        log.debug(message);
+        String normalized = normalize(message);
+        if (normalized != null) {
+            log.debug(normalized);
+        }
     }
 
     public static void debug(Object object){
-        log.debug(object);
+        debug(normalize(object));
+    }
+
+    private static String normalize(Object value) {
+        if (value == null) {
+            return null;
+        }
+
+        String message = value.toString();
+        if (message.isBlank()) {
+            return null;
+        }
+
+        return message.strip();
     }
 }
