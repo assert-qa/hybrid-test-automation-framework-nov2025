@@ -23,7 +23,7 @@ public class StepsLoginWithUnregisteredAccount {
     private String maskedPayload() {
         Map<String, Object> payload = new LinkedHashMap<>(context.getRequestPayload());
         if (payload.containsKey("password")) {
-            payload.put("password", "****");
+            payload.put("password", "******");
         }
         return payload.toString();
     }

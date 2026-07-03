@@ -1,0 +1,14 @@
+@api
+Feature: Register a new user
+
+  Background:
+    Given I set "register" API endpoint
+    And I set request headers
+    And I prepare API base configuration
+
+  Scenario: User successfully register an account
+    Given I prepare register API payload
+    And the register request body should match register request schema
+    When I send "POST" request to "register" API
+    Then the API response status should be 201
+    And the "register" API response should match "success" schema

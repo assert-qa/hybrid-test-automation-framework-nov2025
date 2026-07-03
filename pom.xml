@@ -70,6 +70,7 @@
         <aspectj.weaver.ver>1.9.25.1</aspectj.weaver.ver>
         <rest.assured.ver>6.0.0</rest.assured.ver>
         <json.schema.validator.ver>6.0.0</json.schema.validator.ver>
+        <suiteXmlFile>testng-api.xml</suiteXmlFile>
     </properties>
 
     <dependencies>
@@ -308,7 +309,7 @@
                         <include>**/runner/**/*.java</include>
                     </includes>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.weaver.ver}/aspectjweaver-${aspectj.weaver.ver}.jar"

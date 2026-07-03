@@ -1,0 +1,6 @@
+API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Token Available: false
+Payload: {email=unregistered-6e080b12-d614-461a-b6db-06e371ca53dd@example.com, password=******}

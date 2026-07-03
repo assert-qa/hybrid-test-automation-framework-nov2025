@@ -3,6 +3,7 @@ package steps;
 import api.assertions.AuthAssertions;
 import api.client.ApiClient;
 import api.context.ApiTestContext;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,6 +15,7 @@ import org.assertj.core.api.Assertions;
 import reports.AllureManager;
 import utils.LogUtils;
 
+import java.util.List;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -21,10 +23,11 @@ public class CommonApiSteps {
     private final ApiTestContext context = new ApiTestContext();
     private final AuthAssertions authAssertions = new AuthAssertions();
 
-    @Given("I set login API endpoint")
-    public void i_set_login_api_endpoint() {
-        Assertions.assertThat(EndpointManager.getEndpoint("login"))
-                .as("Login API endpoint")
+    @Given("I set {string} API endpoint")
+    public void i_set_login_api_endpoint(String endpointName) {
+        String endPoint = EndpointManager.getEndpoint(endpointName);
+        Assertions.assertThat(endPoint)
+                .as(endpointName + " API endpoint")
                 .isNotBlank()
                 .startsWith("/");
     }
@@ -36,7 +39,7 @@ public class CommonApiSteps {
                 .isNotNull();
     }
 
-    @And("I prepare login API base configuration")
+    @And("I prepare API base configuration")
     public void i_prepare_login_api_base_configuration() {
         Assertions.assertThat(ConfigManager.getProperty("API_BASE_URL"))
                 .as("API base URL")
@@ -76,19 +79,57 @@ public class CommonApiSteps {
         logAndAttachApiResponse(httpMethod, endpointName, response);
     }
 
-    @And("the login API response should match success schema")
-    public void the_login_api_response_should_match_success_schema() {
-        authAssertions.assertSuccessfulLoginResponse(
+    @And("the {string} API response should match {string} schema")
+    public void the_api_response_should_match_schema(String apiName, String schemaType) {
+        authAssertions.assertAuthApiResponseSchema(
+                apiName,
+                schemaType,
                 context.getResponse(),
                 (String) context.getRequestPayload().get("email")
         );
-        context.setToken(context.getResponse().jsonPath().getString("token"));
-        context.setUserId(context.getResponse().jsonPath().getInt("user.id"));
+        if ("success".equalsIgnoreCase(schemaType)) {
+            context.setToken(context.getResponse().jsonPath().getString("token"));
+            context.setUserId(context.getResponse().jsonPath().getInt("user.id"));
+        }
     }
 
     @Then("the API response status should be {int}")
     public void theLoginApiResponse_status_should_be(int statusCode) {
         authAssertions.assertStatusCode(context.getResponse(), statusCode);
+    }
+
+    @And("the {string} API response error should be {string}")
+    public void the_api_response_error_should_be(String apiName, String expectedError) {
+        Assertions.assertThat(context.getResponse().jsonPath().getString("error"))
+                .as(apiName + " API response error")
+                .isEqualTo(expectedError);
+    }
+
+    @And("the {string} API response details should contain")
+    public void the_api_response_details_should_contain(String apiName, DataTable dataTable) {
+        List<Map<String, String>> expectedDetails = dataTable.asMaps(String.class, String.class);
+        List<Map<String, Object>> actualDetails = context.getResponse().jsonPath().getList("details");
+
+        Assertions.assertThat(actualDetails)
+                .as(apiName + " API response details")
+                .isNotNull();
+
+        for (Map<String, String> expectedDetail : expectedDetails) {
+            Assertions.assertThat(actualDetails)
+                    .as(apiName + " API response details should contain " + expectedDetail)
+                    .anySatisfy(actualDetail -> Assertions.assertThat(actualDetail)
+                            .containsEntry("field", expectedDetail.get("field"))
+                            .containsEntry("message", expectedDetail.get("message")));
+        }
+    }
+
+    @And("the {string} API response details should be empty")
+    public void the_api_response_details_should_be_empty(String apiName) {
+        List<Map<String, Object>> actualDetails = context.getResponse().jsonPath().getList("details");
+        Assertions.assertThat(actualDetails)
+                .as(apiName + " API response details")
+                .isNotNull()
+                .isEmpty();
     }
 
     private void logAndAttachApiRequest(String method, String endpointName, String endpoint) {

@@ -14,6 +14,12 @@ public class AuthAssertions {
 
     private static final File LOGIN_REQUEST_SCHEMA =
             new File("src/test/java/api/schemas/auth/login-request.schema.json");
+    private static final File REGISTER_REQUEST_SCHEMA =
+            new File("src/test/java/api/schemas/auth/register-request.schema.json");
+    private static final File REGISTER_RESPONSE_201_SCHEMA =
+            new File("src/test/java/api/schemas/auth/register-response-201.schema.json");
+    private static final File REGISTER_RESPONSE_400_SCHEMA =
+            new File("src/test/java/api/schemas/auth/register-response-400.schema.json");
     private static final File LOGIN_RESPONSE_200_SCHEMA =
             new File("src/test/java/api/schemas/auth/login-response-200.schema.json");
     private static final File AUTH_RESPONSE_401_SCHEMA =
@@ -26,6 +32,13 @@ public class AuthAssertions {
         Assertions.assertThat(LOGIN_REQUEST_SCHEMA).exists();
         Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(LOGIN_REQUEST_SCHEMA).matches(toJson(payload)))
                 .as("Login request payload should match schema")
+                .isTrue();
+    }
+
+    public void assertRegisterRequestSchema(Map<String, Object> payload) {
+        Assertions.assertThat(REGISTER_REQUEST_SCHEMA).exists();
+        Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(REGISTER_REQUEST_SCHEMA).matches(toJson(payload)))
+                .as("Register request payload should match schema")
                 .isTrue();
     }
 
@@ -52,18 +65,74 @@ public class AuthAssertions {
         Assertions.assertThat(response.jsonPath().getBoolean("success")).isTrue();
     }
 
+    public void assertSuccessfulRegisterResponse(Response response, String expectedEmail) {
+        assertRegisterResponseSchema201(response);
+        assertAccessToken(response);
+        assertUserObject(response, expectedEmail);
+        Assertions.assertThat(response.jsonPath().getBoolean("success")).isTrue();
+    }
+
     public void assertUnauthorizedLoginResponse(Response response) {
         assertResponseSchema(response, response.statusCode());
         Assertions.assertThat(response.jsonPath().getBoolean("success")).isFalse();
         Assertions.assertThat(response.jsonPath().getString("error")).isNotBlank();
     }
 
-    public void assertAccessToken(Response response) {
-        Assertions.assertThat(response.jsonPath().getString("token"))
-                .as("Access token")
-                .isNotBlank()
-                .contains(".");
+    public void assertAuthApiResponseSchema(String apiName, String schemaType, Response response, String expectedEmail) {
+        String normalizedApiName = apiName.trim().toLowerCase();
+        String normalizedSchemaType = schemaType.trim().toLowerCase();
+
+        switch (normalizedApiName + ":" + normalizedSchemaType) {
+            case "login:success" -> assertSuccessfulLoginResponse(response, expectedEmail);
+            case "login:error" -> assertLoginErrorResponse(response);
+            case "register:success" -> assertSuccessfulRegisterResponse(response, expectedEmail);
+            case "register:error" -> assertRegisterErrorResponse(response);
+            default -> throw new IllegalArgumentException(
+                    "Unsupported auth API response schema: " + apiName + " " + schemaType
+            );
+        }
     }
+
+    public void assertLoginResponseSchema200(Response response) {
+        assertResponseMatchesSchema(response, LOGIN_RESPONSE_200_SCHEMA);
+    }
+
+    public void assertRegisterResponseSchema201(Response response) {
+        assertResponseMatchesSchema(response, REGISTER_RESPONSE_201_SCHEMA);
+    }
+
+    public void assertAuthResponseSchema401(Response response) {
+        assertResponseMatchesSchema(response, AUTH_RESPONSE_401_SCHEMA);
+    }
+
+    public void assertLoginResponseSchema400(Response response) {
+        assertResponseMatchesSchema(response, LOGIN_RESPONSE_400_SCHEMA);
+    }
+
+    public void assertRegisterResponseSchema400(Response response) {
+        assertResponseMatchesSchema(response, REGISTER_RESPONSE_400_SCHEMA);
+    }
+
+    public void assertResponseSchema(Response response, int statusCode) {
+        switch (statusCode) {
+            case 200 -> assertLoginResponseSchema200(response);
+            case 400 -> assertLoginResponseSchema400(response);
+            default -> throw new IllegalArgumentException("Unsupported auth response schema for status code: " + statusCode);
+        }
+    }
+
+    public void assertLoginErrorResponse(Response response) {
+        assertLoginResponseSchema400(response);
+        assertErrorResponse(response);
+    }
+
+    public void assertRegisterErrorResponse(Response response) {
+        assertRegisterResponseSchema400(response);
+        assertErrorResponse(response);
+    }
+
+
+    // method helper
 
     public void assertUserObject(Response response, String expectedEmail) {
         Assertions.assertThat(response.jsonPath().getMap("user"))
@@ -79,29 +148,16 @@ public class AuthAssertions {
                 .isEqualTo(expectedEmail);
     }
 
-    public void assertLoginResponseSchema200(Response response) {
-        assertResponseMatchesSchema(response, LOGIN_RESPONSE_200_SCHEMA);
+    public void assertAccessToken(Response response) {
+        Assertions.assertThat(response.jsonPath().getString("token"))
+                .as("Access token")
+                .isNotBlank()
+                .contains(".");
     }
 
-    public void assertAuthResponseSchema401(Response response) {
-        assertResponseMatchesSchema(response, AUTH_RESPONSE_401_SCHEMA);
-    }
-
-    public void assertLoginResponseSchema400(Response response) {
-        assertResponseMatchesSchema(response, LOGIN_RESPONSE_400_SCHEMA);
-    }
-
-    public void assertResponseSchema(Response response, int statusCode) {
-        switch (statusCode) {
-            case 200 -> assertLoginResponseSchema200(response);
-            case 400 -> assertLoginResponseSchema400(response);
-            default -> throw new IllegalArgumentException("Unsupported auth response schema for status code: " + statusCode);
-        }
-    }
-
-    private void assertResponseMatchesSchema(Response response, File schema) {
-        Assertions.assertThat(schema).exists();
-        response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schema));
+    private void assertErrorResponse(Response response) {
+        Assertions.assertThat(response.jsonPath().getBoolean("success")).isFalse();
+        Assertions.assertThat(response.jsonPath().getString("error")).isNotBlank();
     }
 
     private String toJson(Map<String, Object> payload) {
@@ -110,5 +166,10 @@ public class AuthAssertions {
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("Failed to serialize login payload for schema validation", e);
         }
+    }
+
+    private void assertResponseMatchesSchema(Response response, File schema) {
+        Assertions.assertThat(schema).exists();
+        response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schema));
     }
 }
