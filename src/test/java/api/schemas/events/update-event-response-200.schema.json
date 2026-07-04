@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "venue": { "type": "string" },
+        "city": { "type": "string" },
+        "eventDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "price": { "type": "number" },
+        "totalSeats": { "type": "integer" },
+        "availableSeats": { "type": "integer" },
+        "imageUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "category",
+        "venue",
+        "city",
+        "eventDate",
+        "price",
+        "totalSeats",
+        "availableSeats",
+        "imageUrl",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": ["success", "data", "message"]
+}

@@ -1,7 +1,0 @@
-REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "unregistered-d482803c-d5b9-4a1a-9887-7deec785726b@example.com",
-  "password" : "******"
-}

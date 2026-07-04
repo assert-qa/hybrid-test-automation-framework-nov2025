@@ -2,11 +2,17 @@
 Feature: Get list all events
 
   Background:
-    Given I set "events" API endpoint
+    Given I set "login" API endpoint
     And I set request headers
     And I prepare API base configuration
+    And I prepare valid login API payload
+    And the login request body should match login request schema
+    When I send "POST" request to "login" API
+    Then the API response status should be 200
+    And the "login" API response should match "success" schema
+    And I set "events" API endpoint
 
-  Scenario: User successfully get paginated list of events
+  Scenario Outline: User successfully get paginated list of events
     Given I prepare events API query params
       | category | <category> |
       | city     | <city>     |
@@ -17,6 +23,6 @@ Feature: Get list all events
     Then the API response status should be 200
     And the "events" API response should match "success" schema
 
-    Example:
-      | category  | city      | search | page | limit|
-      | Conference| Bangalore | Diwali | 1    | 10   |
+    Examples:
+      | category   | city      | search | page | limit |
+      | Conference | Bangalore | Diwali | 1    | 10    |

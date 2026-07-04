@@ -1,0 +1,964 @@
+[INFO] 04-07-2026 11:43:02 [main] [LogUtils] - TestNG parameter applied: HEADLESS=true
+[INFO] 04-07-2026 11:43:02 [main] [LogUtils] - TestNG parameter applied: BROWSER=chrome
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Allure Cucumber report plugin enabled
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Extent Cucumber report plugin disabled by config
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - STARTING TEST SUITE
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Loaded: src/main/resources/config.properties
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Loaded: src/main/resources/env/prod.properties
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Loaded: src/main/java/objects/event_hub.properties
+[WARN] 04-07-2026 11:43:03 [main] [LogUtils] - File not found or error loading: src/main/resources/cucumber.properties
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Total properties loaded: 77
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Environment found: production
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Properties loaded successfully!
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Configuration loaded successfully
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Environment: prod
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Base URL: https://eventhub.rahulshettyacademy.com/login
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Test User Email: creola.vendervort@gmail.com
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - Headless mode On
+[INFO] 04-07-2026 11:43:03 [main] [LogUtils] - ==================================================
+Testing as: creola.vendervort@gmail.com (Production Account)
+Environment: production
+==================================================
+[INFO] 04-07-2026 11:43:04 [main] [LogUtils] - SCENARIO START: User cannot login with invalid credentials via API
+[INFO] 04-07-2026 11:43:04 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:04 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:04 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: login
+Endpoint: /auth/login
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+[INFO] 04-07-2026 11:43:04 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:05 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:05 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:05 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: login-request.schema.json
+Payload:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:06 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:09 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Sat, 04 Jul 2026 04:43:05 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=66
+ETag=W/"42-z8wtlMslpO5GJFeO5U+WeaHR1mM"
+Connection=close
+Body:
+{
+    "success": false,
+    "error": "Invalid email or password",
+    "details": [
+        
+    ]
+}
+[INFO] 04-07-2026 11:43:09 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 400
+Actual Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+[INFO] 04-07-2026 11:43:09 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: login
+Schema Type: error
+Status Code: 400
+Body:
+{
+    "success": false,
+    "error": "Invalid email or password",
+    "details": [
+        
+    ]
+}
+[INFO] 04-07-2026 11:43:09 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with invalid credentials via API
+[INFO] 04-07-2026 11:43:09 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:09 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - SCENARIO START: User can login with valid credentials via API
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: login
+Endpoint: /auth/login
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: login-request.schema.json
+Payload:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Sat, 04 Jul 2026 04:43:07 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=284
+ETag=W/"11c-nzng1/QL8lqizocag8/60QjycOk"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 200
+Actual Status Code: 200
+Status Line: HTTP/1.1 200 OK
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: login
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - SCENARIO FINISHED: User can login with valid credentials via API
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:10 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - SCENARIO START: User cannot login with unregistered account via API
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: login
+Endpoint: /auth/login
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "unregistered-880ec7e5-4797-4fef-afc2-c37506c471b2@example.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: login-request.schema.json
+Payload:
+{
+  "email" : "unregistered-880ec7e5-4797-4fef-afc2-c37506c471b2@example.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "unregistered-880ec7e5-4797-4fef-afc2-c37506c471b2@example.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Sat, 04 Jul 2026 04:43:08 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=66
+ETag=W/"42-z8wtlMslpO5GJFeO5U+WeaHR1mM"
+Connection=close
+Body:
+{
+    "success": false,
+    "error": "Invalid email or password",
+    "details": [
+        
+    ]
+}
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 400
+Actual Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: login
+Schema Type: error
+Status Code: 400
+Body:
+{
+    "success": false,
+    "error": "Invalid email or password",
+    "details": [
+        
+    ]
+}
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with unregistered account via API
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - SCENARIO START: User successfully register an account
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: register
+Endpoint: /auth/register
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:11 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:12 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "benton.kilback@hotmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:12 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: register-request.schema.json
+Payload:
+{
+  "email" : "benton.kilback@hotmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:12 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: register
+Endpoint: /auth/register
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "benton.kilback@hotmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - API RESPONSE
+Request: POST register
+Status Code: 201
+Status Line: HTTP/1.1 201 Created
+Headers: Date=Sat, 04 Jul 2026 04:43:10 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=281
+ETag=W/"119-Cx0FzHcBroVztECsICm2WKorWVA"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 20869,
+        "email": "benton.kilback@hotmail.com"
+    }
+}
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 201
+Actual Status Code: 201
+Status Line: HTTP/1.1 201 Created
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: register
+Schema Type: success
+Status Code: 201
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 20869,
+        "email": "benton.kilback@hotmail.com"
+    }
+}
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - SCENARIO FINISHED: User successfully register an account
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - SCENARIO START: User cannot register with password too short via API
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: register
+Endpoint: /auth/register
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "password-too-short-0e7c0335-c8c1-40b1-923d-af2f27751686@example.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:13 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: register
+Endpoint: /auth/register
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "password-too-short-0e7c0335-c8c1-40b1-923d-af2f27751686@example.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API RESPONSE
+Request: POST register
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Sat, 04 Jul 2026 04:43:11 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=129
+ETag=W/"81-AQGOfbJn5khNCm8RDj0jRHdfydY"
+Connection=close
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "password",
+            "message": "Password must be at least 6 characters"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 400
+Actual Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: register
+Schema Type: error
+Status Code: 400
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "password",
+            "message": "Password must be at least 6 characters"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API ERROR ASSERTION
+API: register
+Expected Error: Validation failed
+Actual Error: Validation failed
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "password",
+            "message": "Password must be at least 6 characters"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API DETAILS ASSERTION
+API: register
+Expected Details:
+[ {
+  "field" : "password",
+  "message" : "Password must be at least 6 characters"
+} ]
+Actual Details:
+[ {
+  "field" : "password",
+  "message" : "Password must be at least 6 characters"
+} ]
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with password too short via API
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - SCENARIO START: User cannot register with registered email via API
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: register
+Endpoint: /auth/register
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: register-request.schema.json
+Payload:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:14 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: register
+Endpoint: /auth/register
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:15 [main] [LogUtils] - API RESPONSE
+Request: POST register
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Sat, 04 Jul 2026 04:43:12 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=65
+ETag=W/"41-NXXV5luJg781QlBKLQbQgu0cRfs"
+Connection=close
+Body:
+{
+    "success": false,
+    "error": "Email already registered",
+    "details": [
+        
+    ]
+}
+[INFO] 04-07-2026 11:43:15 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 400
+Actual Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+[INFO] 04-07-2026 11:43:15 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: register
+Schema Type: error
+Status Code: 400
+Body:
+{
+    "success": false,
+    "error": "Email already registered",
+    "details": [
+        
+    ]
+}
+[INFO] 04-07-2026 11:43:15 [main] [LogUtils] - API ERROR ASSERTION
+API: register
+Expected Error: Email already registered
+Actual Error: Email already registered
+Body:
+{
+    "success": false,
+    "error": "Email already registered",
+    "details": [
+        
+    ]
+}
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API EMPTY DETAILS ASSERTION
+API: register
+Actual Details:
+[ ]
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with registered email via API
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - SCENARIO START: User cannot register with invalid email format via API
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: register
+Endpoint: /auth/register
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "invalid-email",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: register
+Endpoint: /auth/register
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "invalid-email",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API RESPONSE
+Request: POST register
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Sat, 04 Jul 2026 04:43:13 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=113
+ETag=W/"71-yUJwjOIYVuoIjUdOz9uUDH1Rdwo"
+Connection=close
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "email",
+            "message": "A valid email is required"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 400
+Actual Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: register
+Schema Type: error
+Status Code: 400
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "email",
+            "message": "A valid email is required"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API ERROR ASSERTION
+API: register
+Expected Error: Validation failed
+Actual Error: Validation failed
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "email",
+            "message": "A valid email is required"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API DETAILS ASSERTION
+API: register
+Expected Details:
+[ {
+  "field" : "email",
+  "message" : "A valid email is required"
+} ]
+Actual Details:
+[ {
+  "field" : "email",
+  "message" : "A valid email is required"
+} ]
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with invalid email format via API
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - SCENARIO START: User cannot register with invalid email format and password too short via API
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: register
+Endpoint: /auth/register
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "invalid-email",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:16 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: register
+Endpoint: /auth/register
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "invalid-email",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API RESPONSE
+Request: POST register
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Sat, 04 Jul 2026 04:43:13 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=185
+ETag=W/"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY"
+Connection=close
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "email",
+            "message": "A valid email is required"
+        },
+        {
+            "field": "password",
+            "message": "Password must be at least 6 characters"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 400
+Actual Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: register
+Schema Type: error
+Status Code: 400
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "email",
+            "message": "A valid email is required"
+        },
+        {
+            "field": "password",
+            "message": "Password must be at least 6 characters"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API ERROR ASSERTION
+API: register
+Expected Error: Validation failed
+Actual Error: Validation failed
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "email",
+            "message": "A valid email is required"
+        },
+        {
+            "field": "password",
+            "message": "Password must be at least 6 characters"
+        }
+    ]
+}
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API DETAILS ASSERTION
+API: register
+Expected Details:
+[ {
+  "field" : "email",
+  "message" : "A valid email is required"
+}, {
+  "field" : "password",
+  "message" : "Password must be at least 6 characters"
+} ]
+Actual Details:
+[ {
+  "field" : "email",
+  "message" : "A valid email is required"
+}, {
+  "field" : "password",
+  "message" : "Password must be at least 6 characters"
+} ]
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with invalid email format and password too short via API
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - SCENARIO START: User successfully get paginated list of events
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: login
+Endpoint: /auth/login
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: login-request.schema.json
+Payload:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:17 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 11:43:19 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Sat, 04 Jul 2026 04:43:15 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=284
+ETag=W/"11c-0LfxBrn/mrhY0ecFeBF295iXvws"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 04-07-2026 11:43:19 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 200
+Actual Status Code: 200
+Status Line: HTTP/1.1 200 OK
+[INFO] 04-07-2026 11:43:19 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: login
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 04-07-2026 11:43:19 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: events
+Endpoint: /events
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
+[INFO] 04-07-2026 11:43:19 [main] [LogUtils] - API QUERY PARAMS
+{
+  "category" : "Conference",
+  "city" : "Bangalore",
+  "search" : "Diwali",
+  "page" : "1",
+  "limit" : "10"
+}
+[INFO] 04-07-2026 11:43:19 [main] [LogUtils] - API REQUEST
+Method: GET
+Endpoint Name: events
+Endpoint: /events
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "category" : "Conference",
+  "city" : "Bangalore",
+  "search" : "Diwali",
+  "page" : "1",
+  "limit" : "10"
+}
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - API RESPONSE
+Request: GET events
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Sat, 04 Jul 2026 04:43:16 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=86
+ETag=W/"56-rQkOGUiu0PxluDuPx67mMBHhCbw"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "data": [
+        
+    ],
+    "pagination": {
+        "total": 0,
+        "page": 1,
+        "limit": 10,
+        "totalPages": 0
+    }
+}
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 200
+Actual Status Code: 200
+Status Line: HTTP/1.1 200 OK
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: events
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "data": [
+        
+    ],
+    "pagination": {
+        "total": 0,
+        "page": 1,
+        "limit": 10,
+        "totalPages": 0
+    }
+}
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - SCENARIO FINISHED: User successfully get paginated list of events
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - TEST SUITE COMPLETED
+[INFO] 04-07-2026 11:43:20 [main] [LogUtils] - ========================================

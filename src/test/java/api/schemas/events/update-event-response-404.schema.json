@@ -3,12 +3,15 @@
   "properties": {
     "success": {
       "type": "boolean",
-      "enum": [false]
+      "const": false
     },
     "error": {
-      "type": "string",
-      "enum": ["Resource not found"]
+      "type": "string"
     }
   },
+  "required": [
+    "success",
+    "error"
+  ],
   "additionalProperties": false
 }

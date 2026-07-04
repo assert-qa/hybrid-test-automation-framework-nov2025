@@ -1,5 +1,0 @@
-API PAYLOAD
-{
-  "email" : "invalid-email",
-  "password" : "******"
-}
