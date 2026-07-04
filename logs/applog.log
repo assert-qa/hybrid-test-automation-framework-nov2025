@@ -1,54 +1,54 @@
-[INFO] 04-07-2026 16:05:14 [main] [LogUtils] - TestNG parameter applied: HEADLESS=true
-[INFO] 04-07-2026 16:05:14 [main] [LogUtils] - TestNG parameter applied: BROWSER=chrome
-[INFO] 04-07-2026 16:05:14 [main] [LogUtils] - Allure Cucumber report plugin enabled
-[INFO] 04-07-2026 16:05:14 [main] [LogUtils] - Extent Cucumber report plugin disabled by config
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - STARTING TEST SUITE
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Loaded: src/main/resources/config.properties
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Loaded: src/main/resources/env/prod.properties
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Loaded: src/main/java/objects/event_hub.properties
-[WARN] 04-07-2026 16:05:15 [main] [LogUtils] - File not found or error loading: src/main/resources/cucumber.properties
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Total properties loaded: 77
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Environment found: production
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Properties loaded successfully!
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Configuration loaded successfully
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Environment: prod
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Base URL: https://eventhub.rahulshettyacademy.com/login
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Test User Email: creola.vendervort@gmail.com
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - Headless mode On
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - ==================================================
+[INFO] 04-07-2026 20:32:21 [main] [LogUtils] - TestNG parameter applied: HEADLESS=true
+[INFO] 04-07-2026 20:32:21 [main] [LogUtils] - TestNG parameter applied: BROWSER=chrome
+[INFO] 04-07-2026 20:32:22 [main] [LogUtils] - Allure Cucumber report plugin enabled
+[INFO] 04-07-2026 20:32:22 [main] [LogUtils] - Extent Cucumber report plugin disabled by config
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - STARTING TEST SUITE
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Loaded: src/main/resources/config.properties
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Loaded: src/main/resources/env/prod.properties
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Loaded: src/main/java/objects/event_hub.properties
+[WARN] 04-07-2026 20:32:23 [main] [LogUtils] - File not found or error loading: src/main/resources/cucumber.properties
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Total properties loaded: 77
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Environment found: production
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Properties loaded successfully!
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Configuration loaded successfully
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Environment: prod
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Base URL: https://eventhub.rahulshettyacademy.com/login
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Test User Email: creola.vendervort@gmail.com
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - Headless mode On
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - ==================================================
 Testing as: creola.vendervort@gmail.com (Production Account)
 Environment: production
 ==================================================
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - SCENARIO START: User cannot login with invalid credentials via API
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - SCENARIO START: User cannot login with invalid credentials via API
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:23 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:24 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:15 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:24 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:16 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:26 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:16 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:26 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:16 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:26 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:16 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:27 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -62,11 +62,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:18 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:30 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:05:15 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:27 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -84,11 +84,11 @@ Body:
         
     ]
 }
-[INFO] 04-07-2026 16:05:18 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:30 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 400
 Actual Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:05:18 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:30 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: error
 Status Code: 400
@@ -100,37 +100,37 @@ Body:
         
     ]
 }
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with invalid credentials via API
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - SCENARIO START: User can login with valid credentials via API
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:31 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with invalid credentials via API
+[INFO] 04-07-2026 20:32:31 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:31 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - SCENARIO START: User can login with valid credentials via API
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -144,11 +144,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:16 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:29 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -156,7 +156,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-yjZ8oRT0eAYu/sJ9+b7p08ovm4w"
+ETag=W/"11c-dLU2DiyAOliZcCzsNct4g16KfCo"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -168,11 +168,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:19 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:32 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -185,37 +185,37 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - SCENARIO FINISHED: User can login with valid credentials via API
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - SCENARIO START: User cannot login with unregistered account via API
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - SCENARIO FINISHED: User can login with valid credentials via API
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - SCENARIO START: User cannot login with unregistered account via API
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - API PAYLOAD
 {
-  "email" : "unregistered-77bcd814-c917-49e7-96d0-32931158a355@example.com",
+  "email" : "unregistered-aa013a01-b1c0-4edb-aa05-f47820082ed3@example.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
-  "email" : "unregistered-77bcd814-c917-49e7-96d0-32931158a355@example.com",
+  "email" : "unregistered-aa013a01-b1c0-4edb-aa05-f47820082ed3@example.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:33 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -226,14 +226,14 @@ Headers:
   Authorization: <not set>
 Payload / Query Params:
 {
-  "email" : "unregistered-77bcd814-c917-49e7-96d0-32931158a355@example.com",
+  "email" : "unregistered-aa013a01-b1c0-4edb-aa05-f47820082ed3@example.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:05:17 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:30 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -251,11 +251,11 @@ Body:
         
     ]
 }
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 400
 Actual Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: error
 Status Code: 400
@@ -267,37 +267,37 @@ Body:
         
     ]
 }
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with unregistered account via API
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - SCENARIO START: User successfully register an account
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with unregistered account via API
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - SCENARIO START: User successfully register an account
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: register
 Endpoint: /auth/register
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - API PAYLOAD
 {
-  "email" : "curt.streich@gmail.com",
+  "email" : "blake.connelly@hotmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: register-request.schema.json
 Payload:
 {
-  "email" : "curt.streich@gmail.com",
+  "email" : "blake.connelly@hotmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:20 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:34 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: register
 Endpoint: /auth/register
@@ -308,22 +308,22 @@ Headers:
   Authorization: <not set>
 Payload / Query Params:
 {
-  "email" : "curt.streich@gmail.com",
+  "email" : "blake.connelly@hotmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - API RESPONSE
 Request: POST register
 Status Code: 201
 Status Line: HTTP/1.1 201 Created
-Headers: Date=Sat, 04 Jul 2026 09:05:18 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:31 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
 Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
-Content-Length=272
-ETag=W/"110-La6gXJzrOBt9DZPQeYwKwFYoV08"
+Content-Length=281
+ETag=W/"119-tmh+mVRbguTqh0hYzrkjrVpm5iU"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -331,15 +331,15 @@ Body:
     "success": true,
     "token": "****",
     "user": {
-        "id": 20887,
-        "email": "curt.streich@gmail.com"
+        "id": 20915,
+        "email": "blake.connelly@hotmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 201
 Actual Status Code: 201
 Status Line: HTTP/1.1 201 Created
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: register
 Schema Type: success
 Status Code: 201
@@ -348,34 +348,34 @@ Body:
     "success": true,
     "token": "****",
     "user": {
-        "id": 20887,
-        "email": "curt.streich@gmail.com"
+        "id": 20915,
+        "email": "blake.connelly@hotmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - SCENARIO FINISHED: User successfully register an account
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - SCENARIO START: User cannot register with password too short via API
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - SCENARIO FINISHED: User successfully register an account
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - SCENARIO START: User cannot register with password too short via API
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: register
 Endpoint: /auth/register
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - API PAYLOAD
 {
-  "email" : "password-too-short-1d951333-81af-4cab-96cf-1dac4b5fa6e7@example.com",
+  "email" : "password-too-short-4e8563d9-a596-4965-93fc-b958e949e11f@example.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:21 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:35 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: register
 Endpoint: /auth/register
@@ -386,14 +386,14 @@ Headers:
   Authorization: <not set>
 Payload / Query Params:
 {
-  "email" : "password-too-short-1d951333-81af-4cab-96cf-1dac4b5fa6e7@example.com",
+  "email" : "password-too-short-4e8563d9-a596-4965-93fc-b958e949e11f@example.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API RESPONSE
 Request: POST register
 Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:05:18 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:32 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -414,11 +414,11 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 400
 Actual Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: register
 Schema Type: error
 Status Code: 400
@@ -433,7 +433,7 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API ERROR ASSERTION
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API ERROR ASSERTION
 API: register
 Expected Error: Validation failed
 Actual Error: Validation failed
@@ -448,7 +448,7 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API DETAILS ASSERTION
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API DETAILS ASSERTION
 API: register
 Expected Details:
 [ {
@@ -460,37 +460,37 @@ Actual Details:
   "field" : "password",
   "message" : "Password must be at least 6 characters"
 } ]
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with password too short via API
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - SCENARIO START: User cannot register with registered email via API
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with password too short via API
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - SCENARIO START: User cannot register with registered email via API
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: register
 Endpoint: /auth/register
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: register-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:36 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: register
 Endpoint: /auth/register
@@ -504,11 +504,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API RESPONSE
 Request: POST register
 Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:05:19 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:33 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -526,11 +526,11 @@ Body:
         
     ]
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 400
 Actual Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: register
 Schema Type: error
 Status Code: 400
@@ -542,7 +542,7 @@ Body:
         
     ]
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API ERROR ASSERTION
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API ERROR ASSERTION
 API: register
 Expected Error: Email already registered
 Actual Error: Email already registered
@@ -554,34 +554,34 @@ Body:
         
     ]
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API EMPTY DETAILS ASSERTION
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API EMPTY DETAILS ASSERTION
 API: register
 Actual Details:
 [ ]
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with registered email via API
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - SCENARIO START: User cannot register with invalid email format via API
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with registered email via API
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - SCENARIO START: User cannot register with invalid email format via API
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: register
 Endpoint: /auth/register
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "invalid-email",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:22 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: register
 Endpoint: /auth/register
@@ -595,11 +595,11 @@ Payload / Query Params:
   "email" : "invalid-email",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API RESPONSE
 Request: POST register
 Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:05:19 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:34 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -620,11 +620,11 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 400
 Actual Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:37 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: register
 Schema Type: error
 Status Code: 400
@@ -639,7 +639,7 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API ERROR ASSERTION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API ERROR ASSERTION
 API: register
 Expected Error: Validation failed
 Actual Error: Validation failed
@@ -654,7 +654,7 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API DETAILS ASSERTION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API DETAILS ASSERTION
 API: register
 Expected Details:
 [ {
@@ -666,30 +666,30 @@ Actual Details:
   "field" : "email",
   "message" : "A valid email is required"
 } ]
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with invalid email format via API
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - SCENARIO START: User cannot register with invalid email format and password too short via API
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with invalid email format via API
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - SCENARIO START: User cannot register with invalid email format and password too short via API
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: register
 Endpoint: /auth/register
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "invalid-email",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:23 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: register
 Endpoint: /auth/register
@@ -703,11 +703,11 @@ Payload / Query Params:
   "email" : "invalid-email",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API RESPONSE
 Request: POST register
 Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:05:20 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:35 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -732,11 +732,11 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 400
 Actual Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: register
 Schema Type: error
 Status Code: 400
@@ -755,7 +755,7 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API ERROR ASSERTION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API ERROR ASSERTION
 API: register
 Expected Error: Validation failed
 Actual Error: Validation failed
@@ -774,7 +774,7 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API DETAILS ASSERTION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API DETAILS ASSERTION
 API: register
 Expected Details:
 [ {
@@ -792,37 +792,37 @@ Actual Details:
   "field" : "password",
   "message" : "Password must be at least 6 characters"
 } ]
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with invalid email format and password too short via API
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - SCENARIO START: User successfully create a new event
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with invalid email format and password too short via API
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - SCENARIO START: User successfully create a new event
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:38 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -836,11 +836,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:39 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:21 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:36 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -848,7 +848,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-EZePL4ZrqH+S8jb3b7LWzQuribE"
+ETag=W/"11c-79xHxfrgrjTB/KAhiLvKTCVrdyk"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -860,11 +860,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:39 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:39 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -877,38 +877,38 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:39 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: create new event
 Endpoint: /events
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:39 [main] [LogUtils] - API PAYLOAD
 {
-  "title" : "definition",
-  "description" : "Explicabo perspiciatis iusto perspiciatis earum.",
-  "category" : "Sports",
-  "venue" : "Block Inc Convention Center",
-  "city" : "Steubermouth",
-  "eventDate" : "2026-08-02T09:00:00Z",
-  "price" : 787,
-  "totalSeats" : 75,
-  "imageUrl" : "https://example.com/images/animi_sit.jpg"
+  "title" : "Realigned",
+  "description" : "Sunt animi explicabo.",
+  "category" : "Festival",
+  "venue" : "King-Grant Convention Center",
+  "city" : "East Rooseveltport",
+  "eventDate" : "2026-07-09T12:00:00Z",
+  "price" : "833",
+  "totalSeats" : 8,
+  "imageUrl" : "https://example.com/images/corporis_saepe.jpg"
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:39 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: create-new-event-request.schema.json
 Payload:
 {
-  "title" : "definition",
-  "description" : "Explicabo perspiciatis iusto perspiciatis earum.",
-  "category" : "Sports",
-  "venue" : "Block Inc Convention Center",
-  "city" : "Steubermouth",
-  "eventDate" : "2026-08-02T09:00:00Z",
-  "price" : 787,
-  "totalSeats" : 75,
-  "imageUrl" : "https://example.com/images/animi_sit.jpg"
+  "title" : "Realigned",
+  "description" : "Sunt animi explicabo.",
+  "category" : "Festival",
+  "venue" : "King-Grant Convention Center",
+  "city" : "East Rooseveltport",
+  "eventDate" : "2026-07-09T12:00:00Z",
+  "price" : "833",
+  "totalSeats" : 8,
+  "imageUrl" : "https://example.com/images/corporis_saepe.jpg"
 }
-[INFO] 04-07-2026 16:05:24 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: create new event
 Endpoint: /events
@@ -919,58 +919,58 @@ Headers:
   Authorization: Bearer ******
 Payload / Query Params:
 {
-  "title" : "definition",
-  "description" : "Explicabo perspiciatis iusto perspiciatis earum.",
-  "category" : "Sports",
-  "venue" : "Block Inc Convention Center",
-  "city" : "Steubermouth",
-  "eventDate" : "2026-08-02T09:00:00Z",
-  "price" : 787,
-  "totalSeats" : 75,
-  "imageUrl" : "https://example.com/images/animi_sit.jpg"
+  "title" : "Realigned",
+  "description" : "Sunt animi explicabo.",
+  "category" : "Festival",
+  "venue" : "King-Grant Convention Center",
+  "city" : "East Rooseveltport",
+  "eventDate" : "2026-07-09T12:00:00Z",
+  "price" : "833",
+  "totalSeats" : 8,
+  "imageUrl" : "https://example.com/images/corporis_saepe.jpg"
 }
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API RESPONSE
 Request: POST create new event
 Status Code: 201
 Status Line: HTTP/1.1 201 Created
-Headers: Date=Sat, 04 Jul 2026 09:05:23 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:37 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
 Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
-Content-Length=494
-ETag=W/"1ee-YtATlR6g4x5MVLpDf8psLmsh5BU"
+Content-Length=478
+ETag=W/"1de-bn0g1Z28LqfxM6vfIcvJOwozxkM"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
 {
     "success": true,
     "data": {
-        "id": 70431,
-        "title": "definition",
-        "description": "Explicabo perspiciatis iusto perspiciatis earum.",
-        "category": "Sports",
-        "venue": "Block Inc Convention Center",
-        "city": "Steubermouth",
-        "eventDate": "2026-08-02T09:00:00.000Z",
-        "price": "787",
-        "totalSeats": 75,
-        "availableSeats": 75,
-        "imageUrl": "https://example.com/images/animi_sit.jpg",
+        "id": 70536,
+        "title": "Realigned",
+        "description": "Sunt animi explicabo.",
+        "category": "Festival",
+        "venue": "King-Grant Convention Center",
+        "city": "East Rooseveltport",
+        "eventDate": "2026-07-09T12:00:00.000Z",
+        "price": "833",
+        "totalSeats": 8,
+        "availableSeats": 8,
+        "imageUrl": "https://example.com/images/corporis_saepe.jpg",
         "isStatic": false,
         "userId": 14673,
-        "createdAt": "2026-07-04T09:05:23.028Z",
-        "updatedAt": "2026-07-04T09:05:23.028Z"
+        "createdAt": "2026-07-04T13:32:37.315Z",
+        "updatedAt": "2026-07-04T13:32:37.315Z"
     },
     "message": "Event created successfully"
 }
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 201
 Actual Status Code: 201
 Status Line: HTTP/1.1 201 Created
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: create new event
 Schema Type: success
 Status Code: 201
@@ -978,57 +978,55 @@ Body:
 {
     "success": true,
     "data": {
-        "id": 70431,
-        "title": "definition",
-        "description": "Explicabo perspiciatis iusto perspiciatis earum.",
-        "category": "Sports",
-        "venue": "Block Inc Convention Center",
-        "city": "Steubermouth",
-        "eventDate": "2026-08-02T09:00:00.000Z",
-        "price": "787",
-        "totalSeats": 75,
-        "availableSeats": 75,
-        "imageUrl": "https://example.com/images/animi_sit.jpg",
+        "id": 70536,
+        "title": "Realigned",
+        "description": "Sunt animi explicabo.",
+        "category": "Festival",
+        "venue": "King-Grant Convention Center",
+        "city": "East Rooseveltport",
+        "eventDate": "2026-07-09T12:00:00.000Z",
+        "price": "833",
+        "totalSeats": 8,
+        "availableSeats": 8,
+        "imageUrl": "https://example.com/images/corporis_saepe.jpg",
         "isStatic": false,
         "userId": 14673,
-        "createdAt": "2026-07-04T09:05:23.028Z",
-        "updatedAt": "2026-07-04T09:05:23.028Z"
+        "createdAt": "2026-07-04T13:32:37.315Z",
+        "updatedAt": "2026-07-04T13:32:37.315Z"
     },
     "message": "Event created successfully"
 }
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - No WebDriver active. Skipping failed scenario screenshot.
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - SCENARIO FINISHED: User successfully create a new event
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - SCENARIO STATUS: FAILED
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - ========================================
-[WARN] 04-07-2026 16:05:26 [main] [LogUtils] - Retrying test: runScenario (Attempt 1 of 2)
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - SCENARIO START: User successfully create a new event
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - SCENARIO FINISHED: User successfully create a new event
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - SCENARIO START: User cannot create a new event with invalid payload
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:26 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:40 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -1042,11 +1040,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:42 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:23 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:39 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -1054,7 +1052,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-7gwHJl3sMDlSQmv00GNsXEmWbw0"
+ETag=W/"11c-acnUnPZhsS/F1Dlwg8N6Z9TXTA4"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -1066,11 +1064,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:42 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:42 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -1083,38 +1081,23 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:42 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: create new event
 Endpoint: /events
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:42 [main] [LogUtils] - API PAYLOAD
 {
-  "title" : "logistical",
-  "description" : "Totam ratione velit corrupti consectetur similique.",
-  "category" : "Festival",
-  "venue" : "Larkin-Stroman Convention Center",
-  "city" : "West Kai",
-  "eventDate" : "2026-07-15T19:00:00Z",
-  "price" : 811,
-  "totalSeats" : 54,
-  "imageUrl" : "https://example.com/images/quisquam_adipisci.jpg"
+  "description" : "Earum error adipisci consequuntur earum praesentium soluta illo.",
+  "category" : "Conference",
+  "venue" : "Harvey-Feeney Convention Center",
+  "city" : "Delbertfurt",
+  "eventDate" : "2026-07-05T10:00:00Z",
+  "price" : "360",
+  "totalSeats" : 64,
+  "imageUrl" : "https://example.com/images/iste_neque.jpg"
 }
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: create-new-event-request.schema.json
-Payload:
-{
-  "title" : "logistical",
-  "description" : "Totam ratione velit corrupti consectetur similique.",
-  "category" : "Festival",
-  "venue" : "Larkin-Stroman Convention Center",
-  "city" : "West Kai",
-  "eventDate" : "2026-07-15T19:00:00Z",
-  "price" : 811,
-  "totalSeats" : 54,
-  "imageUrl" : "https://example.com/images/quisquam_adipisci.jpg"
-}
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:42 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: create new event
 Endpoint: /events
@@ -1125,416 +1108,20 @@ Headers:
   Authorization: Bearer ******
 Payload / Query Params:
 {
-  "title" : "logistical",
-  "description" : "Totam ratione velit corrupti consectetur similique.",
-  "category" : "Festival",
-  "venue" : "Larkin-Stroman Convention Center",
-  "city" : "West Kai",
-  "eventDate" : "2026-07-15T19:00:00Z",
-  "price" : 811,
-  "totalSeats" : 54,
-  "imageUrl" : "https://example.com/images/quisquam_adipisci.jpg"
+  "description" : "Earum error adipisci consequuntur earum praesentium soluta illo.",
+  "category" : "Conference",
+  "venue" : "Harvey-Feeney Convention Center",
+  "city" : "Delbertfurt",
+  "eventDate" : "2026-07-05T10:00:00Z",
+  "price" : "360",
+  "totalSeats" : 64,
+  "imageUrl" : "https://example.com/images/iste_neque.jpg"
 }
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API RESPONSE
-Request: POST create new event
-Status Code: 201
-Status Line: HTTP/1.1 201 Created
-Headers: Date=Sat, 04 Jul 2026 09:05:24 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=508
-ETag=W/"1fc-/JLpWco5ilUml+e03JVILL7YTD4"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 70432,
-        "title": "logistical",
-        "description": "Totam ratione velit corrupti consectetur similique.",
-        "category": "Festival",
-        "venue": "Larkin-Stroman Convention Center",
-        "city": "West Kai",
-        "eventDate": "2026-07-15T19:00:00.000Z",
-        "price": "811",
-        "totalSeats": 54,
-        "availableSeats": 54,
-        "imageUrl": "https://example.com/images/quisquam_adipisci.jpg",
-        "isStatic": false,
-        "userId": 14673,
-        "createdAt": "2026-07-04T09:05:24.397Z",
-        "updatedAt": "2026-07-04T09:05:24.397Z"
-    },
-    "message": "Event created successfully"
-}
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 201
-Actual Status Code: 201
-Status Line: HTTP/1.1 201 Created
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: create new event
-Schema Type: success
-Status Code: 201
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 70432,
-        "title": "logistical",
-        "description": "Totam ratione velit corrupti consectetur similique.",
-        "category": "Festival",
-        "venue": "Larkin-Stroman Convention Center",
-        "city": "West Kai",
-        "eventDate": "2026-07-15T19:00:00.000Z",
-        "price": "811",
-        "totalSeats": 54,
-        "availableSeats": 54,
-        "imageUrl": "https://example.com/images/quisquam_adipisci.jpg",
-        "isStatic": false,
-        "userId": 14673,
-        "createdAt": "2026-07-04T09:05:24.397Z",
-        "updatedAt": "2026-07-04T09:05:24.397Z"
-    },
-    "message": "Event created successfully"
-}
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - No WebDriver active. Skipping failed scenario screenshot.
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - SCENARIO FINISHED: User successfully create a new event
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - SCENARIO STATUS: FAILED
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - ========================================
-[WARN] 04-07-2026 16:05:27 [main] [LogUtils] - Retrying test: runScenario (Attempt 2 of 2)
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - SCENARIO START: User successfully create a new event
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:27 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:28 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:25 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=284
-ETag=W/"11c-er81MgGZ3Bt0zg9xA0f0pj8dP8s"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:05:28 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:28 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:05:28 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: create new event
-Endpoint: /events
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-[INFO] 04-07-2026 16:05:28 [main] [LogUtils] - API PAYLOAD
-{
-  "title" : "Self-enabling",
-  "description" : "Qui dolorem sunt assumenda nostrum.",
-  "category" : "Festival",
-  "venue" : "Kuhic Group Convention Center",
-  "city" : "Jaquelineport",
-  "eventDate" : "2026-07-27T11:00:00Z",
-  "price" : 580,
-  "totalSeats" : 55,
-  "imageUrl" : "https://example.com/images/nemo_porro.jpg"
-}
-[INFO] 04-07-2026 16:05:28 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: create-new-event-request.schema.json
-Payload:
-{
-  "title" : "Self-enabling",
-  "description" : "Qui dolorem sunt assumenda nostrum.",
-  "category" : "Festival",
-  "venue" : "Kuhic Group Convention Center",
-  "city" : "Jaquelineport",
-  "eventDate" : "2026-07-27T11:00:00Z",
-  "price" : 580,
-  "totalSeats" : 55,
-  "imageUrl" : "https://example.com/images/nemo_porro.jpg"
-}
-[INFO] 04-07-2026 16:05:28 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: create new event
-Endpoint: /events
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: Bearer ******
-Payload / Query Params:
-{
-  "title" : "Self-enabling",
-  "description" : "Qui dolorem sunt assumenda nostrum.",
-  "category" : "Festival",
-  "venue" : "Kuhic Group Convention Center",
-  "city" : "Jaquelineport",
-  "eventDate" : "2026-07-27T11:00:00Z",
-  "price" : 580,
-  "totalSeats" : 55,
-  "imageUrl" : "https://example.com/images/nemo_porro.jpg"
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API RESPONSE
-Request: POST create new event
-Status Code: 201
-Status Line: HTTP/1.1 201 Created
-Headers: Date=Sat, 04 Jul 2026 09:05:26 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=490
-ETag=W/"1ea-THP42YHqVKE0h+XSGZm0Bhcsd2M"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 70433,
-        "title": "Self-enabling",
-        "description": "Qui dolorem sunt assumenda nostrum.",
-        "category": "Festival",
-        "venue": "Kuhic Group Convention Center",
-        "city": "Jaquelineport",
-        "eventDate": "2026-07-27T11:00:00.000Z",
-        "price": "580",
-        "totalSeats": 55,
-        "availableSeats": 55,
-        "imageUrl": "https://example.com/images/nemo_porro.jpg",
-        "isStatic": false,
-        "userId": 14673,
-        "createdAt": "2026-07-04T09:05:26.700Z",
-        "updatedAt": "2026-07-04T09:05:26.700Z"
-    },
-    "message": "Event created successfully"
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 201
-Actual Status Code: 201
-Status Line: HTTP/1.1 201 Created
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: create new event
-Schema Type: success
-Status Code: 201
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 70433,
-        "title": "Self-enabling",
-        "description": "Qui dolorem sunt assumenda nostrum.",
-        "category": "Festival",
-        "venue": "Kuhic Group Convention Center",
-        "city": "Jaquelineport",
-        "eventDate": "2026-07-27T11:00:00.000Z",
-        "price": "580",
-        "totalSeats": 55,
-        "availableSeats": 55,
-        "imageUrl": "https://example.com/images/nemo_porro.jpg",
-        "isStatic": false,
-        "userId": 14673,
-        "createdAt": "2026-07-04T09:05:26.700Z",
-        "updatedAt": "2026-07-04T09:05:26.700Z"
-    },
-    "message": "Event created successfully"
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - No WebDriver active. Skipping failed scenario screenshot.
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - SCENARIO FINISHED: User successfully create a new event
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - SCENARIO STATUS: FAILED
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - SCENARIO START: User cannot create a new event with invalid payload
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:27 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=284
-ETag=W/"11c-jFfo6FpBMJgFP/d94rWCAFpoDgk"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: create new event
-Endpoint: /events
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API PAYLOAD
-{
-  "description" : "Quod illum maxime totam laudantium.",
-  "category" : "Workshop",
-  "venue" : "Borer-Konopelski Convention Center",
-  "city" : "North Beverlee",
-  "eventDate" : "2026-07-26T17:00:00Z",
-  "price" : 534,
-  "totalSeats" : 66,
-  "imageUrl" : "https://example.com/images/consequatur_nobis.jpg"
-}
-[INFO] 04-07-2026 16:05:30 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: create new event
-Endpoint: /events
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: Bearer ******
-Payload / Query Params:
-{
-  "description" : "Quod illum maxime totam laudantium.",
-  "category" : "Workshop",
-  "venue" : "Borer-Konopelski Convention Center",
-  "city" : "North Beverlee",
-  "eventDate" : "2026-07-26T17:00:00Z",
-  "price" : 534,
-  "totalSeats" : 66,
-  "imageUrl" : "https://example.com/images/consequatur_nobis.jpg"
-}
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API RESPONSE
 Request: POST create new event
 Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:05:29 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:41 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -1555,11 +1142,11 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 400
 Actual Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: create new event
 Schema Type: error
 Status Code: 400
@@ -1574,7 +1161,7 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API ERROR ASSERTION
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API ERROR ASSERTION
 API: create new event
 Expected Error: Validation failed
 Actual Error: Validation failed
@@ -1589,37 +1176,37 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - SCENARIO FINISHED: User cannot create a new event with invalid payload
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - SCENARIO START: Successfully get an event by a valid ID
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - SCENARIO FINISHED: User cannot create a new event with invalid payload
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - SCENARIO START: User successfully delete an event
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:32 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:44 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -1633,11 +1220,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:45 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:29 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:41 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -1645,7 +1232,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-iPpOlD8VlMl6Uwb9eR+vlR7jR4Y"
+ETag=W/"11c-EiBA6Rcp4yAkGZwgR/wBFFDO6tQ"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -1657,11 +1244,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:45 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:45 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -1674,16 +1261,402 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:45 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: delete event
+Endpoint: /events/{id}
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+[INFO] 04-07-2026 20:32:45 [main] [LogUtils] - API PAYLOAD
+{
+  "title" : "complexity",
+  "description" : "Aut explicabo natus.",
+  "category" : "Concert",
+  "venue" : "DuBuque, Schmidt and Hill Convention Center",
+  "city" : "West Franklyn",
+  "eventDate" : "2026-07-28T15:00:00Z",
+  "price" : "704",
+  "totalSeats" : 41,
+  "imageUrl" : "https://example.com/images/laboriosam_laudantium.jpg"
+}
+[INFO] 04-07-2026 20:32:45 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: create-new-event-request.schema.json
+Payload:
+{
+  "title" : "complexity",
+  "description" : "Aut explicabo natus.",
+  "category" : "Concert",
+  "venue" : "DuBuque, Schmidt and Hill Convention Center",
+  "city" : "West Franklyn",
+  "eventDate" : "2026-07-28T15:00:00Z",
+  "price" : "704",
+  "totalSeats" : 41,
+  "imageUrl" : "https://example.com/images/laboriosam_laudantium.jpg"
+}
+[INFO] 04-07-2026 20:32:45 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: create new event
+Endpoint: /events
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "title" : "complexity",
+  "description" : "Aut explicabo natus.",
+  "category" : "Concert",
+  "venue" : "DuBuque, Schmidt and Hill Convention Center",
+  "city" : "West Franklyn",
+  "eventDate" : "2026-07-28T15:00:00Z",
+  "price" : "704",
+  "totalSeats" : 41,
+  "imageUrl" : "https://example.com/images/laboriosam_laudantium.jpg"
+}
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API RESPONSE
+Request: POST create new event
+Status Code: 201
+Status Line: HTTP/1.1 201 Created
+Headers: Date=Sat, 04 Jul 2026 13:32:42 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=496
+ETag=W/"1f0-D7mFBsRZnz/oLEQ3iXVWnv8zDGo"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "data": {
+        "id": 70537,
+        "title": "complexity",
+        "description": "Aut explicabo natus.",
+        "category": "Concert",
+        "venue": "DuBuque, Schmidt and Hill Convention Center",
+        "city": "West Franklyn",
+        "eventDate": "2026-07-28T15:00:00.000Z",
+        "price": "704",
+        "totalSeats": 41,
+        "availableSeats": 41,
+        "imageUrl": "https://example.com/images/laboriosam_laudantium.jpg",
+        "isStatic": false,
+        "userId": 14673,
+        "createdAt": "2026-07-04T13:32:42.714Z",
+        "updatedAt": "2026-07-04T13:32:42.714Z"
+    },
+    "message": "Event created successfully"
+}
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 201
+Actual Status Code: 201
+Status Line: HTTP/1.1 201 Created
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API QUERY PARAMS
+{
+  "id" : 70537
+}
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API REQUEST
+Method: DELETE
+Endpoint Name: delete event
+Endpoint: /events/{id}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "title" : "complexity",
+  "description" : "Aut explicabo natus.",
+  "category" : "Concert",
+  "venue" : "DuBuque, Schmidt and Hill Convention Center",
+  "city" : "West Franklyn",
+  "eventDate" : "2026-07-28T15:00:00Z",
+  "price" : "704",
+  "totalSeats" : 41,
+  "imageUrl" : "https://example.com/images/laboriosam_laudantium.jpg"
+}
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API RESPONSE
+Request: DELETE delete event
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Sat, 04 Jul 2026 13:32:43 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=55
+ETag=W/"37-Qo9mb78Y7s+pUu+WpmJap/uNXdc"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "message": "Event deleted successfully"
+}
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 200
+Actual Status Code: 200
+Status Line: HTTP/1.1 200 OK
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: delete event
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "message": "Event deleted successfully"
+}
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - SCENARIO FINISHED: User successfully delete an event
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - SCENARIO START: User cannot delete an event that does not exist
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: login
+Endpoint: /auth/login
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: login-request.schema.json
+Payload:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 20:32:46 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 20:32:47 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Sat, 04 Jul 2026 13:32:43 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=284
+ETag=W/"11c-FLVIprXxjjOHwkSaPkwoEQWGfTw"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 04-07-2026 20:32:47 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 200
+Actual Status Code: 200
+Status Line: HTTP/1.1 200 OK
+[INFO] 04-07-2026 20:32:47 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: login
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 04-07-2026 20:32:47 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: delete event
+Endpoint: /events/{id}
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+[INFO] 04-07-2026 20:32:47 [main] [LogUtils] - API QUERY PARAMS
+{
+  "id" : 999999
+}
+[INFO] 04-07-2026 20:32:47 [main] [LogUtils] - API REQUEST
+Method: DELETE
+Endpoint Name: delete event
+Endpoint: /events/{id}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API RESPONSE
+Request: DELETE delete event
+Status Code: 404
+Status Line: HTTP/1.1 404 Not Found
+Headers: Date=Sat, 04 Jul 2026 13:32:44 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=58
+ETag=W/"3a-KqeL62lrTWRqO7zB/0cGW1D4/gs"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": false,
+    "error": "Event with id 999999 not found"
+}
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 404
+Actual Status Code: 404
+Status Line: HTTP/1.1 404 Not Found
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: delete event
+Schema Type: error
+Status Code: 404
+Body:
+{
+    "success": false,
+    "error": "Event with id 999999 not found"
+}
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API ERROR ASSERTION
+API: delete event
+Expected Error: Event with id 999999 not found
+Actual Error: Event with id 999999 not found
+Body:
+{
+    "success": false,
+    "error": "Event with id 999999 not found"
+}
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - SCENARIO FINISHED: User cannot delete an event that does not exist
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - SCENARIO START: Successfully get an event by a valid ID
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: login
+Endpoint: /auth/login
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API REQUEST HEADERS
+Content-Type: application/json
+Accept: application/json
+Sensitive Headers: default RestAssured blacklist enabled
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API BASE CONFIGURATION
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Timeout: 20 seconds
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API PAYLOAD
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: login-request.schema.json
+Payload:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 20:32:48 [main] [LogUtils] - API REQUEST
+Method: POST
+Endpoint Name: login
+Endpoint: /auth/login
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API RESPONSE
+Request: POST login
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Sat, 04 Jul 2026 13:32:45 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=284
+ETag=W/"11c-Q7rrytJye31+Bpy1bhl/yWItRm0"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 200
+Actual Status Code: 200
+Status Line: HTTP/1.1 200 OK
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: login
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: get event by id
 Endpoint: /events/{id}
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API QUERY PARAMS
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API QUERY PARAMS
 {
   "id" : 1
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API REQUEST
 Method: GET
 Endpoint Name: get event by id
 Endpoint: /events/{id}
@@ -1697,11 +1670,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API RESPONSE
 Request: GET get event by id
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:30 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:46 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -1733,11 +1706,11 @@ Body:
         "updatedAt": "2026-05-23T06:57:02.677Z"
     }
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: get event by id
 Schema Type: success
 Status Code: 200
@@ -1762,39 +1735,37 @@ Body:
         "updatedAt": "2026-05-23T06:57:02.677Z"
     }
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - No WebDriver active. Skipping failed scenario screenshot.
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - SCENARIO FINISHED: Successfully get an event by a valid ID
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - SCENARIO STATUS: FAILED
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - ========================================
-[WARN] 04-07-2026 16:05:33 [main] [LogUtils] - Retrying test: runScenario (Attempt 1 of 2)
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - SCENARIO START: Successfully get an event by a valid ID
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - SCENARIO FINISHED: Successfully get an event by a valid ID
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - SCENARIO START: Event is not found by invalid ID
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:33 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:49 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -1808,11 +1779,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:34 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:50 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:30 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:47 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -1820,7 +1791,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-z79gGp9Kw9hsjadI4xbYdyrBxlk"
+ETag=W/"11c-LK5D4KtpgU03iAUmk/sUZVj1TCU"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -1832,11 +1803,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:34 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:50 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:34 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:50 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -1849,365 +1820,16 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:34 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:50 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: get event by id
 Endpoint: /events/{id}
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-[INFO] 04-07-2026 16:05:34 [main] [LogUtils] - API QUERY PARAMS
-{
-  "id" : 1
-}
-[INFO] 04-07-2026 16:05:34 [main] [LogUtils] - API REQUEST
-Method: GET
-Endpoint Name: get event by id
-Endpoint: /events/{id}
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: Bearer ******
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API RESPONSE
-Request: GET get event by id
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:31 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=688
-ETag=W/"2b0-jw3szW9VtEs6/+HsAJivP9Bw0e0"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 1,
-        "title": "World Tech Summit",
-        "description": "A premier technology conference bringing together 500+ industry leaders, startup founders, and engineers for two days of keynotes, workshops, and networking. Topics include AI/ML, cloud infrastructure, DevSecOps, and the future of the Indian tech ecosystem.",
-        "category": "Conference",
-        "venue": "Hyderabad, Hitech city",
-        "city": "Hyderabad",
-        "eventDate": "2026-04-18T09:00:00.000Z",
-        "price": "1500",
-        "totalSeats": 500,
-        "availableSeats": 8,
-        "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-        "isStatic": true,
-        "userId": null,
-        "createdAt": "2026-02-22T23:03:37.659Z",
-        "updatedAt": "2026-05-23T06:57:02.677Z"
-    }
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: get event by id
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 1,
-        "title": "World Tech Summit",
-        "description": "A premier technology conference bringing together 500+ industry leaders, startup founders, and engineers for two days of keynotes, workshops, and networking. Topics include AI/ML, cloud infrastructure, DevSecOps, and the future of the Indian tech ecosystem.",
-        "category": "Conference",
-        "venue": "Hyderabad, Hitech city",
-        "city": "Hyderabad",
-        "eventDate": "2026-04-18T09:00:00.000Z",
-        "price": "1500",
-        "totalSeats": 500,
-        "availableSeats": 8,
-        "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-        "isStatic": true,
-        "userId": null,
-        "createdAt": "2026-02-22T23:03:37.659Z",
-        "updatedAt": "2026-05-23T06:57:02.677Z"
-    }
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - No WebDriver active. Skipping failed scenario screenshot.
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - SCENARIO FINISHED: Successfully get an event by a valid ID
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - SCENARIO STATUS: FAILED
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - ========================================
-[WARN] 04-07-2026 16:05:35 [main] [LogUtils] - Retrying test: runScenario (Attempt 2 of 2)
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - SCENARIO START: Successfully get an event by a valid ID
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:32 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=284
-ETag=W/"11c-fSoP525z1RN+nybhPmMwtXg5H0U"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: get event by id
-Endpoint: /events/{id}
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API QUERY PARAMS
-{
-  "id" : 1
-}
-[INFO] 04-07-2026 16:05:35 [main] [LogUtils] - API REQUEST
-Method: GET
-Endpoint Name: get event by id
-Endpoint: /events/{id}
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: Bearer ******
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - API RESPONSE
-Request: GET get event by id
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:32 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=688
-ETag=W/"2b0-jw3szW9VtEs6/+HsAJivP9Bw0e0"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 1,
-        "title": "World Tech Summit",
-        "description": "A premier technology conference bringing together 500+ industry leaders, startup founders, and engineers for two days of keynotes, workshops, and networking. Topics include AI/ML, cloud infrastructure, DevSecOps, and the future of the Indian tech ecosystem.",
-        "category": "Conference",
-        "venue": "Hyderabad, Hitech city",
-        "city": "Hyderabad",
-        "eventDate": "2026-04-18T09:00:00.000Z",
-        "price": "1500",
-        "totalSeats": 500,
-        "availableSeats": 8,
-        "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-        "isStatic": true,
-        "userId": null,
-        "createdAt": "2026-02-22T23:03:37.659Z",
-        "updatedAt": "2026-05-23T06:57:02.677Z"
-    }
-}
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: get event by id
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 1,
-        "title": "World Tech Summit",
-        "description": "A premier technology conference bringing together 500+ industry leaders, startup founders, and engineers for two days of keynotes, workshops, and networking. Topics include AI/ML, cloud infrastructure, DevSecOps, and the future of the Indian tech ecosystem.",
-        "category": "Conference",
-        "venue": "Hyderabad, Hitech city",
-        "city": "Hyderabad",
-        "eventDate": "2026-04-18T09:00:00.000Z",
-        "price": "1500",
-        "totalSeats": 500,
-        "availableSeats": 8,
-        "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-        "isStatic": true,
-        "userId": null,
-        "createdAt": "2026-02-22T23:03:37.659Z",
-        "updatedAt": "2026-05-23T06:57:02.677Z"
-    }
-}
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - No WebDriver active. Skipping failed scenario screenshot.
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - SCENARIO FINISHED: Successfully get an event by a valid ID
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - SCENARIO STATUS: FAILED
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - SCENARIO START: Event is not found by invalid ID
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:36 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:33 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=284
-ETag=W/"11c-9LRD0/ncE+nMj2O/a4bAXekcVDc"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: get event by id
-Endpoint: /events/{id}
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API QUERY PARAMS
+[INFO] 04-07-2026 20:32:50 [main] [LogUtils] - API QUERY PARAMS
 {
   "id" : 99
 }
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:50 [main] [LogUtils] - API REQUEST
 Method: GET
 Endpoint Name: get event by id
 Endpoint: /events/{id}
@@ -2221,11 +1843,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API RESPONSE
 Request: GET get event by id
 Status Code: 404
 Status Line: HTTP/1.1 404 Not Found
-Headers: Date=Sat, 04 Jul 2026 09:05:34 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:47 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -2241,11 +1863,11 @@ Body:
     "success": false,
     "error": "Event with id 99 not found"
 }
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 404
 Actual Status Code: 404
 Status Line: HTTP/1.1 404 Not Found
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: get event by id
 Schema Type: error
 Status Code: 404
@@ -2254,7 +1876,7 @@ Body:
     "success": false,
     "error": "Event with id 99 not found"
 }
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API ERROR ASSERTION
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API ERROR ASSERTION
 API: get event by id
 Expected Error: Event with id 99 not found
 Actual Error: Event with id 99 not found
@@ -2263,37 +1885,37 @@ Body:
     "success": false,
     "error": "Event with id 99 not found"
 }
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - SCENARIO FINISHED: Event is not found by invalid ID
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - SCENARIO START: User successfully get paginated list of events
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - SCENARIO FINISHED: Event is not found by invalid ID
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - SCENARIO START: User successfully get paginated list of events
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:37 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:51 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -2307,11 +1929,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:05:38 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:35 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:48 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -2319,7 +1941,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-vyVvGf/M2RnfafjWP4nVyH/2Ouo"
+ETag=W/"11c-wKrahSLmbyGddKTJvj++2at6Eyo"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -2331,11 +1953,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:38 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:38 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -2348,12 +1970,12 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:05:38 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: events
 Endpoint: /events
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-[INFO] 04-07-2026 16:05:38 [main] [LogUtils] - API QUERY PARAMS
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API QUERY PARAMS
 {
   "category" : "Conference",
   "city" : "Bangalore",
@@ -2361,7 +1983,7 @@ Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
   "page" : "1",
   "limit" : "10"
 }
-[INFO] 04-07-2026 16:05:38 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API REQUEST
 Method: GET
 Endpoint Name: events
 Endpoint: /events
@@ -2378,11 +2000,11 @@ Payload / Query Params:
   "page" : "1",
   "limit" : "10"
 }
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API RESPONSE
 Request: GET events
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:05:35 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:49 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -2406,11 +2028,11 @@ Body:
         "totalPages": 0
     }
 }
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: events
 Schema Type: success
 Status Code: 200
@@ -2427,63 +2049,37 @@ Body:
         "totalPages": 0
     }
 }
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - SCENARIO FINISHED: User successfully get paginated list of events
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - TEST SUITE COMPLETED
-[INFO] 04-07-2026 16:05:39 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:34 [main] [LogUtils] - TestNG parameter applied: HEADLESS=true
-[INFO] 04-07-2026 16:19:34 [main] [LogUtils] - TestNG parameter applied: BROWSER=chrome
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Allure Cucumber report plugin enabled
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Extent Cucumber report plugin disabled by config
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - STARTING TEST SUITE
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Loaded: src/main/resources/config.properties
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Loaded: src/main/resources/env/prod.properties
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Loaded: src/main/java/objects/event_hub.properties
-[WARN] 04-07-2026 16:19:35 [main] [LogUtils] - File not found or error loading: src/main/resources/cucumber.properties
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Total properties loaded: 77
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Environment found: production
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Properties loaded successfully!
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Configuration loaded successfully
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Environment: prod
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Base URL: https://eventhub.rahulshettyacademy.com/login
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Test User Email: creola.vendervort@gmail.com
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - Headless mode On
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - ==================================================
-Testing as: creola.vendervort@gmail.com (Production Account)
-Environment: production
-==================================================
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - SCENARIO START: User cannot login with invalid credentials via API
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - SCENARIO FINISHED: User successfully get paginated list of events
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - SCENARIO START: User successfully update an event
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:19:35 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:36 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:36 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:36 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:36 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:52 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -2497,93 +2093,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:40 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:19:37 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=66
-ETag=W/"42-z8wtlMslpO5GJFeO5U+WeaHR1mM"
-Connection=close
-Body:
-{
-    "success": false,
-    "error": "Invalid email or password",
-    "details": [
-        
-    ]
-}
-[INFO] 04-07-2026 16:19:40 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 400
-Actual Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:19:40 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: error
-Status Code: 400
-Body:
-{
-    "success": false,
-    "error": "Invalid email or password",
-    "details": [
-        
-    ]
-}
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with invalid credentials via API
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - SCENARIO START: User can login with valid credentials via API
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:41 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:53 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:19:38 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:50 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -2591,7 +2105,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-dQdgICeiL2NQphgulJYRBy/xUno"
+ETag=W/"11c-FesfqRViIc95A9u3U0DnJTwM3Ms"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -2603,11 +2117,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:53 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:53 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -2620,730 +2134,38 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - SCENARIO FINISHED: User can login with valid credentials via API
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - SCENARIO START: User cannot login with unregistered account via API
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
+[INFO] 04-07-2026 20:32:53 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: update event
+Endpoint: /events/{id}
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API PAYLOAD
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+[INFO] 04-07-2026 20:32:53 [main] [LogUtils] - API PAYLOAD
 {
-  "email" : "unregistered-bc9482ff-15b3-4b31-914d-e6dbd2d57ec3@example.com",
-  "password" : "******"
+  "title" : "impactful",
+  "description" : "Minima dolorem dignissimos quis sapiente numquam vel.",
+  "category" : "Conference",
+  "venue" : "Gusikowski Inc Convention Center",
+  "city" : "Maddieside",
+  "eventDate" : "2026-07-31T10:00:00Z",
+  "price" : "381",
+  "totalSeats" : 41,
+  "imageUrl" : "https://example.com/images/quos_sapiente.jpg"
 }
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "unregistered-bc9482ff-15b3-4b31-914d-e6dbd2d57ec3@example.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "unregistered-bc9482ff-15b3-4b31-914d-e6dbd2d57ec3@example.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:19:39 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=66
-ETag=W/"42-z8wtlMslpO5GJFeO5U+WeaHR1mM"
-Connection=close
-Body:
-{
-    "success": false,
-    "error": "Invalid email or password",
-    "details": [
-        
-    ]
-}
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 400
-Actual Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: error
-Status Code: 400
-Body:
-{
-    "success": false,
-    "error": "Invalid email or password",
-    "details": [
-        
-    ]
-}
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - SCENARIO FINISHED: User cannot login with unregistered account via API
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - SCENARIO START: User successfully register an account
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: register
-Endpoint: /auth/register
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:42 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "amber.vonrueden@yahoo.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: register-request.schema.json
-Payload:
-{
-  "email" : "amber.vonrueden@yahoo.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: register
-Endpoint: /auth/register
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "amber.vonrueden@yahoo.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API RESPONSE
-Request: POST register
-Status Code: 201
-Status Line: HTTP/1.1 201 Created
-Headers: Date=Sat, 04 Jul 2026 09:19:40 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=279
-ETag=W/"117-Uz6SS8fWYx3OHUI3C/U1B9fX2BA"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 20888,
-        "email": "amber.vonrueden@yahoo.com"
-    }
-}
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 201
-Actual Status Code: 201
-Status Line: HTTP/1.1 201 Created
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: register
-Schema Type: success
-Status Code: 201
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 20888,
-        "email": "amber.vonrueden@yahoo.com"
-    }
-}
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - SCENARIO FINISHED: User successfully register an account
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - SCENARIO START: User cannot register with password too short via API
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: register
-Endpoint: /auth/register
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "password-too-short-304c00f5-5a46-46b2-b3c8-10d8e97411e4@example.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:43 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: register
-Endpoint: /auth/register
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "password-too-short-304c00f5-5a46-46b2-b3c8-10d8e97411e4@example.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API RESPONSE
-Request: POST register
-Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:19:40 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=129
-ETag=W/"81-AQGOfbJn5khNCm8RDj0jRHdfydY"
-Connection=close
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "password",
-            "message": "Password must be at least 6 characters"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 400
-Actual Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: register
-Schema Type: error
-Status Code: 400
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "password",
-            "message": "Password must be at least 6 characters"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API ERROR ASSERTION
-API: register
-Expected Error: Validation failed
-Actual Error: Validation failed
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "password",
-            "message": "Password must be at least 6 characters"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API DETAILS ASSERTION
-API: register
-Expected Details:
-[ {
-  "field" : "password",
-  "message" : "Password must be at least 6 characters"
-} ]
-Actual Details:
-[ {
-  "field" : "password",
-  "message" : "Password must be at least 6 characters"
-} ]
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with password too short via API
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - SCENARIO START: User cannot register with registered email via API
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: register
-Endpoint: /auth/register
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: register-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:44 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: register
-Endpoint: /auth/register
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API RESPONSE
-Request: POST register
-Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:19:41 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=65
-ETag=W/"41-NXXV5luJg781QlBKLQbQgu0cRfs"
-Connection=close
-Body:
-{
-    "success": false,
-    "error": "Email already registered",
-    "details": [
-        
-    ]
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 400
-Actual Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: register
-Schema Type: error
-Status Code: 400
-Body:
-{
-    "success": false,
-    "error": "Email already registered",
-    "details": [
-        
-    ]
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API ERROR ASSERTION
-API: register
-Expected Error: Email already registered
-Actual Error: Email already registered
-Body:
-{
-    "success": false,
-    "error": "Email already registered",
-    "details": [
-        
-    ]
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API EMPTY DETAILS ASSERTION
-API: register
-Actual Details:
-[ ]
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with registered email via API
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - SCENARIO START: User cannot register with invalid email format via API
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: register
-Endpoint: /auth/register
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "invalid-email",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: register
-Endpoint: /auth/register
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "invalid-email",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API RESPONSE
-Request: POST register
-Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:19:42 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=113
-ETag=W/"71-yUJwjOIYVuoIjUdOz9uUDH1Rdwo"
-Connection=close
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "email",
-            "message": "A valid email is required"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 400
-Actual Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: register
-Schema Type: error
-Status Code: 400
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "email",
-            "message": "A valid email is required"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API ERROR ASSERTION
-API: register
-Expected Error: Validation failed
-Actual Error: Validation failed
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "email",
-            "message": "A valid email is required"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API DETAILS ASSERTION
-API: register
-Expected Details:
-[ {
-  "field" : "email",
-  "message" : "A valid email is required"
-} ]
-Actual Details:
-[ {
-  "field" : "email",
-  "message" : "A valid email is required"
-} ]
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with invalid email format via API
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - SCENARIO START: User cannot register with invalid email format and password too short via API
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: register
-Endpoint: /auth/register
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "invalid-email",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:45 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: register
-Endpoint: /auth/register
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "invalid-email",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API RESPONSE
-Request: POST register
-Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:19:42 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=185
-ETag=W/"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY"
-Connection=close
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "email",
-            "message": "A valid email is required"
-        },
-        {
-            "field": "password",
-            "message": "Password must be at least 6 characters"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 400
-Actual Status Code: 400
-Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: register
-Schema Type: error
-Status Code: 400
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "email",
-            "message": "A valid email is required"
-        },
-        {
-            "field": "password",
-            "message": "Password must be at least 6 characters"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API ERROR ASSERTION
-API: register
-Expected Error: Validation failed
-Actual Error: Validation failed
-Body:
-{
-    "success": false,
-    "error": "Validation failed",
-    "details": [
-        {
-            "field": "email",
-            "message": "A valid email is required"
-        },
-        {
-            "field": "password",
-            "message": "Password must be at least 6 characters"
-        }
-    ]
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API DETAILS ASSERTION
-API: register
-Expected Details:
-[ {
-  "field" : "email",
-  "message" : "A valid email is required"
-}, {
-  "field" : "password",
-  "message" : "Password must be at least 6 characters"
-} ]
-Actual Details:
-[ {
-  "field" : "email",
-  "message" : "A valid email is required"
-}, {
-  "field" : "password",
-  "message" : "Password must be at least 6 characters"
-} ]
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - SCENARIO FINISHED: User cannot register with invalid email format and password too short via API
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - SCENARIO START: User successfully create a new event
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:19:43 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=284
-ETag=W/"11c-6YEC/FXIhmVyKSIbYpfx+JX4q0E"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:19:46 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: create new event
-Endpoint: /events
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-[INFO] 04-07-2026 16:19:47 [main] [LogUtils] - API PAYLOAD
-{
-  "title" : "parallelism",
-  "description" : "Corporis illum provident ab facere.",
-  "category" : "Sports",
-  "venue" : "Dooley, Pfeffer and Hamill Convention Center",
-  "city" : "Cassychester",
-  "eventDate" : "2026-07-18T12:00:00Z",
-  "price" : "837",
-  "totalSeats" : 6,
-  "imageUrl" : "https://example.com/images/perferendis_iure.jpg"
-}
-[INFO] 04-07-2026 16:19:47 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:53 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: create-new-event-request.schema.json
 Payload:
 {
-  "title" : "parallelism",
-  "description" : "Corporis illum provident ab facere.",
-  "category" : "Sports",
-  "venue" : "Dooley, Pfeffer and Hamill Convention Center",
-  "city" : "Cassychester",
-  "eventDate" : "2026-07-18T12:00:00Z",
-  "price" : "837",
-  "totalSeats" : 6,
-  "imageUrl" : "https://example.com/images/perferendis_iure.jpg"
+  "title" : "impactful",
+  "description" : "Minima dolorem dignissimos quis sapiente numquam vel.",
+  "category" : "Conference",
+  "venue" : "Gusikowski Inc Convention Center",
+  "city" : "Maddieside",
+  "eventDate" : "2026-07-31T10:00:00Z",
+  "price" : "381",
+  "totalSeats" : 41,
+  "imageUrl" : "https://example.com/images/quos_sapiente.jpg"
 }
-[INFO] 04-07-2026 16:19:47 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:53 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: create new event
 Endpoint: /events
@@ -3354,114 +2176,206 @@ Headers:
   Authorization: Bearer ******
 Payload / Query Params:
 {
-  "title" : "parallelism",
-  "description" : "Corporis illum provident ab facere.",
-  "category" : "Sports",
-  "venue" : "Dooley, Pfeffer and Hamill Convention Center",
-  "city" : "Cassychester",
-  "eventDate" : "2026-07-18T12:00:00Z",
-  "price" : "837",
-  "totalSeats" : 6,
-  "imageUrl" : "https://example.com/images/perferendis_iure.jpg"
+  "title" : "impactful",
+  "description" : "Minima dolorem dignissimos quis sapiente numquam vel.",
+  "category" : "Conference",
+  "venue" : "Gusikowski Inc Convention Center",
+  "city" : "Maddieside",
+  "eventDate" : "2026-07-31T10:00:00Z",
+  "price" : "381",
+  "totalSeats" : 41,
+  "imageUrl" : "https://example.com/images/quos_sapiente.jpg"
 }
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:54 [main] [LogUtils] - API RESPONSE
 Request: POST create new event
 Status Code: 201
 Status Line: HTTP/1.1 201 Created
-Headers: Date=Sat, 04 Jul 2026 09:19:45 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:51 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
 Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
-Content-Length=504
-ETag=W/"1f8-7NK9khn8Zc7WztxGjFPu2Hdls3k"
+Content-Length=509
+ETag=W/"1fd-2O3nz0dA4IMRGVzF2JjeXgc10RU"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
 {
     "success": true,
     "data": {
-        "id": 70436,
-        "title": "parallelism",
-        "description": "Corporis illum provident ab facere.",
-        "category": "Sports",
-        "venue": "Dooley, Pfeffer and Hamill Convention Center",
-        "city": "Cassychester",
-        "eventDate": "2026-07-18T12:00:00.000Z",
-        "price": "837",
-        "totalSeats": 6,
-        "availableSeats": 6,
-        "imageUrl": "https://example.com/images/perferendis_iure.jpg",
+        "id": 70538,
+        "title": "impactful",
+        "description": "Minima dolorem dignissimos quis sapiente numquam vel.",
+        "category": "Conference",
+        "venue": "Gusikowski Inc Convention Center",
+        "city": "Maddieside",
+        "eventDate": "2026-07-31T10:00:00.000Z",
+        "price": "381",
+        "totalSeats": 41,
+        "availableSeats": 41,
+        "imageUrl": "https://example.com/images/quos_sapiente.jpg",
         "isStatic": false,
         "userId": 14673,
-        "createdAt": "2026-07-04T09:19:45.964Z",
-        "updatedAt": "2026-07-04T09:19:45.964Z"
+        "createdAt": "2026-07-04T13:32:51.042Z",
+        "updatedAt": "2026-07-04T13:32:51.042Z"
     },
     "message": "Event created successfully"
 }
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:54 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 201
 Actual Status Code: 201
 Status Line: HTTP/1.1 201 Created
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: create new event
-Schema Type: success
-Status Code: 201
+[INFO] 04-07-2026 20:32:54 [main] [LogUtils] - API QUERY PARAMS
+{
+  "id" : 70538
+}
+[INFO] 04-07-2026 20:32:54 [main] [LogUtils] - API PAYLOAD
+{
+  "title" : "circuit",
+  "description" : "Officia ullam facilis consectetur.",
+  "category" : "Concert",
+  "venue" : "Schinner-Hermiston International Center",
+  "city" : "Greenholtside",
+  "eventDate" : "2026-07-09T13:00:00Z",
+  "price" : "859",
+  "totalSeats" : 27,
+  "imageUrl" : "https://example.com/images/hic_cupiditate.jpg"
+}
+[INFO] 04-07-2026 20:32:54 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+Schema: update-event-request.schema.json
+Payload:
+{
+  "title" : "circuit",
+  "description" : "Officia ullam facilis consectetur.",
+  "category" : "Concert",
+  "venue" : "Schinner-Hermiston International Center",
+  "city" : "Greenholtside",
+  "eventDate" : "2026-07-09T13:00:00Z",
+  "price" : "859",
+  "totalSeats" : 27,
+  "imageUrl" : "https://example.com/images/hic_cupiditate.jpg"
+}
+[INFO] 04-07-2026 20:32:54 [main] [LogUtils] - API REQUEST
+Method: PUT
+Endpoint Name: update event
+Endpoint: /events/{id}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "title" : "circuit",
+  "description" : "Officia ullam facilis consectetur.",
+  "category" : "Concert",
+  "venue" : "Schinner-Hermiston International Center",
+  "city" : "Greenholtside",
+  "eventDate" : "2026-07-09T13:00:00Z",
+  "price" : "859",
+  "totalSeats" : 27,
+  "imageUrl" : "https://example.com/images/hic_cupiditate.jpg"
+}
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - API RESPONSE
+Request: PUT update event
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Sat, 04 Jul 2026 13:32:51 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=496
+ETag=W/"1f0-CL84Lv0XHjaiYaMAH2jwjgziedQ"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
 Body:
 {
     "success": true,
     "data": {
-        "id": 70436,
-        "title": "parallelism",
-        "description": "Corporis illum provident ab facere.",
-        "category": "Sports",
-        "venue": "Dooley, Pfeffer and Hamill Convention Center",
-        "city": "Cassychester",
-        "eventDate": "2026-07-18T12:00:00.000Z",
-        "price": "837",
-        "totalSeats": 6,
-        "availableSeats": 6,
-        "imageUrl": "https://example.com/images/perferendis_iure.jpg",
+        "id": 70538,
+        "title": "circuit",
+        "description": "Officia ullam facilis consectetur.",
+        "category": "Concert",
+        "venue": "Schinner-Hermiston International Center",
+        "city": "Greenholtside",
+        "eventDate": "2026-07-09T13:00:00.000Z",
+        "price": "859",
+        "totalSeats": 27,
+        "availableSeats": 41,
+        "imageUrl": "https://example.com/images/hic_cupiditate.jpg",
         "isStatic": false,
         "userId": 14673,
-        "createdAt": "2026-07-04T09:19:45.964Z",
-        "updatedAt": "2026-07-04T09:19:45.964Z"
+        "createdAt": "2026-07-04T13:32:51.042Z",
+        "updatedAt": "2026-07-04T13:32:51.900Z"
     },
-    "message": "Event created successfully"
+    "message": "Event updated successfully"
 }
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - SCENARIO FINISHED: User successfully create a new event
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - SCENARIO START: User cannot create a new event with invalid payload
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 200
+Actual Status Code: 200
+Status Line: HTTP/1.1 200 OK
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: update event
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "data": {
+        "id": 70538,
+        "title": "circuit",
+        "description": "Officia ullam facilis consectetur.",
+        "category": "Concert",
+        "venue": "Schinner-Hermiston International Center",
+        "city": "Greenholtside",
+        "eventDate": "2026-07-09T13:00:00.000Z",
+        "price": "859",
+        "totalSeats": 27,
+        "availableSeats": 41,
+        "imageUrl": "https://example.com/images/hic_cupiditate.jpg",
+        "isStatic": false,
+        "userId": 14673,
+        "createdAt": "2026-07-04T13:32:51.042Z",
+        "updatedAt": "2026-07-04T13:32:51.900Z"
+    },
+    "message": "Event updated successfully"
+}
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - SCENARIO FINISHED: User successfully update an event
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - SCENARIO START: User cannot update an event with invalid payload
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:49 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:55 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -3475,11 +2389,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:56 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:19:46 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:52 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -3487,7 +2401,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-98jGFsEgtvbfP3tITi6TCc3DbsQ"
+ETag=W/"11c-rPOJf1PGXbrPGsP8y+6/BHSrNJc"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -3499,11 +2413,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:56 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:56 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -3516,23 +2430,24 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: create new event
-Endpoint: /events
+[INFO] 04-07-2026 20:32:56 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: update event
+Endpoint: /events/{id}
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API PAYLOAD
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+[INFO] 04-07-2026 20:32:56 [main] [LogUtils] - API PAYLOAD
 {
-  "description" : "Autem inventore culpa alias expedita cupiditate.",
+  "title" : "Seamless",
+  "description" : "Error recusandae voluptatum placeat deserunt distinctio temporibus.",
   "category" : "Workshop",
-  "venue" : "Corkery LLC Convention Center",
-  "city" : "East Gus",
-  "eventDate" : "2026-07-09T19:00:00Z",
-  "price" : "115",
-  "totalSeats" : 63,
-  "imageUrl" : "https://example.com/images/quo_eveniet.jpg"
+  "venue" : "Gutkowski, Cronin and Hane Convention Center",
+  "city" : "East Dustin",
+  "eventDate" : "2026-07-06T19:00:00Z",
+  "price" : "915",
+  "totalSeats" : 51,
+  "imageUrl" : "https://example.com/images/impedit_praesentium.jpg"
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:56 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: create new event
 Endpoint: /events
@@ -3543,20 +2458,97 @@ Headers:
   Authorization: Bearer ******
 Payload / Query Params:
 {
-  "description" : "Autem inventore culpa alias expedita cupiditate.",
+  "title" : "Seamless",
+  "description" : "Error recusandae voluptatum placeat deserunt distinctio temporibus.",
   "category" : "Workshop",
-  "venue" : "Corkery LLC Convention Center",
-  "city" : "East Gus",
-  "eventDate" : "2026-07-09T19:00:00Z",
-  "price" : "115",
-  "totalSeats" : 63,
-  "imageUrl" : "https://example.com/images/quo_eveniet.jpg"
+  "venue" : "Gutkowski, Cronin and Hane Convention Center",
+  "city" : "East Dustin",
+  "eventDate" : "2026-07-06T19:00:00Z",
+  "price" : "915",
+  "totalSeats" : 51,
+  "imageUrl" : "https://example.com/images/impedit_praesentium.jpg"
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:56 [main] [LogUtils] - API RESPONSE
 Request: POST create new event
+Status Code: 201
+Status Line: HTTP/1.1 201 Created
+Headers: Date=Sat, 04 Jul 2026 13:32:53 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=539
+ETag=W/"21b-Kl54i8wWFuRbe4gaRnNdsh4F7q8"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "data": {
+        "id": 70523,
+        "title": "Seamless",
+        "description": "Error recusandae voluptatum placeat deserunt distinctio temporibus.",
+        "category": "Workshop",
+        "venue": "Gutkowski, Cronin and Hane Convention Center",
+        "city": "East Dustin",
+        "eventDate": "2026-07-06T19:00:00.000Z",
+        "price": "915",
+        "totalSeats": 51,
+        "availableSeats": 51,
+        "imageUrl": "https://example.com/images/impedit_praesentium.jpg",
+        "isStatic": false,
+        "userId": 14673,
+        "createdAt": "2026-07-04T13:22:16.969Z",
+        "updatedAt": "2026-07-04T13:32:53.496Z"
+    },
+    "message": "Event created successfully"
+}
+[INFO] 04-07-2026 20:32:56 [main] [LogUtils] - API STATUS ASSERTION
+Expected Status Code: 201
+Actual Status Code: 201
+Status Line: HTTP/1.1 201 Created
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API QUERY PARAMS
+{
+  "id" : 70523
+}
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API PAYLOAD
+{
+  "description" : "Dolores nihil vitae possimus animi commodi.",
+  "category" : "Workshop",
+  "venue" : "Mayert Inc International Center",
+  "city" : "Cortezport",
+  "eventDate" : "2026-07-25T17:00:00Z",
+  "price" : "708",
+  "totalSeats" : 22,
+  "imageUrl" : "https://example.com/images/perferendis_assumenda.jpg"
+}
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API REQUEST
+Method: PUT
+Endpoint Name: update event
+Endpoint: /events/{id}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "description" : "Dolores nihil vitae possimus animi commodi.",
+  "category" : "Workshop",
+  "venue" : "Mayert Inc International Center",
+  "city" : "Cortezport",
+  "eventDate" : "2026-07-25T17:00:00Z",
+  "price" : "708",
+  "totalSeats" : 22,
+  "imageUrl" : "https://example.com/images/perferendis_assumenda.jpg"
+}
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API RESPONSE
+Request: PUT update event
 Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-Headers: Date=Sat, 04 Jul 2026 09:19:47 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:54 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -3577,12 +2569,12 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 400
 Actual Status Code: 400
 Status Line: HTTP/1.1 400 Bad Request
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: create new event
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: update event
 Schema Type: error
 Status Code: 400
 Body:
@@ -3596,8 +2588,8 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API ERROR ASSERTION
-API: create new event
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API ERROR ASSERTION
+API: update event
 Expected Error: Validation failed
 Actual Error: Validation failed
 Body:
@@ -3611,37 +2603,37 @@ Body:
         }
     ]
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - SCENARIO FINISHED: User cannot create a new event with invalid payload
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - SCENARIO START: Successfully get an event by a valid ID
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API ENDPOINT
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - SCENARIO FINISHED: User cannot update an event with invalid payload
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - SCENARIO START: User cannot update an event that does not exist
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - SCENARIO STATUS: Starting
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API ENDPOINT
 Endpoint Name: login
 Endpoint: /auth/login
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API REQUEST HEADERS
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API REQUEST HEADERS
 Content-Type: application/json
 Accept: application/json
 Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API BASE CONFIGURATION
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API BASE CONFIGURATION
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API PAYLOAD
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API PAYLOAD
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
 Schema: login-request.schema.json
 Payload:
 {
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:50 [main] [LogUtils] - API REQUEST
+[INFO] 04-07-2026 20:32:57 [main] [LogUtils] - API REQUEST
 Method: POST
 Endpoint Name: login
 Endpoint: /auth/login
@@ -3655,11 +2647,11 @@ Payload / Query Params:
   "email" : "creola.vendervort@gmail.com",
   "password" : "******"
 }
-[INFO] 04-07-2026 16:19:51 [main] [LogUtils] - API RESPONSE
+[INFO] 04-07-2026 20:32:58 [main] [LogUtils] - API RESPONSE
 Request: POST login
 Status Code: 200
 Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:19:47 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:55 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
@@ -3667,7 +2659,7 @@ Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
 Content-Length=284
-ETag=W/"11c-5azLKDqtKiTNvvZTfBzKEwh8dpc"
+ETag=W/"11c-2PwWlchp8RH5EUophyX7OtOefZk"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
@@ -3679,11 +2671,11 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:19:51 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:32:58 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 200
 Actual Status Code: 200
 Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:19:51 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+[INFO] 04-07-2026 20:32:58 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
 API: login
 Schema Type: success
 Status Code: 200
@@ -3696,191 +2688,30 @@ Body:
         "email": "creola.vendervort@gmail.com"
     }
 }
-[INFO] 04-07-2026 16:19:51 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: get event by id
+[INFO] 04-07-2026 20:32:58 [main] [LogUtils] - API ENDPOINT
+Endpoint Name: update event
 Endpoint: /events/{id}
 Base URL: https://api.eventhub.rahulshettyacademy.com/api
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-[INFO] 04-07-2026 16:19:51 [main] [LogUtils] - API QUERY PARAMS
+[INFO] 04-07-2026 20:32:58 [main] [LogUtils] - API QUERY PARAMS
 {
-  "id" : 1
+  "id" : 999999
 }
-[INFO] 04-07-2026 16:19:51 [main] [LogUtils] - API REQUEST
-Method: GET
-Endpoint Name: get event by id
-Endpoint: /events/{id}
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: Bearer ******
-Payload / Query Params:
+[INFO] 04-07-2026 20:32:58 [main] [LogUtils] - API PAYLOAD
 {
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
+  "title" : "client-driven",
+  "description" : "Delectus corrupti nisi.",
+  "category" : "Conference",
+  "venue" : "Sanford, Simonis and Parker International Center",
+  "city" : "Wayneland",
+  "eventDate" : "2026-07-14T16:00:00Z",
+  "price" : "784",
+  "totalSeats" : 86,
+  "imageUrl" : "https://example.com/images/neque_nostrum.jpg"
 }
-[INFO] 04-07-2026 16:19:51 [main] [LogUtils] - API RESPONSE
-Request: GET get event by id
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:19:48 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=688
-ETag=W/"2b0-jw3szW9VtEs6/+HsAJivP9Bw0e0"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 1,
-        "title": "World Tech Summit",
-        "description": "A premier technology conference bringing together 500+ industry leaders, startup founders, and engineers for two days of keynotes, workshops, and networking. Topics include AI/ML, cloud infrastructure, DevSecOps, and the future of the Indian tech ecosystem.",
-        "category": "Conference",
-        "venue": "Hyderabad, Hitech city",
-        "city": "Hyderabad",
-        "eventDate": "2026-04-18T09:00:00.000Z",
-        "price": "1500",
-        "totalSeats": 500,
-        "availableSeats": 8,
-        "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-        "isStatic": true,
-        "userId": null,
-        "createdAt": "2026-02-22T23:03:37.659Z",
-        "updatedAt": "2026-05-23T06:57:02.677Z"
-    }
-}
-[INFO] 04-07-2026 16:19:51 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: get event by id
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "data": {
-        "id": 1,
-        "title": "World Tech Summit",
-        "description": "A premier technology conference bringing together 500+ industry leaders, startup founders, and engineers for two days of keynotes, workshops, and networking. Topics include AI/ML, cloud infrastructure, DevSecOps, and the future of the Indian tech ecosystem.",
-        "category": "Conference",
-        "venue": "Hyderabad, Hitech city",
-        "city": "Hyderabad",
-        "eventDate": "2026-04-18T09:00:00.000Z",
-        "price": "1500",
-        "totalSeats": 500,
-        "availableSeats": 8,
-        "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-        "isStatic": true,
-        "userId": null,
-        "createdAt": "2026-02-22T23:03:37.659Z",
-        "updatedAt": "2026-05-23T06:57:02.677Z"
-    }
-}
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - SCENARIO FINISHED: Successfully get an event by a valid ID
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - SCENARIO START: Event is not found by invalid ID
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:52 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:53 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:19:50 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=284
-ETag=W/"11c-QXLT7msWrr8OHv5Ebm1v6aLS2pk"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:19:53 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:19:53 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:19:53 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: get event by id
-Endpoint: /events/{id}
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
-[INFO] 04-07-2026 16:19:53 [main] [LogUtils] - API QUERY PARAMS
-{
-  "id" : 99
-}
-[INFO] 04-07-2026 16:19:53 [main] [LogUtils] - API REQUEST
-Method: GET
-Endpoint Name: get event by id
+[INFO] 04-07-2026 20:32:58 [main] [LogUtils] - API REQUEST
+Method: PUT
+Endpoint Name: update event
 Endpoint: /events/{id}
 Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
 Headers:
@@ -3889,218 +2720,61 @@ Headers:
   Authorization: Bearer ******
 Payload / Query Params:
 {
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
+  "title" : "client-driven",
+  "description" : "Delectus corrupti nisi.",
+  "category" : "Conference",
+  "venue" : "Sanford, Simonis and Parker International Center",
+  "city" : "Wayneland",
+  "eventDate" : "2026-07-14T16:00:00Z",
+  "price" : "784",
+  "totalSeats" : 86,
+  "imageUrl" : "https://example.com/images/neque_nostrum.jpg"
 }
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API RESPONSE
-Request: GET get event by id
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - API RESPONSE
+Request: PUT update event
 Status Code: 404
 Status Line: HTTP/1.1 404 Not Found
-Headers: Date=Sat, 04 Jul 2026 09:19:50 GMT
+Headers: Date=Sat, 04 Jul 2026 13:32:57 GMT
 Server=Apache/2.4.52 (Ubuntu)
 X-Powered-By=Express
 Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
 Vary=Origin
 Access-Control-Allow-Credentials=true
 Content-Type=application/json; charset=utf-8
-Content-Length=54
-ETag=W/"36-ST01PsPxPYwdqLUvXKCgTvDup0E"
+Content-Length=58
+ETag=W/"3a-KqeL62lrTWRqO7zB/0cGW1D4/gs"
 Keep-Alive=timeout=5, max=100
 Connection=Keep-Alive
 Body:
 {
     "success": false,
-    "error": "Event with id 99 not found"
+    "error": "Event with id 999999 not found"
 }
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API STATUS ASSERTION
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - API STATUS ASSERTION
 Expected Status Code: 404
 Actual Status Code: 404
 Status Line: HTTP/1.1 404 Not Found
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: get event by id
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
+API: update event
 Schema Type: error
 Status Code: 404
 Body:
 {
     "success": false,
-    "error": "Event with id 99 not found"
+    "error": "Event with id 999999 not found"
 }
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API ERROR ASSERTION
-API: get event by id
-Expected Error: Event with id 99 not found
-Actual Error: Event with id 99 not found
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - API ERROR ASSERTION
+API: update event
+Expected Error: Event with id 999999 not found
+Actual Error: Event with id 999999 not found
 Body:
 {
     "success": false,
-    "error": "Event with id 99 not found"
+    "error": "Event with id 999999 not found"
 }
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - SCENARIO FINISHED: Event is not found by invalid ID
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - SCENARIO START: User successfully get paginated list of events
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - SCENARIO STATUS: Starting
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API scenario detected. Skipping browser initialization.
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: login
-Endpoint: /auth/login
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API BASE CONFIGURATION
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Timeout: 20 seconds
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API PAYLOAD
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - REQUEST SCHEMA VALIDATION
-Schema: login-request.schema.json
-Payload:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API REQUEST
-Method: POST
-Endpoint Name: login
-Endpoint: /auth/login
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/login
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: <not set>
-Payload / Query Params:
-{
-  "email" : "creola.vendervort@gmail.com",
-  "password" : "******"
-}
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API RESPONSE
-Request: POST login
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:19:51 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=284
-ETag=W/"11c-JrgETmPXUp6vry5j9SR+kqpHP0U"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: login
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "token": "****",
-    "user": {
-        "id": 14673,
-        "email": "creola.vendervort@gmail.com"
-    }
-}
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API ENDPOINT
-Endpoint Name: events
-Endpoint: /events
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API QUERY PARAMS
-{
-  "category" : "Conference",
-  "city" : "Bangalore",
-  "search" : "Diwali",
-  "page" : "1",
-  "limit" : "10"
-}
-[INFO] 04-07-2026 16:19:54 [main] [LogUtils] - API REQUEST
-Method: GET
-Endpoint Name: events
-Endpoint: /events
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
-Headers:
-  Content-Type: application/json
-  Accept: application/json
-  Authorization: Bearer ******
-Payload / Query Params:
-{
-  "category" : "Conference",
-  "city" : "Bangalore",
-  "search" : "Diwali",
-  "page" : "1",
-  "limit" : "10"
-}
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - API RESPONSE
-Request: GET events
-Status Code: 200
-Status Line: HTTP/1.1 200 OK
-Headers: Date=Sat, 04 Jul 2026 09:19:52 GMT
-Server=Apache/2.4.52 (Ubuntu)
-X-Powered-By=Express
-Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
-Vary=Origin
-Access-Control-Allow-Credentials=true
-Content-Type=application/json; charset=utf-8
-Content-Length=86
-ETag=W/"56-rQkOGUiu0PxluDuPx67mMBHhCbw"
-Keep-Alive=timeout=5, max=100
-Connection=Keep-Alive
-Body:
-{
-    "success": true,
-    "data": [
-        
-    ],
-    "pagination": {
-        "total": 0,
-        "page": 1,
-        "limit": 10,
-        "totalPages": 0
-    }
-}
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - API STATUS ASSERTION
-Expected Status Code: 200
-Actual Status Code: 200
-Status Line: HTTP/1.1 200 OK
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - RESPONSE SCHEMA VALIDATION
-API: events
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "data": [
-        
-    ],
-    "pagination": {
-        "total": 0,
-        "page": 1,
-        "limit": 10,
-        "totalPages": 0
-    }
-}
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - SCENARIO FINISHED: User successfully get paginated list of events
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - SCENARIO STATUS: PASSED
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - ========================================
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - TEST SUITE COMPLETED
-[INFO] 04-07-2026 16:19:55 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - SCENARIO FINISHED: User cannot update an event that does not exist
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - SCENARIO STATUS: PASSED
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - ========================================
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - TEST SUITE COMPLETED
+[INFO] 04-07-2026 20:33:00 [main] [LogUtils] - ========================================

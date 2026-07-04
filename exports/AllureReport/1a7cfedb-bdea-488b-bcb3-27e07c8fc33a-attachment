@@ -1,0 +1,37 @@
+API RESPONSE
+Request: POST create new event
+Status Code: 201
+Status Line: HTTP/1.1 201 Created
+Headers: Date=Sat, 04 Jul 2026 13:32:51 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=509
+ETag=W/"1fd-2O3nz0dA4IMRGVzF2JjeXgc10RU"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "data": {
+        "id": 70538,
+        "title": "impactful",
+        "description": "Minima dolorem dignissimos quis sapiente numquam vel.",
+        "category": "Conference",
+        "venue": "Gusikowski Inc Convention Center",
+        "city": "Maddieside",
+        "eventDate": "2026-07-31T10:00:00.000Z",
+        "price": "381",
+        "totalSeats": 41,
+        "availableSeats": 41,
+        "imageUrl": "https://example.com/images/quos_sapiente.jpg",
+        "isStatic": false,
+        "userId": 14673,
+        "createdAt": "2026-07-04T13:32:51.042Z",
+        "updatedAt": "2026-07-04T13:32:51.042Z"
+    },
+    "message": "Event created successfully"
+}

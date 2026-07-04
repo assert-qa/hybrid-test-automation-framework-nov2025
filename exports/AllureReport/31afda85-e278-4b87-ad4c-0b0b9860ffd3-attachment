@@ -1,0 +1,21 @@
+API REQUEST
+Method: POST
+Endpoint Name: create new event
+Endpoint: /events
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "title" : "impactful",
+  "description" : "Minima dolorem dignissimos quis sapiente numquam vel.",
+  "category" : "Conference",
+  "venue" : "Gusikowski Inc Convention Center",
+  "city" : "Maddieside",
+  "eventDate" : "2026-07-31T10:00:00Z",
+  "price" : "381",
+  "totalSeats" : 41,
+  "imageUrl" : "https://example.com/images/quos_sapiente.jpg"
+}

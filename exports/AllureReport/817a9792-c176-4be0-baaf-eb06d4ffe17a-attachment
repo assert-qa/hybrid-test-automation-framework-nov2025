@@ -1,0 +1,11 @@
+API PAYLOAD
+{
+  "description" : "Earum error adipisci consequuntur earum praesentium soluta illo.",
+  "category" : "Conference",
+  "venue" : "Harvey-Feeney Convention Center",
+  "city" : "Delbertfurt",
+  "eventDate" : "2026-07-05T10:00:00Z",
+  "price" : "360",
+  "totalSeats" : 64,
+  "imageUrl" : "https://example.com/images/iste_neque.jpg"
+}

@@ -1,0 +1,29 @@
+API RESPONSE
+Request: POST register
+Status Code: 400
+Status Line: HTTP/1.1 400 Bad Request
+Headers: Date=Sat, 04 Jul 2026 13:32:35 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=185
+ETag=W/"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY"
+Connection=close
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "email",
+            "message": "A valid email is required"
+        },
+        {
+            "field": "password",
+            "message": "Password must be at least 6 characters"
+        }
+    ]
+}

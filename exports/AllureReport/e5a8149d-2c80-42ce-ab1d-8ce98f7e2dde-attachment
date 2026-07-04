@@ -1,8 +1,0 @@
-=== TEST RESULT SUMMARY ===
-
-Test Name: User cannot register with invalid email format via API
-Status: PASSED
-Executed By: creola.vendervort@gmail.com
-Environment: prod
-Execution Date: 04-07-2026 16:19:45
-Browser: chrome

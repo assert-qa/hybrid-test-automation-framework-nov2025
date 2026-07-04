@@ -1,0 +1,21 @@
+API REQUEST
+Method: PUT
+Endpoint Name: update event
+Endpoint: /events/{id}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "title" : "circuit",
+  "description" : "Officia ullam facilis consectetur.",
+  "category" : "Concert",
+  "venue" : "Schinner-Hermiston International Center",
+  "city" : "Greenholtside",
+  "eventDate" : "2026-07-09T13:00:00Z",
+  "price" : "859",
+  "totalSeats" : 27,
+  "imageUrl" : "https://example.com/images/hic_cupiditate.jpg"
+}

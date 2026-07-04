@@ -54,6 +54,11 @@ public class EventAssertions {
     private static final File DELETE_EVENT_RESPONSE_500_SCHEMA =
             new File("src/test/java/api/schemas/events/delete-event-response-500.schema.json");
 
+    private void assertResponseMatchesSchema(Response response, File schema) {
+        Assertions.assertThat(schema).exists();
+        response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schema));
+    }
+
     public void assertListEventsResponseSchema200(Response response) {
         assertResponseMatchesSchema(response, LIST_EVENTS_RESPONSE_200_SCHEMA);
     }
@@ -62,6 +67,13 @@ public class EventAssertions {
         Assertions.assertThat(CREATE_NEW_EVENT_SCHEMA).exists();
         Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(CREATE_NEW_EVENT_SCHEMA).matches(toJson(payload)))
                 .as("Create new event request payload should match schema")
+                .isTrue();
+    }
+
+    public void assertUpdateEventRequestSchema(Map<String, Object> payload) {
+        Assertions.assertThat(UPDATE_EVENT_REQUEST_SCHEMA).exists();
+        Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(UPDATE_EVENT_REQUEST_SCHEMA).matches(toJson(payload)))
+                .as("Update event request payload should match schema")
                 .isTrue();
     }
 
@@ -99,6 +111,26 @@ public class EventAssertions {
             return;
         }
 
+        if (normalizedApiName.contains("update")) {
+            switch (statusCode) {
+                case 200 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_200_SCHEMA);
+                case 400 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_400_SCHEMA);
+                case 404 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_404_SCHEMA);
+                default -> throw unsupportedEventSchema(apiName, schemaType, statusCode);
+            }
+            return;
+        }
+
+        if (normalizedApiName.contains("delete")) {
+            switch (statusCode) {
+                case 200 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_200_SCHEMA);
+                case 404 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_404_SCHEMA);
+                case 500 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_500_SCHEMA);
+                default -> throw unsupportedEventSchema(apiName, schemaType, statusCode);
+            }
+            return;
+        }
+
         if ("success".equals(normalizedSchemaType) && statusCode == 200) {
             assertListEventsResponseSchema200(response);
             return;
@@ -107,6 +139,7 @@ public class EventAssertions {
         throw unsupportedEventSchema(apiName, schemaType, statusCode);
     }
 
+    // helper method
     private IllegalArgumentException unsupportedEventSchema(String apiName, String schemaType, int statusCode) {
         return new IllegalArgumentException(
                 "Unsupported event API response schema: " + apiName + " " + schemaType + " " + statusCode
@@ -123,10 +156,5 @@ public class EventAssertions {
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("Failed to serialize event payload for schema validation", e);
         }
-    }
-
-    private void assertResponseMatchesSchema(Response response, File schema) {
-        Assertions.assertThat(schema).exists();
-        response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schema));
     }
 }

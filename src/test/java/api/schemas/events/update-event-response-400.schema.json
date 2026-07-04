@@ -3,7 +3,9 @@
   "properties": {
     "success": {
       "type": "boolean",
-      "const": false
+      "enum": [
+        false
+      ]
     },
     "error": {
       "type": "string"

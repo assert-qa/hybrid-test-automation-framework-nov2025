@@ -1,0 +1,7 @@
+REQUEST SCHEMA VALIDATION
+Schema: login-request.schema.json
+Payload:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}

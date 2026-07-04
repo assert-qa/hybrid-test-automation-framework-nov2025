@@ -1,0 +1,20 @@
+API RESPONSE
+Request: DELETE delete event
+Status Code: 404
+Status Line: HTTP/1.1 404 Not Found
+Headers: Date=Sat, 04 Jul 2026 13:32:44 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=58
+ETag=W/"3a-KqeL62lrTWRqO7zB/0cGW1D4/gs"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": false,
+    "error": "Event with id 999999 not found"
+}

@@ -59,6 +59,32 @@ public class EventPayloads {
         return payload;
     }
 
+    public static Map<String, Object> updateEventPayload() {
+        LocalDate date = LocalDate.now().plusDays(DataFakerHelper.getRandomNumber(1, 31));
+
+        LocalTime time = LocalTime.of(DataFakerHelper.getRandomNumber(8, 20), 0);
+
+        String eventDate = LocalDateTime.of(date, time).atOffset(ZoneOffset.UTC).format(DateTimeFormatter.ISO_INSTANT);
+
+        Map<String, Object> payload = new LinkedHashMap<>();
+        payload.put("title", DataFakerHelper.getFaker().company().buzzword());
+        payload.put("description", DataFakerHelper.getFaker().lorem().sentence());
+        payload.put("category", getRandomCategory());
+        payload.put("venue", DataFakerHelper.getFaker().company().name() + " International Center");
+        payload.put("city", DataFakerHelper.getFaker().address().city());
+        payload.put("eventDate", eventDate);
+        payload.put("price", String.valueOf(DataFakerHelper.getFaker().number().numberBetween(100, 1000)));
+        payload.put("totalSeats", DataFakerHelper.getFaker().number().numberBetween(1, 100));
+        payload.put("imageUrl", "https://example.com/images/" + DataFakerHelper.getFaker().internet().slug() + ".jpg");
+        return payload;
+    }
+
+    public static Map<String, Object> invalidUpdateEventPayload() {
+        Map<String, Object> payload = updateEventPayload();
+        payload.remove("title");
+        return payload;
+    }
+
     // Helper method
     public static void putIfPresent(Map<String, Object> params, String key, String value){
         if (value != null && !value.isBlank()

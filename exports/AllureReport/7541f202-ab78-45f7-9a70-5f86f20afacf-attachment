@@ -1,0 +1,11 @@
+API PAYLOAD
+{
+  "description" : "Dolores nihil vitae possimus animi commodi.",
+  "category" : "Workshop",
+  "venue" : "Mayert Inc International Center",
+  "city" : "Cortezport",
+  "eventDate" : "2026-07-25T17:00:00Z",
+  "price" : "708",
+  "totalSeats" : 22,
+  "imageUrl" : "https://example.com/images/perferendis_assumenda.jpg"
+}

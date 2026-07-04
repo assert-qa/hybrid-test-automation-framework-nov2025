@@ -1,0 +1,5 @@
+API PAYLOAD
+{
+  "email" : "password-too-short-4e8563d9-a596-4965-93fc-b958e949e11f@example.com",
+  "password" : "******"
+}

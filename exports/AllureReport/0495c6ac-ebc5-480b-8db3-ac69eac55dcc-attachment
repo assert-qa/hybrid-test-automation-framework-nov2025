@@ -1,0 +1,26 @@
+RESPONSE SCHEMA VALIDATION
+API: update event
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "data": {
+        "id": 70538,
+        "title": "circuit",
+        "description": "Officia ullam facilis consectetur.",
+        "category": "Concert",
+        "venue": "Schinner-Hermiston International Center",
+        "city": "Greenholtside",
+        "eventDate": "2026-07-09T13:00:00.000Z",
+        "price": "859",
+        "totalSeats": 27,
+        "availableSeats": 41,
+        "imageUrl": "https://example.com/images/hic_cupiditate.jpg",
+        "isStatic": false,
+        "userId": 14673,
+        "createdAt": "2026-07-04T13:32:51.042Z",
+        "updatedAt": "2026-07-04T13:32:51.900Z"
+    },
+    "message": "Event updated successfully"
+}

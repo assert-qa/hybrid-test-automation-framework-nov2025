@@ -1,8 +1,0 @@
-=== TEST RESULT SUMMARY ===
-
-Test Name: User cannot create a new event with invalid payload
-Status: PASSED
-Executed By: creola.vendervort@gmail.com
-Environment: prod
-Execution Date: 04-07-2026 16:19:50
-Browser: chrome

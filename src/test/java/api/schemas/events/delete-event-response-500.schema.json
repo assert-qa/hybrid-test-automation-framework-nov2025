@@ -3,11 +3,13 @@
   "properties": {
     "success": {
       "type": "boolean",
-      "const": false
+      "enum": [
+        false
+      ]
     },
     "error": {
       "type": "string",
-      "const": "Resource not found"
+      "pattern": "^(Resource not found|Event with id [0-9]+ not found)$"
     }
   },
   "required": ["success", "error"],

@@ -1,0 +1,5 @@
+API ENDPOINT
+Endpoint Name: update event
+Endpoint: /events/{id}
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}

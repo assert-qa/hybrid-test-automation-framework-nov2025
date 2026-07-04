@@ -3,11 +3,20 @@
   "properties": {
     "success": {
       "type": "boolean",
-      "const": true
+      "enum": [
+        true
+      ]
     },
     "message": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "Event deleted successfully"
+      ]
     }
   },
+  "required": [
+    "success",
+    "message"
+  ],
   "additionalProperties": false
 }

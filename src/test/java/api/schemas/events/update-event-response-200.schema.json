@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "success": {
-      "type": "boolean"
+      "type": "boolean",
+      "enum": [
+        true
+      ]
     },
     "data": {
       "type": "object",
@@ -27,6 +30,15 @@
           "type": "string",
           "format": "uri"
         },
+        "isStatic": {
+          "type": "boolean"
+        },
+        "userId": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
         "createdAt": {
           "type": "string",
           "format": "date-time"
@@ -47,14 +59,17 @@
         "price",
         "totalSeats",
         "availableSeats",
-        "imageUrl",
-        "createdAt",
-        "updatedAt"
-      ]
+        "imageUrl"
+      ],
+      "additionalProperties": false
     },
     "message": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "Event updated successfully"
+      ]
     }
   },
-  "required": ["success", "data", "message"]
+  "required": ["success", "data", "message"],
+  "additionalProperties": false
 }
