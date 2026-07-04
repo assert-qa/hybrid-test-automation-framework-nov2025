@@ -1,0 +1,14 @@
+API REQUEST
+Method: POST
+Endpoint Name: register
+Endpoint: /auth/register
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "email" : "password-too-short-9b6d5c96-f960-4334-bce5-1244874259db@example.com",
+  "password" : "******"
+}

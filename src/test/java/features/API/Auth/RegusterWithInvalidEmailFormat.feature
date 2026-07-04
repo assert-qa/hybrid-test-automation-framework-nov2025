@@ -23,6 +23,6 @@ Feature: Register with invalid email format
     And the "register" API response should match "error" schema
     And the "register" API response error should be "Validation failed"
     And the "register" API response details should contain
-      | field    | message                                  |
-      | email    | A valid email is required                |
+      | field    | message                                |
+      | email    | A valid email is required              |
       | password | Password must be at least 6 characters |

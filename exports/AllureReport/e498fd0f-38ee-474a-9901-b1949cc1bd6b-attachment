@@ -1,6 +1,0 @@
-API REQUEST
-Method: POST
-Endpoint Name: register
-Endpoint: /auth/register
-Token Available: false
-Payload: {email=invalid-email, password=******}

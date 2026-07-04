@@ -280,7 +280,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${rest.assured.ver}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Source: https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
@@ -288,7 +287,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>json-schema-validator</artifactId>
             <version>${json.schema.validator.ver}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

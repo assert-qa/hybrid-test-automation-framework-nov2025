@@ -1,0 +1,12 @@
+RESPONSE SCHEMA VALIDATION
+API: register
+Schema Type: error
+Status Code: 400
+Body:
+{
+    "success": false,
+    "error": "Email already registered",
+    "details": [
+        
+    ]
+}

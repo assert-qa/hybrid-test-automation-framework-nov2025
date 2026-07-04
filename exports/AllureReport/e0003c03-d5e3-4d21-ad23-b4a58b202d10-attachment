@@ -1,0 +1,24 @@
+API RESPONSE
+Request: POST register
+Status Code: 201
+Status Line: HTTP/1.1 201 Created
+Headers: Date=Sat, 04 Jul 2026 04:08:50 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=267
+ETag=W/"10b-fODx8wS9pYKw+I07tO/F9JZt5Zg"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 20864,
+        "email": "kenny.hand@yahoo.com"
+    }
+}

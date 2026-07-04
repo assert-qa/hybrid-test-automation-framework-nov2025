@@ -1,0 +1,15 @@
+API ERROR ASSERTION
+API: register
+Expected Error: Validation failed
+Actual Error: Validation failed
+Body:
+{
+    "success": false,
+    "error": "Validation failed",
+    "details": [
+        {
+            "field": "password",
+            "message": "Password must be at least 6 characters"
+        }
+    ]
+}

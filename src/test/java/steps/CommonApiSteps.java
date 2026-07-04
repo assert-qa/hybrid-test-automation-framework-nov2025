@@ -1,8 +1,10 @@
 package steps;
 
 import api.assertions.AuthAssertions;
+import api.assertions.EventAssertions;
 import api.client.ApiClient;
 import api.context.ApiTestContext;
+import helpers.ApiReportHelper;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -12,20 +14,19 @@ import io.restassured.response.Response;
 import managers.ConfigManager;
 import managers.EndpointManager;
 import org.assertj.core.api.Assertions;
-import reports.AllureManager;
-import utils.LogUtils;
 
 import java.util.List;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class CommonApiSteps {
     private final ApiTestContext context = new ApiTestContext();
     private final AuthAssertions authAssertions = new AuthAssertions();
+    private final EventAssertions eventAssertions = new EventAssertions();
 
     @Given("I set {string} API endpoint")
     public void i_set_login_api_endpoint(String endpointName) {
         String endPoint = EndpointManager.getEndpoint(endpointName);
+        ApiReportHelper.attachEndpointEvidence(endpointName, endPoint);
         Assertions.assertThat(endPoint)
                 .as(endpointName + " API endpoint")
                 .isNotBlank()
@@ -34,6 +35,7 @@ public class CommonApiSteps {
 
     @And("I set request headers")
     public void i_set_request_headers() {
+        ApiReportHelper.attachRequestHeadersEvidence();
         Assertions.assertThat(ApiClient.requestSpec())
                 .as("API request specification with JSON headers")
                 .isNotNull();
@@ -41,6 +43,7 @@ public class CommonApiSteps {
 
     @And("I prepare API base configuration")
     public void i_prepare_login_api_base_configuration() {
+        ApiReportHelper.attachBaseConfigurationEvidence();
         Assertions.assertThat(ConfigManager.getProperty("API_BASE_URL"))
                 .as("API base URL")
                 .isNotBlank()
@@ -49,6 +52,7 @@ public class CommonApiSteps {
 
     @And("the login request body should match login request schema")
     public void the_login_request_body_should_match_login_request_schema() {
+        ApiReportHelper.attachRequestSchemaEvidence("login-request.schema.json", context.getRequestPayload());
         authAssertions.assertLoginRequestSchema(context.getRequestPayload());
     }
 
@@ -56,13 +60,20 @@ public class CommonApiSteps {
     public void i_send_request_to_api(String method, String endpointName) {
         String httpMethod = method.trim().toUpperCase();
         String endpoint = EndpointManager.getEndpoint(endpointName);
-        logAndAttachApiRequest(httpMethod, endpointName, endpoint);
+        ApiReportHelper.attachRequestEvidence(
+                httpMethod,
+                endpointName,
+                endpoint,
+                context.getToken(),
+                context.getRequestPayload()
+        );
 
         Response response = switch(httpMethod){
             case "POST" -> ApiClient.request(context.getToken())
                     .body(context.getRequestPayload())
                     .post(endpoint);
             case "GET" -> ApiClient.request(context.getToken())
+                    .queryParams(context.getRequestPayload())
                     .get(endpoint);
             case "PUT" -> ApiClient.request(context.getToken())
                     .body(context.getRequestPayload())
@@ -76,11 +87,17 @@ public class CommonApiSteps {
         };
 
         context.setResponse(response);
-        logAndAttachApiResponse(httpMethod, endpointName, response);
+        ApiReportHelper.attachResponseEvidence(httpMethod, endpointName, response);
     }
 
     @And("the {string} API response should match {string} schema")
     public void the_api_response_should_match_schema(String apiName, String schemaType) {
+        ApiReportHelper.attachResponseSchemaEvidence(apiName, schemaType, context.getResponse());
+        if ("events".equalsIgnoreCase(apiName) && "success".equalsIgnoreCase(schemaType)) {
+            eventAssertions.assertListEventsResponseSchema200(context.getResponse());
+            return;
+        }
+
         authAssertions.assertAuthApiResponseSchema(
                 apiName,
                 schemaType,
@@ -95,11 +112,13 @@ public class CommonApiSteps {
 
     @Then("the API response status should be {int}")
     public void theLoginApiResponse_status_should_be(int statusCode) {
+        ApiReportHelper.attachStatusEvidence(statusCode, context.getResponse());
         authAssertions.assertStatusCode(context.getResponse(), statusCode);
     }
 
     @And("the {string} API response error should be {string}")
     public void the_api_response_error_should_be(String apiName, String expectedError) {
+        ApiReportHelper.attachErrorEvidence(apiName, expectedError, context.getResponse());
         Assertions.assertThat(context.getResponse().jsonPath().getString("error"))
                 .as(apiName + " API response error")
                 .isEqualTo(expectedError);
@@ -114,6 +133,8 @@ public class CommonApiSteps {
                 .as(apiName + " API response details")
                 .isNotNull();
 
+        ApiReportHelper.attachDetailsEvidence(apiName, expectedDetails, actualDetails);
+
         for (Map<String, String> expectedDetail : expectedDetails) {
             Assertions.assertThat(actualDetails)
                     .as(apiName + " API response details should contain " + expectedDetail)
@@ -126,55 +147,10 @@ public class CommonApiSteps {
     @And("the {string} API response details should be empty")
     public void the_api_response_details_should_be_empty(String apiName) {
         List<Map<String, Object>> actualDetails = context.getResponse().jsonPath().getList("details");
+        ApiReportHelper.attachEmptyDetailsEvidence(apiName, actualDetails);
         Assertions.assertThat(actualDetails)
                 .as(apiName + " API response details")
                 .isNotNull()
                 .isEmpty();
-    }
-
-    private void logAndAttachApiRequest(String method, String endpointName, String endpoint) {
-        String requestLog = "API REQUEST"
-                + System.lineSeparator() + "Method: " + method
-                + System.lineSeparator() + "Endpoint Name: " + endpointName
-                + System.lineSeparator() + "Endpoint: " + endpoint
-                + System.lineSeparator() + "Token Available: " + (context.getToken() != null && !context.getToken().isBlank())
-                + System.lineSeparator() + "Payload: " + formatPayload();
-
-        LogUtils.info(requestLog);
-        AllureManager.attachText("API Request - " + method + " " + endpointName, requestLog);
-    }
-
-    private void logAndAttachApiResponse(String method, String endpointName, Response response) {
-        String responseLog = "API RESPONSE"
-                + System.lineSeparator() + "Request: " + method + " " + endpointName
-                + System.lineSeparator() + "Status Code: " + response.statusCode()
-                + System.lineSeparator() + "Status Line: " + response.statusLine()
-                + System.lineSeparator() + "Headers: " + response.getHeaders()
-                + System.lineSeparator() + "Body: " + maskSensitiveValues(response.asPrettyString());
-
-        LogUtils.info(responseLog);
-        AllureManager.attachText("API Response - " + method + " " + endpointName, responseLog);
-    }
-
-    private String formatPayload() {
-        if (context.getRequestPayload() == null) {
-            return "<empty>";
-        }
-
-        Map<String, Object> maskedPayload = new LinkedHashMap<>(context.getRequestPayload());
-        if (maskedPayload.containsKey("password")) {
-            maskedPayload.put("password", "******");
-        }
-        if (maskedPayload.containsKey("token")) {
-            maskedPayload.put("token", "******");
-        }
-        return maskedPayload.toString();
-    }
-
-    private String maskSensitiveValues(String value) {
-        if (value == null) {
-            return null;
-        }
-        return value.replaceAll("(?i)(\"(?:password|token)\"\\s*:\\s*\")([^\"]*)(\")", "$1****$3");
     }
 }

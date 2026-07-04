@@ -1,0 +1,17 @@
+API REQUEST
+Method: GET
+Endpoint Name: events
+Endpoint: /events
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: <not set>
+Payload / Query Params:
+{
+  "category" : "<category>",
+  "city" : "<city>",
+  "search" : "<search>",
+  "page" : "<page>",
+  "limit" : "<limit>"
+}

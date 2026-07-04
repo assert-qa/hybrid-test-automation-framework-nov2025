@@ -1,0 +1,12 @@
+API ERROR ASSERTION
+API: register
+Expected Error: Email already registered
+Actual Error: Email already registered
+Body:
+{
+    "success": false,
+    "error": "Email already registered",
+    "details": [
+        
+    ]
+}

@@ -131,7 +131,6 @@ public class AuthAssertions {
         assertErrorResponse(response);
     }
 
-
     // method helper
 
     public void assertUserObject(Response response, String expectedEmail) {
