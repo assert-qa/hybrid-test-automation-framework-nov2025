@@ -1,0 +1,28 @@
+API RESPONSE
+Request: GET events
+Status Code: 200
+Status Line: HTTP/1.1 200 OK
+Headers: Date=Sat, 04 Jul 2026 09:19:52 GMT
+Server=Apache/2.4.52 (Ubuntu)
+X-Powered-By=Express
+Access-Control-Allow-Origin=https://eventhub.rahulshettyacademy.com
+Vary=Origin
+Access-Control-Allow-Credentials=true
+Content-Type=application/json; charset=utf-8
+Content-Length=86
+ETag=W/"56-rQkOGUiu0PxluDuPx67mMBHhCbw"
+Keep-Alive=timeout=5, max=100
+Connection=Keep-Alive
+Body:
+{
+    "success": true,
+    "data": [
+        
+    ],
+    "pagination": {
+        "total": 0,
+        "page": 1,
+        "limit": 10,
+        "totalPages": 0
+    }
+}

@@ -50,8 +50,8 @@
             "format": "date-time"
           },
           "price": {
-            "type": "number",
-            "minimum": 0
+            "type": "string",
+            "pattern": "^[0-9]+$"
           },
           "totalSeats": {
             "type": "integer",

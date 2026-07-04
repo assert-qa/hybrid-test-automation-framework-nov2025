@@ -1,0 +1,7 @@
+REQUEST SCHEMA VALIDATION
+Schema: register-request.schema.json
+Payload:
+{
+  "email" : "amber.vonrueden@yahoo.com",
+  "password" : "******"
+}

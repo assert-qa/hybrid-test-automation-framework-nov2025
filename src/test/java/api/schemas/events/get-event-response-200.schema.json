@@ -3,7 +3,9 @@
   "properties": {
     "success": {
       "type": "boolean",
-      "const": true
+      "enum": [
+        true
+      ]
     },
     "data": {
       "type": "object",
@@ -31,8 +33,8 @@
           "format": "date-time"
         },
         "price": {
-          "type": "number",
-          "minimum": 0
+          "type": "string",
+          "pattern": "^[0-9]+$"
         },
         "totalSeats": {
           "type": "integer"
@@ -42,6 +44,15 @@
         },
         "imageUrl": {
           "type": "string"
+        },
+        "isStatic": {
+          "type": "boolean"
+        },
+        "userId": {
+          "type": [
+            "integer",
+            "null"
+          ]
         },
         "createdAt": {
           "type": "string",
@@ -64,11 +75,17 @@
         "totalSeats",
         "availableSeats",
         "imageUrl",
+        "isStatic",
+        "userId",
         "createdAt",
         "updatedAt"
       ],
       "additionalProperties": false
     }
   },
+  "required": [
+    "success",
+    "data"
+  ],
   "additionalProperties": false
 }

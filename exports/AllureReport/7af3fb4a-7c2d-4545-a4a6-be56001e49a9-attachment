@@ -1,0 +1,12 @@
+API DETAILS ASSERTION
+API: register
+Expected Details:
+[ {
+  "field" : "password",
+  "message" : "Password must be at least 6 characters"
+} ]
+Actual Details:
+[ {
+  "field" : "password",
+  "message" : "Password must be at least 6 characters"
+} ]

@@ -1,0 +1,17 @@
+API REQUEST
+Method: GET
+Endpoint Name: events
+Endpoint: /events
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "category" : "Conference",
+  "city" : "Bangalore",
+  "search" : "Diwali",
+  "page" : "1",
+  "limit" : "10"
+}

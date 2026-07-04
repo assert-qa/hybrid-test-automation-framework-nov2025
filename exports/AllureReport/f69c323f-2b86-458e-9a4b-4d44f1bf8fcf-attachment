@@ -1,0 +1,13 @@
+RESPONSE SCHEMA VALIDATION
+API: register
+Schema Type: success
+Status Code: 201
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 20888,
+        "email": "amber.vonrueden@yahoo.com"
+    }
+}

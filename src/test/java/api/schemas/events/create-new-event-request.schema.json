@@ -21,7 +21,8 @@
       "format": "date-time"
     },
     "price": {
-      "type": "number"
+      "type": "string",
+      "pattern": "^[0-9]+$"
     },
     "totalSeats": {
       "type": "integer"

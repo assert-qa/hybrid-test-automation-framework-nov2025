@@ -1,0 +1,5 @@
+API ENDPOINT
+Endpoint Name: register
+Endpoint: /auth/register
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/auth/register

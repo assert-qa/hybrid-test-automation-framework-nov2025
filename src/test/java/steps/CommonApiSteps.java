@@ -11,6 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import managers.ConfigManager;
 import managers.EndpointManager;
 import org.assertj.core.api.Assertions;
@@ -27,27 +28,19 @@ public class CommonApiSteps {
     public void i_set_login_api_endpoint(String endpointName) {
         String endPoint = EndpointManager.getEndpoint(endpointName);
         ApiReportHelper.attachEndpointEvidence(endpointName, endPoint);
-        Assertions.assertThat(endPoint)
-                .as(endpointName + " API endpoint")
-                .isNotBlank()
-                .startsWith("/");
+        Assertions.assertThat(endPoint).as(endpointName + " API endpoint").isNotBlank().startsWith("/");
     }
 
     @And("I set request headers")
     public void i_set_request_headers() {
         ApiReportHelper.attachRequestHeadersEvidence();
-        Assertions.assertThat(ApiClient.requestSpec())
-                .as("API request specification with JSON headers")
-                .isNotNull();
+        Assertions.assertThat(ApiClient.requestSpec()).as("API request specification with JSON headers").isNotNull();
     }
 
     @And("I prepare API base configuration")
     public void i_prepare_login_api_base_configuration() {
         ApiReportHelper.attachBaseConfigurationEvidence();
-        Assertions.assertThat(ConfigManager.getProperty("API_BASE_URL"))
-                .as("API base URL")
-                .isNotBlank()
-                .startsWith("http");
+        Assertions.assertThat(ConfigManager.getProperty("API_BASE_URL")).as("API base URL").isNotBlank().startsWith("http");
     }
 
     @And("the login request body should match login request schema")
@@ -60,28 +53,25 @@ public class CommonApiSteps {
     public void i_send_request_to_api(String method, String endpointName) {
         String httpMethod = method.trim().toUpperCase();
         String endpoint = EndpointManager.getEndpoint(endpointName);
+        Map<String, Object> requestPayload = context.getRequestPayload() == null ? Map.of() : context.getRequestPayload();
         ApiReportHelper.attachRequestEvidence(
-                httpMethod,
-                endpointName,
-                endpoint,
-                context.getToken(),
-                context.getRequestPayload()
+                httpMethod, endpointName, endpoint, context.getToken(), requestPayload
         );
 
         Response response = switch(httpMethod){
-            case "POST" -> ApiClient.request(context.getToken())
-                    .body(context.getRequestPayload())
+            case "POST" -> requestWithPathParams(endpoint)
+                    .body(requestPayload)
                     .post(endpoint);
-            case "GET" -> ApiClient.request(context.getToken())
-                    .queryParams(context.getRequestPayload())
+            case "GET" -> requestWithPathParams(endpoint)
+                    .queryParams(requestPayload)
                     .get(endpoint);
-            case "PUT" -> ApiClient.request(context.getToken())
-                    .body(context.getRequestPayload())
+            case "PUT" -> requestWithPathParams(endpoint)
+                    .body(requestPayload)
                     .put(endpoint);
-            case "PATCH" -> ApiClient.request(context.getToken())
-                    .body(context.getRequestPayload())
+            case "PATCH" -> requestWithPathParams(endpoint)
+                    .body(requestPayload)
                     .patch(endpoint);
-            case "DELETE" -> ApiClient.request(context.getToken())
+            case "DELETE" -> requestWithPathParams(endpoint)
                     .delete(endpoint);
             default -> throw new IllegalArgumentException("Unsupported HTTP Method: " + method);
         };
@@ -93,16 +83,13 @@ public class CommonApiSteps {
     @And("the {string} API response should match {string} schema")
     public void the_api_response_should_match_schema(String apiName, String schemaType) {
         ApiReportHelper.attachResponseSchemaEvidence(apiName, schemaType, context.getResponse());
-        if ("events".equalsIgnoreCase(apiName) && "success".equalsIgnoreCase(schemaType)) {
-            eventAssertions.assertListEventsResponseSchema200(context.getResponse());
+        if (eventAssertions.supportsApi(apiName)) {
+            eventAssertions.assertEventApiResponseSchema(apiName, schemaType, context.getResponse());
             return;
         }
 
         authAssertions.assertAuthApiResponseSchema(
-                apiName,
-                schemaType,
-                context.getResponse(),
-                (String) context.getRequestPayload().get("email")
+                apiName, schemaType, context.getResponse(), (String) context.getRequestPayload().get("email")
         );
         if ("success".equalsIgnoreCase(schemaType)) {
             context.setToken(context.getResponse().jsonPath().getString("token"));
@@ -119,9 +106,12 @@ public class CommonApiSteps {
     @And("the {string} API response error should be {string}")
     public void the_api_response_error_should_be(String apiName, String expectedError) {
         ApiReportHelper.attachErrorEvidence(apiName, expectedError, context.getResponse());
-        Assertions.assertThat(context.getResponse().jsonPath().getString("error"))
-                .as(apiName + " API response error")
-                .isEqualTo(expectedError);
+        Assertions.assertThat(context.getResponse().jsonPath().getString("error")).as(apiName + " API response error").isEqualTo(expectedError);
+    }
+
+    @And("the {string} API response message should be {string}")
+    public void the_api_response_message_should_be(String apiName, String expectedMessage) {
+        Assertions.assertThat(context.getResponse().jsonPath().getString("message")).as(apiName + " API response message").isEqualTo(expectedMessage);
     }
 
     @And("the {string} API response details should contain")
@@ -129,18 +119,13 @@ public class CommonApiSteps {
         List<Map<String, String>> expectedDetails = dataTable.asMaps(String.class, String.class);
         List<Map<String, Object>> actualDetails = context.getResponse().jsonPath().getList("details");
 
-        Assertions.assertThat(actualDetails)
-                .as(apiName + " API response details")
-                .isNotNull();
+        Assertions.assertThat(actualDetails).as(apiName + " API response details").isNotNull();
 
         ApiReportHelper.attachDetailsEvidence(apiName, expectedDetails, actualDetails);
 
         for (Map<String, String> expectedDetail : expectedDetails) {
-            Assertions.assertThat(actualDetails)
-                    .as(apiName + " API response details should contain " + expectedDetail)
-                    .anySatisfy(actualDetail -> Assertions.assertThat(actualDetail)
-                            .containsEntry("field", expectedDetail.get("field"))
-                            .containsEntry("message", expectedDetail.get("message")));
+            Assertions.assertThat(actualDetails).as(apiName + " API response details should contain " + expectedDetail).anySatisfy(actualDetail -> Assertions.assertThat(actualDetail)
+                            .containsEntry("field", expectedDetail.get("field")).containsEntry("message", expectedDetail.get("message")));
         }
     }
 
@@ -148,9 +133,17 @@ public class CommonApiSteps {
     public void the_api_response_details_should_be_empty(String apiName) {
         List<Map<String, Object>> actualDetails = context.getResponse().jsonPath().getList("details");
         ApiReportHelper.attachEmptyDetailsEvidence(apiName, actualDetails);
-        Assertions.assertThat(actualDetails)
-                .as(apiName + " API response details")
-                .isNotNull()
-                .isEmpty();
+        Assertions.assertThat(actualDetails).as(apiName + " API response details").isNotNull().isEmpty();
+    }
+
+    private RequestSpecification requestWithPathParams(String endpoint) {
+        RequestSpecification request = ApiClient.request(context.getToken());
+        if (endpoint.contains("{id}")) {
+            Integer id = context.getEventId() != null ? context.getEventId() : context.getBookingId();
+            Assertions.assertThat(id).as("ID path parameter").isNotNull();
+
+            request.pathParam("id", id);
+        }
+        return request;
     }
 }

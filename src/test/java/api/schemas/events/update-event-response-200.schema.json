@@ -17,7 +17,10 @@
           "type": "string",
           "format": "date-time"
         },
-        "price": { "type": "number" },
+        "price": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
         "totalSeats": { "type": "integer" },
         "availableSeats": { "type": "integer" },
         "imageUrl": {
