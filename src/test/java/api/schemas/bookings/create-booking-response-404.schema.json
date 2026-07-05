@@ -1,5 +1,6 @@
 {
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "success",
     "error"
@@ -10,8 +11,8 @@
       "const": false
     },
     "error": {
-      "type": "string"
+      "type": "string",
+      "const": "Resource not found"
     }
-  },
-  "additionalProperties": false
+  }
 }

@@ -1,8 +1,10 @@
 {
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "success",
-    "data"
+    "data",
+    "pagination"
   ],
   "properties": {
     "success": {
@@ -10,129 +12,165 @@
       "const": true
     },
     "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "eventId",
+          "customerName",
+          "customerEmail",
+          "customerPhone",
+          "quantity",
+          "totalPrice",
+          "status",
+          "bookingRef",
+          "createdAt",
+          "updatedAt",
+          "event"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "eventId": {
+            "type": "integer"
+          },
+          "customerName": {
+            "type": "string"
+          },
+          "customerEmail": {
+            "type": "string",
+            "format": "email"
+          },
+          "customerPhone": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "totalPrice": {
+            "type": "number",
+            "minimum": 0
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "confirmed",
+              "cancelled"
+            ]
+          },
+          "bookingRef": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "event": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "title",
+              "description",
+              "category",
+              "venue",
+              "city",
+              "eventDate",
+              "price",
+              "totalSeats",
+              "availableSeats",
+              "imageUrl",
+              "createdAt",
+              "updatedAt"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "venue": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "eventDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "price": {
+                "type": "number",
+                "minimum": 0
+              },
+              "totalSeats": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "availableSeats": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "imageUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    },
+    "pagination": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
-        "id",
-        "eventId",
-        "customerName",
-        "customerEmail",
-        "customerPhone",
-        "quantity",
-        "totalPrice",
-        "status",
-        "bookingRef",
-        "createdAt",
-        "updatedAt",
-        "event"
+        "total",
+        "page",
+        "limit",
+        "totalPages"
       ],
       "properties": {
-        "id": {
-          "type": "integer"
+        "total": {
+          "type": "integer",
+          "minimum": 0
         },
-        "eventId": {
-          "type": "integer"
+        "page": {
+          "type": "integer",
+          "minimum": 1
         },
-        "customerName": {
-          "type": "string"
+        "limit": {
+          "type": "integer",
+          "minimum": 1
         },
-        "customerEmail": {
-          "type": "string"
-        },
-        "customerPhone": {
-          "type": "string"
-        },
-        "quantity": {
-          "type": "integer"
-        },
-        "totalPrice": {
-          "type": "number"
-        },
-        "status": {
-          "type": "string",
-          "enum": [
-            "confirmed",
-            "cancelled"
-          ]
-        },
-        "bookingRef": {
-          "type": "string"
-        },
-        "createdAt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "updatedAt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "event": {
-          "type": "object",
-          "required": [
-            "id",
-            "title",
-            "description",
-            "category",
-            "venue",
-            "city",
-            "eventDate",
-            "price",
-            "totalSeats",
-            "availableSeats",
-            "createdAt",
-            "updatedAt"
-          ],
-          "properties": {
-            "id": {
-              "type": "integer"
-            },
-            "title": {
-              "type": "string"
-            },
-            "description": {
-              "type": "string"
-            },
-            "category": {
-              "type": "string"
-            },
-            "venue": {
-              "type": "string"
-            },
-            "city": {
-              "type": "string"
-            },
-            "eventDate": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "price": {
-              "type": "number"
-            },
-            "totalSeats": {
-              "type": "integer"
-            },
-            "availableSeats": {
-              "type": "integer"
-            },
-            "imageUrl": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "createdAt": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "updatedAt": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          "additionalProperties": false
+        "totalPages": {
+          "type": "integer",
+          "minimum": 1
         }
-      },
-      "additionalProperties": false
+      }
     }
-  },
-  "additionalProperties": false
+  }
 }

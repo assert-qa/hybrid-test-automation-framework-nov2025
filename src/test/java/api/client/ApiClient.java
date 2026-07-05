@@ -52,9 +52,7 @@ public class ApiClient {
     }
 
     public static ResponseSpecification responseSpec() {
-        return new ResponseSpecBuilder()
-                .expectContentType(ContentType.JSON)
-                .build();
+        return new ResponseSpecBuilder().expectContentType(ContentType.JSON).build();
     }
 
     public static ResponseSpecification responseSpec(int statusCode) {
@@ -82,9 +80,8 @@ public class ApiClient {
     }
 
     private static Filter logOnFailure() {
-        return (FilterableRequestSpecification requestSpec,
-                FilterableResponseSpecification responseSpec,
-                FilterContext context) -> {
+        return (FilterableRequestSpecification requestSpec, FilterableResponseSpecification responseSpec, FilterContext context) ->
+        {
             Response response = context.next(requestSpec, responseSpec);
             if (response.statusCode() >= 500) {
                 logFailedRequest(requestSpec);

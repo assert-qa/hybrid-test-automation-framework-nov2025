@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/java/features/UI/MyBookings/CancelBooking.feature",
+        features = "src/test/java/features/UI/MyBookings/DELETE_CancelBooking.feature",
         glue = {"steps", "hooks"},
         monochrome = true,
         plugin = {
