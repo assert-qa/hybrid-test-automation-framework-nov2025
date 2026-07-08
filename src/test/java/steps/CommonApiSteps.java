@@ -1,6 +1,7 @@
 package steps;
 
 import api.assertions.AuthAssertions;
+import api.assertions.BookingAssertions;
 import api.assertions.EventAssertions;
 import api.client.ApiClient;
 import api.context.ApiTestContext;
@@ -23,6 +24,7 @@ public class CommonApiSteps {
     private final ApiTestContext context = new ApiTestContext();
     private final AuthAssertions authAssertions = new AuthAssertions();
     private final EventAssertions eventAssertions = new EventAssertions();
+    private final BookingAssertions bookingAssertions = new BookingAssertions();
 
     @Given("I set {string} API endpoint")
     public void i_set_login_api_endpoint(String endpointName) {
@@ -88,13 +90,22 @@ public class CommonApiSteps {
             return;
         }
 
-        authAssertions.assertAuthApiResponseSchema(
-                apiName, schemaType, context.getResponse(), (String) context.getRequestPayload().get("email")
-        );
-        if ("success".equalsIgnoreCase(schemaType)) {
-            context.setToken(context.getResponse().jsonPath().getString("token"));
-            context.setUserId(context.getResponse().jsonPath().getInt("user.id"));
+        if (bookingAssertions.supportsApi(apiName)) {
+            bookingAssertions.assertBookingApiResponseSchema(apiName, schemaType, context.getResponse());
+            return;
         }
+
+        if (authAssertions.supportsApi(apiName)) {
+            authAssertions.assertAuthApiResponseSchema(
+                    apiName, schemaType, context.getResponse(), getExpectedEmail()
+            );
+            if ("success".equalsIgnoreCase(schemaType)) {
+                context.setToken(context.getResponse().jsonPath().getString("token"));
+                context.setUserId(context.getResponse().jsonPath().getInt("user.id"));
+            }
+            return;
+        }
+        throw new IllegalArgumentException("Unsupported API response schema: " + apiName + " " + schemaType);
     }
 
     @Then("the API response status should be {int}")
@@ -136,13 +147,25 @@ public class CommonApiSteps {
         Assertions.assertThat(actualDetails).as(apiName + " API response details").isNotNull().isEmpty();
     }
 
+    // method helper
+    private String getExpectedEmail() {
+        Map<String, Object> requestPayload = context.getRequestPayload();
+        return requestPayload == null ? null : (String) requestPayload.get("email");
+    }
+
     private RequestSpecification requestWithPathParams(String endpoint) {
         RequestSpecification request = ApiClient.request(context.getToken());
         if (endpoint.contains("{id}")) {
-            Integer id = context.getEventId() != null ? context.getEventId() : context.getBookingId();
+            Integer id = endpoint.startsWith("/bookings/")
+                    ? context.getBookingId()
+                    : context.getEventId();
             Assertions.assertThat(id).as("ID path parameter").isNotNull();
 
             request.pathParam("id", id);
+        }
+        if (endpoint.contains("{ref}")) {
+            Assertions.assertThat(context.getBookingReferenceCode()).as("Booking reference path parameter").isNotBlank();
+            request.pathParam("ref", context.getBookingReferenceCode());
         }
         return request;
     }

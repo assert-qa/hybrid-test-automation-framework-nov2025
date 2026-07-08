@@ -1,0 +1,17 @@
+API REQUEST
+Method: GET
+Endpoint Name: get booking by id
+Endpoint: /bookings/{id}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/bookings/{id}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "eventId" : 72253,
+  "customerName" : "Dorie",
+  "customerEmail" : "felisha.hauck@yahoo.com",
+  "customerPhone" : "(305) 274-7744",
+  "quantity" : 1
+}

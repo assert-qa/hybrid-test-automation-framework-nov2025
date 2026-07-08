@@ -1,0 +1,8 @@
+API PAYLOAD
+{
+  "eventId" : 1,
+  "customerName" : "Pasty",
+  "customerEmail" : "hugh.rath@yahoo.com",
+  "customerPhone" : "(472) 838-8476",
+  "quantity" : 11
+}

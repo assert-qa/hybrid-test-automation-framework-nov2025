@@ -1,0 +1,8 @@
+API PAYLOAD
+{
+  "eventId" : 999999,
+  "customerName" : "Zenobia",
+  "customerEmail" : "janelle.windler@gmail.com",
+  "customerPhone" : "(472) 950-1855",
+  "quantity" : 2
+}

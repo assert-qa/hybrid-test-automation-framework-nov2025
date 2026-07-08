@@ -1,0 +1,8 @@
+API PAYLOAD
+{
+  "eventId" : 1,
+  "customerName" : "Thaddeus",
+  "customerEmail" : "terra.crist@hotmail.com",
+  "customerPhone" : "(472) 929-4712",
+  "quantity" : 1
+}

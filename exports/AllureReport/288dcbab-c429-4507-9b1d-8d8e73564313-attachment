@@ -1,0 +1,14 @@
+API REQUEST
+Method: GET
+Endpoint Name: get booking by reference code
+Endpoint: /bookings/ref/{ref}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/bookings/ref/{ref}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "email" : "creola.vendervort@gmail.com",
+  "password" : "******"
+}

@@ -12,34 +12,23 @@ import java.util.Map;
 public class AuthAssertions {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    private static final File LOGIN_REQUEST_SCHEMA =
-            new File("src/test/java/api/schemas/auth/login-request.schema.json");
-    private static final File REGISTER_REQUEST_SCHEMA =
-            new File("src/test/java/api/schemas/auth/register-request.schema.json");
-    private static final File REGISTER_RESPONSE_201_SCHEMA =
-            new File("src/test/java/api/schemas/auth/register-response-201.schema.json");
-    private static final File REGISTER_RESPONSE_400_SCHEMA =
-            new File("src/test/java/api/schemas/auth/register-response-400.schema.json");
-    private static final File LOGIN_RESPONSE_200_SCHEMA =
-            new File("src/test/java/api/schemas/auth/login-response-200.schema.json");
-    private static final File AUTH_RESPONSE_401_SCHEMA =
-            new File("src/test/java/api/schemas/auth/get-auth-response-401.schema.json");
-    private static final File LOGIN_RESPONSE_400_SCHEMA =
-            new File("src/test/java/api/schemas/auth/login-response-400.schema.json");
+    private static final String SCHEMA_DIR = "src/test/java/api/schemas/auth/";
 
+    private static final File LOGIN_REQUEST_SCHEMA = schema("login-request.schema.json");
+    private static final File REGISTER_REQUEST_SCHEMA = schema("register-request.schema.json");
+    private static final File REGISTER_RESPONSE_201_SCHEMA = schema("register-response-201.schema.json");
+    private static final File REGISTER_RESPONSE_400_SCHEMA = schema("register-response-400.schema.json");
+    private static final File LOGIN_RESPONSE_200_SCHEMA = schema("login-response-200.schema.json");
+    private static final File LOGIN_RESPONSE_400_SCHEMA = schema("login-response-400.schema.json");
+    private static final File AUTH_RESPONSE_200_SCHEMA = schema("get-auth-response-200.schema.json");
+    private static final File AUTH_RESPONSE_401_SCHEMA = schema("get-auth-response-401.schema.json");
 
     public void assertLoginRequestSchema(Map<String, Object> payload) {
-        Assertions.assertThat(LOGIN_REQUEST_SCHEMA).exists();
-        Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(LOGIN_REQUEST_SCHEMA).matches(toJson(payload)))
-                .as("Login request payload should match schema")
-                .isTrue();
+        assertRequestMatchesSchema(payload, LOGIN_REQUEST_SCHEMA, "Login request payload should match schema");
     }
 
     public void assertRegisterRequestSchema(Map<String, Object> payload) {
-        Assertions.assertThat(REGISTER_REQUEST_SCHEMA).exists();
-        Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(REGISTER_REQUEST_SCHEMA).matches(toJson(payload)))
-                .as("Register request payload should match schema")
-                .isTrue();
+        assertRequestMatchesSchema(payload, REGISTER_REQUEST_SCHEMA, "Register request payload should match schema");
     }
 
     public void assertLoginRequestDoesNotMatchSchema(Map<String, Object> payload) {
@@ -47,6 +36,14 @@ public class AuthAssertions {
         Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(LOGIN_REQUEST_SCHEMA).matches(toJson(payload)))
                 .as("Login request payload should not match schema")
                 .isFalse();
+    }
+
+    public boolean supportsApi(String apiName) {
+        String normalizedApiName = normalize(apiName);
+        return normalizedApiName.contains("login")
+                || normalizedApiName.contains("register")
+                || normalizedApiName.contains("auth")
+                || normalizedApiName.equals("me");
     }
 
     public void assertStatusCode(Response response, int expectedStatusCode) {
@@ -79,18 +76,25 @@ public class AuthAssertions {
     }
 
     public void assertAuthApiResponseSchema(String apiName, String schemaType, Response response, String expectedEmail) {
-        String normalizedApiName = apiName.trim().toLowerCase();
-        String normalizedSchemaType = schemaType.trim().toLowerCase();
+        String normalizedApiName = normalize(apiName);
+        int statusCode = response.statusCode();
 
-        switch (normalizedApiName + ":" + normalizedSchemaType) {
-            case "login:success" -> assertSuccessfulLoginResponse(response, expectedEmail);
-            case "login:error" -> assertLoginErrorResponse(response);
-            case "register:success" -> assertSuccessfulRegisterResponse(response, expectedEmail);
-            case "register:error" -> assertRegisterErrorResponse(response);
-            default -> throw new IllegalArgumentException(
-                    "Unsupported auth API response schema: " + apiName + " " + schemaType
-            );
+        if (normalizedApiName.contains("login")) {
+            assertLoginResponseSchema(response, statusCode, expectedEmail);
+            return;
         }
+
+        if (normalizedApiName.contains("register")) {
+            assertRegisterResponseSchema(response, statusCode, expectedEmail);
+            return;
+        }
+
+        if (normalizedApiName.contains("auth") || normalizedApiName.equals("me")) {
+            assertAuthMeResponseSchema(response, statusCode);
+            return;
+        }
+
+        throw unsupportedAuthSchema(apiName, schemaType, statusCode);
     }
 
     public void assertLoginResponseSchema200(Response response) {
@@ -114,11 +118,7 @@ public class AuthAssertions {
     }
 
     public void assertResponseSchema(Response response, int statusCode) {
-        switch (statusCode) {
-            case 200 -> assertLoginResponseSchema200(response);
-            case 400 -> assertLoginResponseSchema400(response);
-            default -> throw new IllegalArgumentException("Unsupported auth response schema for status code: " + statusCode);
-        }
+        assertLoginResponseSchema(response, statusCode, null);
     }
 
     public void assertLoginErrorResponse(Response response) {
@@ -159,6 +159,59 @@ public class AuthAssertions {
         Assertions.assertThat(response.jsonPath().getString("error")).isNotBlank();
     }
 
+    private void assertLoginResponseSchema(Response response, int statusCode, String expectedEmail) {
+        switch (statusCode) {
+            case 200 -> {
+                assertLoginResponseSchema200(response);
+                assertAccessToken(response);
+                if (expectedEmail != null) {
+                    assertUserObject(response, expectedEmail);
+                }
+            }
+            case 400 -> assertLoginErrorResponse(response);
+            default -> throw unsupportedAuthSchema("login", "response", statusCode);
+        }
+    }
+
+    private void assertRegisterResponseSchema(Response response, int statusCode, String expectedEmail) {
+        switch (statusCode) {
+            case 201 -> {
+                assertRegisterResponseSchema201(response);
+                assertAccessToken(response);
+                if (expectedEmail != null) {
+                    assertUserObject(response, expectedEmail);
+                }
+            }
+            case 400 -> assertRegisterErrorResponse(response);
+            default -> throw unsupportedAuthSchema("register", "response", statusCode);
+        }
+    }
+
+    private void assertAuthMeResponseSchema(Response response, int statusCode) {
+        switch (statusCode) {
+            case 200 -> assertResponseMatchesSchema(response, AUTH_RESPONSE_200_SCHEMA);
+            case 401 -> assertAuthResponseSchema401(response);
+            default -> throw unsupportedAuthSchema("auth", "response", statusCode);
+        }
+    }
+
+    private void assertRequestMatchesSchema(Map<String, Object> payload, File schema, String assertionMessage) {
+        Assertions.assertThat(schema).exists();
+        Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(schema).matches(toJson(payload)))
+                .as(assertionMessage)
+                .isTrue();
+    }
+
+    private IllegalArgumentException unsupportedAuthSchema(String apiName, String schemaType, int statusCode) {
+        return new IllegalArgumentException(
+                "Unsupported auth API response schema: " + apiName + " " + schemaType + " " + statusCode
+        );
+    }
+
+    private String normalize(String value) {
+        return value.trim().replace("-", " ").replace("_", " ").toLowerCase();
+    }
+
     private String toJson(Map<String, Object> payload) {
         try {
             return OBJECT_MAPPER.writeValueAsString(payload);
@@ -170,5 +223,9 @@ public class AuthAssertions {
     private void assertResponseMatchesSchema(Response response, File schema) {
         Assertions.assertThat(schema).exists();
         response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schema));
+    }
+
+    private static File schema(String fileName) {
+        return new File(SCHEMA_DIR + fileName);
     }
 }

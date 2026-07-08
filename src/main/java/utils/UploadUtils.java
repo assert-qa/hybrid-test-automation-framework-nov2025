@@ -1,7 +1,7 @@
 package utils;
 
-import constants.ConstantGlobal;
 import factory.DriverManager;
+import managers.ConfigManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,7 +10,7 @@ import java.io.File;
 import java.time.Duration;
 
 public class UploadUtils {
-    private final static long EXPLICIT_TIMEOUT = Long.parseLong(ConstantGlobal.EXPLICIT_TIMEOUT);
+    private static final long EXPLICIT_TIMEOUT = ConfigManager.getExplicitWaitTimeout();
 
     public static void uploadFile(By by, String filePath) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(EXPLICIT_TIMEOUT), Duration.ofMillis(500));

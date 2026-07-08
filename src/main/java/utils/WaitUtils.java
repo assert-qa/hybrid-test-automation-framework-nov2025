@@ -1,6 +1,7 @@
 package utils;
 
 import factory.DriverManager;
+import managers.ConfigManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.function.Function;
 
 public class WaitUtils {
-    private static final int DEFAULT_TIMEOUT = 30;
+    private static final int DEFAULT_TIMEOUT = ConfigManager.getExplicitWaitTimeout();
     private static final int DEFAULT_POLLING = 500;
 
     public static WebDriverWait getWait(int timeoutInSeconds) {
@@ -354,7 +355,7 @@ public class WaitUtils {
     }
 
     public static boolean waitForPageLoad() {
-        return waitForPageLoad(DEFAULT_TIMEOUT);
+        return waitForPageLoad(ConfigManager.getPageLoadTimeout());
     }
 
     public static boolean waitForAngularLoad(int timeout) {
@@ -380,5 +381,9 @@ public class WaitUtils {
             Thread.currentThread().interrupt();
             LogUtils.error("Hard wait interrupted: " + e.getMessage());
         }
+    }
+
+    public static void hardWait() {
+        hardWait(ConfigManager.getHardWaitTimeout() * 1000);
     }
 }

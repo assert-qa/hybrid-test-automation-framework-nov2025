@@ -4,11 +4,10 @@
   "properties": {
     "success": {
       "type": "boolean",
-      "enum": [false]
+      "const": false
     },
     "error": {
-      "type": "string",
-      "example": "Resource not found"
+      "type": "string"
     }
   },
   "additionalProperties": false

@@ -42,7 +42,10 @@
           "type": "integer"
         },
         "totalPrice": {
-          "type": "number"
+          "type": [
+            "number",
+            "string"
+          ]
         },
         "status": {
           "type": "string",
@@ -102,7 +105,10 @@
               "format": "date-time"
             },
             "price": {
-              "type": "number"
+              "type": [
+                "number",
+                "string"
+              ]
             },
             "totalSeats": {
               "type": "integer"

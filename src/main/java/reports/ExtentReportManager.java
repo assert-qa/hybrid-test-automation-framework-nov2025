@@ -2,7 +2,6 @@ package reports;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import constants.ConstantGlobal;
 import managers.ConfigManager;
 import helpers.SystemHelper;
 
@@ -26,7 +25,7 @@ public class ExtentReportManager {
 
                 // Get absolute path
                 String basePath = System.getProperty("user.dir");
-                String relativePath = ConstantGlobal.EXTENT_REPORT_PATH.replace("ExtentReport.html",
+                String relativePath = ConfigManager.getExtentReportPath().replace("ExtentReport.html",
                         "ExtentReport_" + timestamp + ".html");
 
                 // Create absolute path
@@ -50,18 +49,16 @@ public class ExtentReportManager {
 
                 // ========== FIXED: Added Null Check ==========
                 extentReports.setSystemInfo("Framework Name", "Cucumber Selenium Java");
-                extentReports.setSystemInfo("Author", ConstantGlobal.AUTHOR != null ? ConstantGlobal.AUTHOR : "N/A");
+                extentReports.setSystemInfo("Author", valueOrNA(ConfigManager.getAuthor()));
                 extentReports.setSystemInfo("Browser", ConfigManager.getBrowser() != null ? ConfigManager.getBrowser() : "N/A");
 
                 // Use environment from ConfigManager
-                String environment = ConfigManager.getEnvironment() != null ?
-                    ConfigManager.getEnvironment() : (ConstantGlobal.ENV != null ? ConstantGlobal.ENV : "N/A");
+                String environment = valueOrNA(ConfigManager.getEnvironment());
                 extentReports.setSystemInfo("Environment", environment);
                 extentReports.setSystemInfo("Version", "1.0");
 
                 // User Information from ConfigManager
-                String testUserEmail = ConfigManager.getValidLoginEmail() != null ?
-                    ConfigManager.getValidLoginEmail() : (ConstantGlobal.VALID_EMAIL != null ? ConstantGlobal.VALID_EMAIL : "N/A");
+                String testUserEmail = valueOrNA(ConfigManager.getValidLoginEmail());
                 extentReports.setSystemInfo("Test User Email", testUserEmail);
                 extentReports.setSystemInfo("Test Account Type", getUserAccountType());
                 extentReports.setSystemInfo("Test Data Source", "Environment Properties - env/" + environment + ".properties");
@@ -72,7 +69,8 @@ public class ExtentReportManager {
                 extentReports.setSystemInfo("Report Generated", LocalDateTime.now().format(
                         DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
                 extentReports.setSystemInfo("Headless Mode", ConfigManager.isHeadless() ? "On" : "Off");
-                extentReports.setSystemInfo("Page Load Timeout (seconds)", ConstantGlobal.PAGE_LOAD_TIMEOUT != null ? ConstantGlobal.PAGE_LOAD_TIMEOUT : "N/A");
+                extentReports.setSystemInfo("Page Load Timeout (seconds)", String.valueOf(ConfigManager.getPageLoadTimeout()));
+                extentReports.setSystemInfo("Locale", ConfigManager.getLocale());
 
                 System.out.println("ExtentReport initialized at: " + reportPath);
             }catch (Exception e){
@@ -86,8 +84,7 @@ public class ExtentReportManager {
     // ========== ENHANCEMENT: Helper Methods for User Info ==========
     private static String getUserAccountType() {
         // Use environment from ConfigManager
-        String env = ConfigManager.getEnvironment() != null ?
-            ConfigManager.getEnvironment() : ConstantGlobal.ENV;
+        String env = ConfigManager.getEnvironment();
 
         if (env == null) {
             System.err.println("WARNING: Environment is NULL! Check if properties are loaded correctly.");
@@ -107,10 +104,8 @@ public class ExtentReportManager {
 
     public static String getFormattedUserInfo() {
         // Use info from ConfigManager
-        String email = ConfigManager.getValidLoginEmail() != null ?
-            ConfigManager.getValidLoginEmail() : (ConstantGlobal.VALID_EMAIL != null ? ConstantGlobal.VALID_EMAIL : "N/A");
-        String environment = ConfigManager.getEnvironment() != null ?
-            ConfigManager.getEnvironment() : (ConstantGlobal.ENV != null ? ConstantGlobal.ENV : "N/A");
+        String email = valueOrNA(ConfigManager.getValidLoginEmail());
+        String environment = valueOrNA(ConfigManager.getEnvironment());
 
         return String.format(
                 "User Info:\n" +
@@ -123,5 +118,9 @@ public class ExtentReportManager {
                 environment,
                 environment
         );
+    }
+
+    private static String valueOrNA(String value) {
+        return value == null || value.isBlank() ? "N/A" : value;
     }
 }

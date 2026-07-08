@@ -1,0 +1,11 @@
+API PAYLOAD
+{
+  "description" : "Reprehenderit necessitatibus cumque aut sint officia nulla.",
+  "category" : "Conference",
+  "venue" : "Ruecker, DuBuque and Dooley Convention Center",
+  "city" : "West Portiaborough",
+  "eventDate" : "2026-07-09T16:00:00Z",
+  "price" : "456",
+  "totalSeats" : 12,
+  "imageUrl" : "https://example.com/images/excepturi_provident.jpg"
+}

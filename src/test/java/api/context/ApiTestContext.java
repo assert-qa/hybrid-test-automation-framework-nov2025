@@ -12,6 +12,7 @@ public class ApiTestContext {
     private static final ThreadLocal<Integer> userId = new ThreadLocal<>();
     private static final ThreadLocal<Integer> eventId = new ThreadLocal<>();
     private static final ThreadLocal<Integer> bookingId = new ThreadLocal<>();
+    private static final ThreadLocal<String> bookingReferenceCode = new ThreadLocal<>();
 
     public Map<String, Object> getRequestPayload() {
         return requestPayload.get();
@@ -61,6 +62,14 @@ public class ApiTestContext {
         bookingId.set(id);
     }
 
+    public String getBookingReferenceCode() {
+        return bookingReferenceCode.get();
+    }
+
+    public void setBookingReferenceCode(String referenceCode) {
+        bookingReferenceCode.set(referenceCode);
+    }
+
     public static void reset() {
         requestPayload.remove();
         response.remove();
@@ -68,5 +77,6 @@ public class ApiTestContext {
         userId.remove();
         eventId.remove();
         bookingId.remove();
+        bookingReferenceCode.remove();
     }
 }

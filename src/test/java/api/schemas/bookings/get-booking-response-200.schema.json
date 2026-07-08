@@ -19,6 +19,7 @@
         "required": [
           "id",
           "eventId",
+          "userId",
           "customerName",
           "customerEmail",
           "customerPhone",
@@ -37,6 +38,9 @@
           "eventId": {
             "type": "integer"
           },
+          "userId": {
+            "type": "integer"
+          },
           "customerName": {
             "type": "string"
           },
@@ -52,8 +56,10 @@
             "minimum": 1
           },
           "totalPrice": {
-            "type": "number",
-            "minimum": 0
+            "type": [
+              "number",
+              "string"
+            ]
           },
           "status": {
             "type": "string",
@@ -64,7 +70,8 @@
             ]
           },
           "bookingRef": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[A-Z]-[A-Z0-9]{6}$"
           },
           "createdAt": {
             "type": "string",
@@ -89,6 +96,8 @@
               "totalSeats",
               "availableSeats",
               "imageUrl",
+              "isStatic",
+              "userId",
               "createdAt",
               "updatedAt"
             ],
@@ -116,8 +125,10 @@
                 "format": "date-time"
               },
               "price": {
-                "type": "number",
-                "minimum": 0
+                "type": [
+                  "number",
+                  "string"
+                ]
               },
               "totalSeats": {
                 "type": "integer",
@@ -130,6 +141,15 @@
               "imageUrl": {
                 "type": "string",
                 "format": "uri"
+              },
+              "isStatic": {
+                "type": "boolean"
+              },
+              "userId": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "createdAt": {
                 "type": "string",
@@ -168,7 +188,7 @@
         },
         "totalPages": {
           "type": "integer",
-          "minimum": 1
+          "minimum": 0
         }
       }
     }

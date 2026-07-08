@@ -1,15 +1,15 @@
 package common;
 
-import constants.ConstantGlobal;
 import factory.DriverFactory;
 import factory.DriverManager;
+import managers.ConfigManager;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
 
     public static void createDriver(){
         if (DriverManager.getDriver() == null) {
-            new DriverFactory().createDriver(ConstantGlobal.BROWSER);
+            new DriverFactory().createDriver(ConfigManager.getBrowser());
         }
     }
 

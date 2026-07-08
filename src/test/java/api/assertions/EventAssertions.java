@@ -12,69 +12,33 @@ import java.util.Map;
 public class EventAssertions {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    private static final File LIST_EVENTS_RESPONSE_200_SCHEMA =
-            new File("src/test/java/api/schemas/events/list-event-response-200.schema.json");
+    private static final String SCHEMA_DIR = "src/test/java/api/schemas/events/";
 
-    private static final File CREATE_NEW_EVENT_SCHEMA =
-            new File("src/test/java/api/schemas/events/create-new-event-request.schema.json");
-
-    private static final File CREATE_NEW_EVENT_RESPONSE_201_SCHEMA =
-            new File("src/test/java/api/schemas/events/create-new-event-response-201.schema.json");
-
-    private static final File CREATE_NEW_EVENT_RESPONSE_400_SCHEMA =
-            new File("src/test/java/api/schemas/events/create-new-event-response-400.schema.json");
-
-    private static final File GET_EVENT_BY_ID_RESPONSE_200_SCHEMA =
-            new File("src/test/java/api/schemas/events/get-event-response-200.schema.json");
-
-    private static final File GET_EVENT_BY_ID_RESPONSE_404_SCHEMA =
-            new File("src/test/java/api/schemas/events/get-event-response-404.schema.json");
-
-    private static final File GET_EVENT_BY_ID_RESPONSE_500_SCHEMA =
-            new File("src/test/java/api/schemas/events/get-event-response-500.schema.json");
-
-    private static final File UPDATE_EVENT_REQUEST_SCHEMA =
-            new File("src/test/java/api/schemas/events/update-event-request.schema.json");
-
-    private static final File UPDATE_EVENT_RESPONSE_200_SCHEMA =
-            new File("src/test/java/api/schemas/events/update-event-response-200.schema.json");
-
-    private static final File UPDATE_EVENT_RESPONSE_400_SCHEMA =
-            new File("src/test/java/api/schemas/events/update-event-response-400.schema.json");
-
-    private static final File UPDATE_EVENT_RESPONSE_404_SCHEMA =
-            new File("src/test/java/api/schemas/events/update-event-response-404.schema.json");
-
-    private static final File DELETE_EVENT_RESPONSE_200_SCHEMA =
-            new File("src/test/java/api/schemas/events/delete-event-response-200.schema.json");
-
-    private static final File DELETE_EVENT_RESPONSE_404_SCHEMA =
-            new File("src/test/java/api/schemas/events/delete-event-response-404.schema.json");
-
-    private static final File DELETE_EVENT_RESPONSE_500_SCHEMA =
-            new File("src/test/java/api/schemas/events/delete-event-response-500.schema.json");
-
-    private void assertResponseMatchesSchema(Response response, File schema) {
-        Assertions.assertThat(schema).exists();
-        response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schema));
-    }
+    private static final File LIST_EVENTS_RESPONSE_200_SCHEMA = schema("list-event-response-200.schema.json");
+    private static final File CREATE_NEW_EVENT_SCHEMA = schema("create-new-event-request.schema.json");
+    private static final File CREATE_NEW_EVENT_RESPONSE_201_SCHEMA = schema("create-new-event-response-201.schema.json");
+    private static final File CREATE_NEW_EVENT_RESPONSE_400_SCHEMA = schema("create-new-event-response-400.schema.json");
+    private static final File GET_EVENT_BY_ID_RESPONSE_200_SCHEMA = schema("get-event-response-200.schema.json");
+    private static final File GET_EVENT_BY_ID_RESPONSE_404_SCHEMA = schema("get-event-response-404.schema.json");
+    private static final File GET_EVENT_BY_ID_RESPONSE_500_SCHEMA = schema("get-event-response-500.schema.json");
+    private static final File UPDATE_EVENT_REQUEST_SCHEMA = schema("update-event-request.schema.json");
+    private static final File UPDATE_EVENT_RESPONSE_200_SCHEMA = schema("update-event-response-200.schema.json");
+    private static final File UPDATE_EVENT_RESPONSE_400_SCHEMA = schema("update-event-response-400.schema.json");
+    private static final File UPDATE_EVENT_RESPONSE_404_SCHEMA = schema("update-event-response-404.schema.json");
+    private static final File DELETE_EVENT_RESPONSE_200_SCHEMA = schema("delete-event-response-200.schema.json");
+    private static final File DELETE_EVENT_RESPONSE_404_SCHEMA = schema("delete-event-response-404.schema.json");
+    private static final File DELETE_EVENT_RESPONSE_500_SCHEMA = schema("delete-event-response-500.schema.json");
 
     public void assertListEventsResponseSchema200(Response response) {
         assertResponseMatchesSchema(response, LIST_EVENTS_RESPONSE_200_SCHEMA);
     }
 
     public void assertCreateNewEventRequestSchema(Map<String, Object> payload) {
-        Assertions.assertThat(CREATE_NEW_EVENT_SCHEMA).exists();
-        Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(CREATE_NEW_EVENT_SCHEMA).matches(toJson(payload)))
-                .as("Create new event request payload should match schema")
-                .isTrue();
+        assertRequestMatchesSchema(payload, CREATE_NEW_EVENT_SCHEMA, "Create new event request payload should match schema");
     }
 
     public void assertUpdateEventRequestSchema(Map<String, Object> payload) {
-        Assertions.assertThat(UPDATE_EVENT_REQUEST_SCHEMA).exists();
-        Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(UPDATE_EVENT_REQUEST_SCHEMA).matches(toJson(payload)))
-                .as("Update event request payload should match schema")
-                .isTrue();
+        assertRequestMatchesSchema(payload, UPDATE_EVENT_REQUEST_SCHEMA, "Update event request payload should match schema");
     }
 
     public boolean supportsApi(String apiName) {
@@ -87,47 +51,28 @@ public class EventAssertions {
         String normalizedSchemaType = normalize(schemaType);
         int statusCode = response.statusCode();
 
-        if ("events".equals(normalizedApiName) || "list events".equals(normalizedApiName)) {
+        if (isListEvent(normalizedApiName)) {
             assertListEventsResponseSchema200(response);
             return;
         }
 
         if (normalizedApiName.contains("create")) {
-            switch (statusCode) {
-                case 201 -> assertResponseMatchesSchema(response, CREATE_NEW_EVENT_RESPONSE_201_SCHEMA);
-                case 400 -> assertResponseMatchesSchema(response, CREATE_NEW_EVENT_RESPONSE_400_SCHEMA);
-                default -> throw unsupportedEventSchema(apiName, schemaType, statusCode);
-            }
+            assertCreateEventResponseSchema(response, statusCode);
             return;
         }
 
         if (normalizedApiName.contains("get")) {
-            switch (statusCode) {
-                case 200 -> assertResponseMatchesSchema(response, GET_EVENT_BY_ID_RESPONSE_200_SCHEMA);
-                case 404 -> assertResponseMatchesSchema(response, GET_EVENT_BY_ID_RESPONSE_404_SCHEMA);
-                case 500 -> assertResponseMatchesSchema(response, GET_EVENT_BY_ID_RESPONSE_500_SCHEMA);
-                default -> throw unsupportedEventSchema(apiName, schemaType, statusCode);
-            }
+            assertGetEventByIdResponseSchema(response, statusCode);
             return;
         }
 
         if (normalizedApiName.contains("update")) {
-            switch (statusCode) {
-                case 200 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_200_SCHEMA);
-                case 400 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_400_SCHEMA);
-                case 404 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_404_SCHEMA);
-                default -> throw unsupportedEventSchema(apiName, schemaType, statusCode);
-            }
+            assertUpdateEventResponseSchema(response, statusCode);
             return;
         }
 
         if (normalizedApiName.contains("delete")) {
-            switch (statusCode) {
-                case 200 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_200_SCHEMA);
-                case 404 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_404_SCHEMA);
-                case 500 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_500_SCHEMA);
-                default -> throw unsupportedEventSchema(apiName, schemaType, statusCode);
-            }
+            assertDeleteEventResponseSchema(response, statusCode);
             return;
         }
 
@@ -139,7 +84,45 @@ public class EventAssertions {
         throw unsupportedEventSchema(apiName, schemaType, statusCode);
     }
 
-    // helper method
+    private void assertCreateEventResponseSchema(Response response, int statusCode) {
+        switch (statusCode) {
+            case 201 -> assertResponseMatchesSchema(response, CREATE_NEW_EVENT_RESPONSE_201_SCHEMA);
+            case 400 -> assertResponseMatchesSchema(response, CREATE_NEW_EVENT_RESPONSE_400_SCHEMA);
+            default -> throw unsupportedEventSchema("create event", "response", statusCode);
+        }
+    }
+
+    private void assertGetEventByIdResponseSchema(Response response, int statusCode) {
+        switch (statusCode) {
+            case 200 -> assertResponseMatchesSchema(response, GET_EVENT_BY_ID_RESPONSE_200_SCHEMA);
+            case 404 -> assertResponseMatchesSchema(response, GET_EVENT_BY_ID_RESPONSE_404_SCHEMA);
+            case 500 -> assertResponseMatchesSchema(response, GET_EVENT_BY_ID_RESPONSE_500_SCHEMA);
+            default -> throw unsupportedEventSchema("get event by id", "response", statusCode);
+        }
+    }
+
+    private void assertUpdateEventResponseSchema(Response response, int statusCode) {
+        switch (statusCode) {
+            case 200 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_200_SCHEMA);
+            case 400 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_400_SCHEMA);
+            case 404 -> assertResponseMatchesSchema(response, UPDATE_EVENT_RESPONSE_404_SCHEMA);
+            default -> throw unsupportedEventSchema("update event", "response", statusCode);
+        }
+    }
+
+    private void assertDeleteEventResponseSchema(Response response, int statusCode) {
+        switch (statusCode) {
+            case 200 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_200_SCHEMA);
+            case 404 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_404_SCHEMA);
+            case 500 -> assertResponseMatchesSchema(response, DELETE_EVENT_RESPONSE_500_SCHEMA);
+            default -> throw unsupportedEventSchema("delete event", "response", statusCode);
+        }
+    }
+
+    private boolean isListEvent(String normalizedApiName) {
+        return "events".equals(normalizedApiName) || normalizedApiName.contains("list");
+    }
+
     private IllegalArgumentException unsupportedEventSchema(String apiName, String schemaType, int statusCode) {
         return new IllegalArgumentException(
                 "Unsupported event API response schema: " + apiName + " " + schemaType + " " + statusCode
@@ -156,5 +139,21 @@ public class EventAssertions {
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("Failed to serialize event payload for schema validation", e);
         }
+    }
+
+    private void assertRequestMatchesSchema(Map<String, Object> payload, File schema, String assertionMessage) {
+        Assertions.assertThat(schema).exists();
+        Assertions.assertThat(JsonSchemaValidator.matchesJsonSchema(schema).matches(toJson(payload)))
+                .as(assertionMessage)
+                .isTrue();
+    }
+
+    private void assertResponseMatchesSchema(Response response, File schema) {
+        Assertions.assertThat(schema).exists();
+        response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schema));
+    }
+
+    private static File schema(String fileName) {
+        return new File(SCHEMA_DIR + fileName);
     }
 }

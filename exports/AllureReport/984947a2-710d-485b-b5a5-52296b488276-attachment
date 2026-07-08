@@ -1,0 +1,5 @@
+API ENDPOINT
+Endpoint Name: get booking by reference code
+Endpoint: /bookings/ref/{ref}
+Base URL: https://api.eventhub.rahulshettyacademy.com/api
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/bookings/ref/{ref}

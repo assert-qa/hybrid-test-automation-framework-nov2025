@@ -1,0 +1,40 @@
+RESPONSE SCHEMA VALIDATION
+API: create new booking
+Schema Type: success
+Status Code: 201
+Body:
+{
+    "success": true,
+    "data": {
+        "id": 78982,
+        "eventId": 72254,
+        "userId": 14673,
+        "customerName": "Margareta",
+        "customerEmail": "long.kertzmann@yahoo.com",
+        "customerPhone": "(854) 768-0138",
+        "quantity": 1,
+        "totalPrice": "374",
+        "status": "confirmed",
+        "bookingRef": "B-V5TCUH",
+        "createdAt": "2026-07-08T03:55:23.366Z",
+        "updatedAt": "2026-07-08T03:55:23.366Z",
+        "event": {
+            "id": 72254,
+            "title": "bandwidth-monitored",
+            "description": "Veritatis atque sed quos dignissimos modi.",
+            "category": "Concert",
+            "venue": "Fisher and Sons Convention Center",
+            "city": "Torpchester",
+            "eventDate": "2026-07-19T15:00:00.000Z",
+            "price": "374",
+            "totalSeats": 99,
+            "availableSeats": 99,
+            "imageUrl": "https://example.com/images/libero_incidunt.jpg",
+            "isStatic": false,
+            "userId": 14673,
+            "createdAt": "2026-07-08T03:55:22.660Z",
+            "updatedAt": "2026-07-08T03:55:22.660Z"
+        }
+    },
+    "message": "Booking confirmed!"
+}

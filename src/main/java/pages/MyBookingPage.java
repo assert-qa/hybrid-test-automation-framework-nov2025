@@ -1,10 +1,10 @@
 package pages;
 
-import constants.ConstantGlobal;
 import factory.DriverFactory;
 import factory.DriverManager;
 import keywords.WebUI;
 import lombok.NonNull;
+import managers.ConfigManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -174,7 +174,7 @@ public class MyBookingPage extends DriverFactory {
     }
 
     public void confirmBookingDeletion(){
-        Alert alert = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(Long.parseLong(ConstantGlobal.EXPLICIT_TIMEOUT)))
+        Alert alert = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigManager.getExplicitWaitTimeout()))
                 .until(ExpectedConditions.alertIsPresent());
         alert.accept();
     }
@@ -182,7 +182,7 @@ public class MyBookingPage extends DriverFactory {
     public void waitUntilBookingsCleared(){
         By bookingCardLocator = By.cssSelector(listOfBookedEvents);
 
-        new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(Long.parseLong(ConstantGlobal.EXPLICIT_TIMEOUT)))
+        new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigManager.getExplicitWaitTimeout()))
                 .until(driver -> WebUI.getWebElements(bookingCardLocator).isEmpty()
                         || WebUI.isElementDisplayed(By.xpath(emptyStateLabel)));
     }

@@ -1,6 +1,6 @@
 package reports;
 
-import constants.ConstantGlobal;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import factory.DriverManager;
 import managers.ConfigManager;
 import helpers.SystemHelper;
@@ -8,10 +8,21 @@ import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Properties;
 
 public class AllureManager {
+    private static final String ALLURE_RESULTS_DIRECTORY_PROPERTY = "allure.results.directory";
+    private static final String DEFAULT_ALLURE_RESULTS_DIRECTORY = "exports/AllureReport";
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
     // Text attachment
     @Attachment(value = "{0}", type = "text/plain")
     public static String saveTextLog(String message) {
@@ -47,9 +58,65 @@ public class AllureManager {
         return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-    // ...existing code...
+    // Executor metadata for Allure report Executors tab.
+    public static void writeExecutorInfo() {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return;
+        }
 
-    // ========== ENHANCEMENT: Environment Information ==========
+        try {
+            Path resultsDirectory = getAllureResultsDirectory();
+            Files.createDirectories(resultsDirectory);
+
+            Map<String, Object> executor = new LinkedHashMap<>();
+            executor.put("name", getExecutorName());
+            executor.put("type", getExecutorType());
+            addIfPresent(executor, "url", firstNonBlank(env("BUILD_URL"), env("GITHUB_SERVER_URL"), env("CI_SERVER_URL")));
+            executor.put("buildOrder", getBuildOrder());
+            executor.put("buildName", getBuildName());
+            addIfPresent(executor, "buildUrl", getBuildUrl());
+            executor.put("reportName", "Allure Report - " + valueOrNA(ConfigManager.getEnvironment()));
+            addIfPresent(executor, "reportUrl", env("ALLURE_REPORT_URL"));
+
+            OBJECT_MAPPER.writerWithDefaultPrettyPrinter()
+                    .writeValue(resultsDirectory.resolve("executor.json").toFile(), executor);
+        } catch (IOException e) {
+            System.err.println("WARNING: Failed to write Allure executor info: " + e.getMessage());
+        }
+    }
+
+    // Environment metadata for Allure report Environment tab.
+    public static void writeEnvironmentInfo() {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return;
+        }
+
+        try {
+            Path resultsDirectory = getAllureResultsDirectory();
+            Files.createDirectories(resultsDirectory);
+
+            Properties environment = new Properties();
+            environment.setProperty("Environment", valueOrNA(ConfigManager.getEnvironment()));
+            environment.setProperty("Maven.Profile.Env", valueOrNA(System.getProperty("env")));
+            environment.setProperty("Base.URL", valueOrNA(ConfigManager.getBaseUrl()));
+            environment.setProperty("Browser", valueOrNA(ConfigManager.getBrowser()));
+            environment.setProperty("Headless.Mode", ConfigManager.isHeadless() ? "On" : "Off");
+            environment.setProperty("Locale", valueOrNA(ConfigManager.getLocale()));
+            environment.setProperty("Author", valueOrNA(ConfigManager.getAuthor()));
+            environment.setProperty("Test.User.Email", valueOrNA(ConfigManager.getValidLoginEmail()));
+            environment.setProperty("Account.Type", getAccountType());
+            environment.setProperty("Operating.System", valueOrNA(SystemHelper.getOSName()));
+            environment.setProperty("Java.Version", valueOrNA(System.getProperty("java.version")));
+            environment.setProperty("Executor", getExecutorName());
+
+            try (OutputStream output = Files.newOutputStream(resultsDirectory.resolve("environment.properties"))) {
+                environment.store(output, "Allure environment");
+            }
+        } catch (IOException e) {
+            System.err.println("WARNING: Failed to write Allure environment info: " + e.getMessage());
+        }
+    }
+
     @Attachment(value = "Test Environment Information", type = "text/plain")
     public static String attachEnvironmentInfo() {
         if (!ConfigManager.isAllureReportEnabled()) {
@@ -58,20 +125,18 @@ public class AllureManager {
         StringBuilder info = new StringBuilder();
         info.append("=== TEST ENVIRONMENT INFORMATION ===\n\n");
 
-        // Use environment from ConfigManager
-        String environment = ConfigManager.getEnvironment() != null ?
-            ConfigManager.getEnvironment() : (ConstantGlobal.ENV != null ? ConstantGlobal.ENV : "N/A");
+        String environment = valueOrNA(ConfigManager.getEnvironment());
 
         info.append("Environment: ").append(environment).append("\n");
-        info.append("Base URL: ").append(ConfigManager.getBaseUrl() != null ? ConfigManager.getBaseUrl() : "N/A").append("\n");
-        info.append("Browser: ").append(ConfigManager.getBrowser() != null ? ConfigManager.getBrowser() : "N/A").append("\n");
+        info.append("Base URL: ").append(valueOrNA(ConfigManager.getBaseUrl())).append("\n");
+        info.append("Browser: ").append(valueOrNA(ConfigManager.getBrowser())).append("\n");
         info.append("Headless Mode: ").append(ConfigManager.isHeadless() ? "On" : "Off").append("\n");
+        info.append("Locale: ").append(ConfigManager.getLocale()).append("\n");
         info.append("Execution Time: ").append(LocalDateTime.now().format(
                 DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"))).append("\n");
         return info.toString();
     }
 
-    // ========== ENHANCEMENT: User Account Information ==========
     @Attachment(value = "Test User Account Information", type = "text/plain")
     public static String attachUserAccountInfo() {
         if (!ConfigManager.isAllureReportEnabled()) {
@@ -80,11 +145,8 @@ public class AllureManager {
         StringBuilder userInfo = new StringBuilder();
         userInfo.append("=== TEST USER ACCOUNT INFORMATION ===\n\n");
 
-        // Use email and environment from ConfigManager
-        String email = ConfigManager.getValidLoginEmail() != null ?
-            ConfigManager.getValidLoginEmail() : (ConstantGlobal.VALID_EMAIL != null ? ConstantGlobal.VALID_EMAIL : "N/A");
-        String environment = ConfigManager.getEnvironment() != null ?
-            ConfigManager.getEnvironment() : (ConstantGlobal.ENV != null ? ConstantGlobal.ENV : "N/A");
+        String email = valueOrNA(ConfigManager.getValidLoginEmail());
+        String environment = valueOrNA(ConfigManager.getEnvironment());
 
         userInfo.append("Email: ").append(email).append("\n");
         userInfo.append("Account Type: ").append(getAccountType()).append("\n");
@@ -94,7 +156,6 @@ public class AllureManager {
         return userInfo.toString();
     }
 
-    // ========== ENHANCEMENT: System Configuration ==========
     @Attachment(value = "System Configuration", type = "text/plain")
     public static String attachSystemConfig() {
         if (!ConfigManager.isAllureReportEnabled()) {
@@ -104,14 +165,19 @@ public class AllureManager {
         config.append("=== SYSTEM CONFIGURATION ===\n\n");
         config.append("Operating System: ").append(SystemHelper.getOSName()).append("\n");
         config.append("Java Version: ").append(System.getProperty("java.version")).append("\n");
-        config.append("Browser: ").append(ConstantGlobal.BROWSER).append("\n");
-        config.append("Explicit Wait Timeout: ").append(ConstantGlobal.EXPLICIT_TIMEOUT).append(" seconds\n");
-        config.append("Page Load Timeout: ").append(ConstantGlobal.PAGE_LOAD_TIMEOUT).append(" seconds\n");
-        config.append("Hard Wait Timeout: ").append(ConstantGlobal.HARD_WAIT_TIMEOUT).append(" seconds\n");
+        config.append("Browser: ").append(ConfigManager.getBrowser()).append("\n");
+        config.append("Author: ").append(ConfigManager.getAuthor()).append("\n");
+        config.append("Explicit Wait Timeout: ").append(ConfigManager.getExplicitWaitTimeout()).append(" seconds\n");
+        config.append("Page Load Timeout: ").append(ConfigManager.getPageLoadTimeout()).append(" seconds\n");
+        config.append("Hard Wait Timeout: ").append(ConfigManager.getHardWaitTimeout()).append(" seconds\n");
+        config.append("Step Time: ").append(ConfigManager.getStepTime()).append(" seconds\n");
+        config.append("Screenshot Path: ").append(ConfigManager.getScreenshotPath()).append("\n");
+        config.append("Record Video Path: ").append(ConfigManager.getRecordVideoPath()).append("\n");
+        config.append("Record Video Enabled: ").append(ConfigManager.isRecordVideoEnabled()).append("\n");
+        config.append("Screenshot Step All Enabled: ").append(ConfigManager.isScreenshotStepAllEnabled()).append("\n");
         return config.toString();
     }
 
-    // ========== ENHANCEMENT: Complete Test Context ==========
     @Attachment(value = "Complete Test Context Information", type = "text/plain")
     public static String attachCompleteTestContext() {
         if (!ConfigManager.isAllureReportEnabled()) {
@@ -125,7 +191,6 @@ public class AllureManager {
         return context.toString();
     }
 
-    // ========== ENHANCEMENT: Test Result Summary ==========
     @Attachment(value = "Test Result Summary", type = "text/plain")
     public static String attachTestResultSummary(String testName, String status) {
         if (!ConfigManager.isAllureReportEnabled()) {
@@ -136,29 +201,26 @@ public class AllureManager {
         summary.append("Test Name: ").append(testName).append("\n");
         summary.append("Status: ").append(status).append("\n");
 
-        // Use email and environment from ConfigManager
-        String email = ConfigManager.getValidLoginEmail() != null ?
-            ConfigManager.getValidLoginEmail() : (ConstantGlobal.VALID_EMAIL != null ? ConstantGlobal.VALID_EMAIL : "N/A");
-        String environment = ConfigManager.getEnvironment() != null ?
-            ConfigManager.getEnvironment() : (ConstantGlobal.ENV != null ? ConstantGlobal.ENV : "N/A");
+        String email = valueOrNA(ConfigManager.getValidLoginEmail());
+        String environment = valueOrNA(ConfigManager.getEnvironment());
 
         summary.append("Executed By: ").append(email).append("\n");
         summary.append("Environment: ").append(environment).append("\n");
         summary.append("Execution Date: ").append(LocalDateTime.now().format(
                 DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"))).append("\n");
-        summary.append("Browser: ").append(ConfigManager.getBrowser() != null ? ConfigManager.getBrowser() : "N/A").append("\n");
+        summary.append("Browser: ").append(valueOrNA(ConfigManager.getBrowser())).append("\n");
         return summary.toString();
     }
 
-    // ========== HELPER METHOD ==========
+    // helper method
     private static String getAccountType() {
-        // ========== FIXED: Add null check ==========
-        if (ConstantGlobal.ENV == null) {
-            System.err.println("WARNING: ConstantGlobal.ENV is NULL!");
+        String env = ConfigManager.getEnvironment();
+        if (env == null) {
+            System.err.println("WARNING: ConfigManager environment is NULL!");
             return "Unknown Account";
         }
 
-        String env = ConstantGlobal.ENV.toLowerCase();
+        env = env.toLowerCase();
         if (env.contains("prod")) {
             return "Production Account";
         } else if (env.contains("staging")) {
@@ -167,5 +229,102 @@ public class AllureManager {
             return "Development Account";
         }
         return "Test Account (" + env + ")";
+    }
+
+    private static String valueOrNA(String value) {
+        return value == null || value.isBlank() ? "N/A" : value;
+    }
+
+    private static Path getAllureResultsDirectory() {
+        return Path.of(System.getProperty(ALLURE_RESULTS_DIRECTORY_PROPERTY, DEFAULT_ALLURE_RESULTS_DIRECTORY));
+    }
+
+    private static String getExecutorName() {
+        if (isPresent(env("GITHUB_ACTIONS"))) {
+            return "GitHub Actions";
+        }
+        if (isPresent(env("JENKINS_URL"))) {
+            return "Jenkins";
+        }
+        if (isPresent(env("GITLAB_CI"))) {
+            return "GitLab CI";
+        }
+        return "Local Machine";
+    }
+
+    private static String getExecutorType() {
+        if (isPresent(env("GITHUB_ACTIONS"))) {
+            return "github";
+        }
+        if (isPresent(env("JENKINS_URL"))) {
+            return "jenkins";
+        }
+        if (isPresent(env("GITLAB_CI"))) {
+            return "gitlab";
+        }
+        return "local";
+    }
+
+    private static long getBuildOrder() {
+        String buildNumber = firstNonBlank(
+                env("BUILD_NUMBER"),
+                env("GITHUB_RUN_NUMBER"),
+                env("CI_PIPELINE_IID"),
+                env("CI_PIPELINE_ID")
+        );
+        if (isPresent(buildNumber)) {
+            try {
+                return Long.parseLong(buildNumber);
+            } catch (NumberFormatException ignored) {
+                // Fallback to timestamp for non-numeric CI build identifiers.
+            }
+        }
+        return System.currentTimeMillis() / 1000;
+    }
+
+    private static String getBuildName() {
+        String environment = valueOrNA(ConfigManager.getEnvironment());
+        String runName = firstNonBlank(
+                env("GITHUB_RUN_ID"),
+                env("BUILD_TAG"),
+                env("CI_PIPELINE_ID")
+        );
+        if (isPresent(runName)) {
+            return environment + " - " + runName;
+        }
+        return environment + " - " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+    }
+
+    private static String getBuildUrl() {
+        String githubServerUrl = env("GITHUB_SERVER_URL");
+        String githubRepository = env("GITHUB_REPOSITORY");
+        String githubRunId = env("GITHUB_RUN_ID");
+        if (isPresent(githubServerUrl) && isPresent(githubRepository) && isPresent(githubRunId)) {
+            return githubServerUrl + "/" + githubRepository + "/actions/runs/" + githubRunId;
+        }
+        return firstNonBlank(env("BUILD_URL"), env("CI_PIPELINE_URL"));
+    }
+
+    private static void addIfPresent(Map<String, Object> target, String key, String value) {
+        if (isPresent(value)) {
+            target.put(key, value);
+        }
+    }
+
+    private static String firstNonBlank(String... values) {
+        for (String value : values) {
+            if (isPresent(value)) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    private static boolean isPresent(String value) {
+        return value != null && !value.isBlank();
+    }
+
+    private static String env(String key) {
+        return System.getenv(key);
     }
 }

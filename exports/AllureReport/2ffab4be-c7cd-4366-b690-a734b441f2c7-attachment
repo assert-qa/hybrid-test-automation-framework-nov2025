@@ -1,0 +1,8 @@
+API PAYLOAD
+{
+  "eventId" : 72253,
+  "customerName" : "Dorie",
+  "customerEmail" : "felisha.hauck@yahoo.com",
+  "customerPhone" : "(305) 274-7744",
+  "quantity" : 1
+}

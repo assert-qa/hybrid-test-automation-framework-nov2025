@@ -1,0 +1,8 @@
+=== TEST RESULT SUMMARY ===
+
+Test Name: User cannot update an event that does not exist
+Status: PASSED
+Executed By: creola.vendervort@gmail.com
+Environment: prod
+Execution Date: 08-07-2026 10:55:52
+Browser: chrome

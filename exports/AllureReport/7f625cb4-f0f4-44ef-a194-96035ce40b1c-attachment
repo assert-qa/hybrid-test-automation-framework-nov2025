@@ -1,0 +1,12 @@
+API PAYLOAD
+{
+  "title" : "multimedia",
+  "description" : "Perspiciatis blanditiis maxime ipsam quod.",
+  "category" : "Workshop",
+  "venue" : "Deckow-Kessler Convention Center",
+  "city" : "Eddyview",
+  "eventDate" : "2026-07-09T08:00:00Z",
+  "price" : "245",
+  "totalSeats" : 9,
+  "imageUrl" : "https://example.com/images/omnis_totam.jpg"
+}

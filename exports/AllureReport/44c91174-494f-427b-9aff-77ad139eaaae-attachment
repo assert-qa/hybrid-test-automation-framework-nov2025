@@ -1,0 +1,21 @@
+API REQUEST
+Method: DELETE
+Endpoint Name: delete event
+Endpoint: /events/{id}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "title" : "Stand-alone",
+  "description" : "Odio dignissimos corporis.",
+  "category" : "Sports",
+  "venue" : "Metz-Howell Convention Center",
+  "city" : "West Demetriusport",
+  "eventDate" : "2026-07-24T19:00:00Z",
+  "price" : "602",
+  "totalSeats" : 12,
+  "imageUrl" : "https://example.com/images/repellendus_consequatur.jpg"
+}

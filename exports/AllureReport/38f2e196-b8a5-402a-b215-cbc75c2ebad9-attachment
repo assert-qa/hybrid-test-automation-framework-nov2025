@@ -1,0 +1,20 @@
+API REQUEST
+Method: PUT
+Endpoint Name: update event
+Endpoint: /events/{id}
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/events/{id}
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "description" : "Hic quia rem voluptatum deserunt reprehenderit numquam adipisci.",
+  "category" : "Conference",
+  "venue" : "Corwin-Jacobson International Center",
+  "city" : "New Daniel",
+  "eventDate" : "2026-07-28T12:00:00Z",
+  "price" : "889",
+  "totalSeats" : 97,
+  "imageUrl" : "https://example.com/images/rerum_nam.jpg"
+}

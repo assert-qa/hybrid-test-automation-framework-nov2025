@@ -1,6 +1,5 @@
 package hooks;
 
-import constants.ConstantGlobal;
 import api.context.ApiTestContext;
 import factory.DriverFactory;
 import factory.DriverManager;
@@ -43,6 +42,9 @@ public class CucumberHooks {
 
         // Log user info at suite level
         LogUtils.info(UserInfoHelper.getUserTestHeader());
+
+        AllureManager.writeExecutorInfo();
+        AllureManager.writeEnvironmentInfo();
     }
 
     @AfterAll
@@ -77,10 +79,8 @@ public class CucumberHooks {
                 ExtentTestManager.getTest().info("Starting scenario: " + testName);
 
                 // Log user info from ConfigManager
-                String userEmail = ConfigManager.getValidLoginEmail() != null ?
-                    ConfigManager.getValidLoginEmail() : ConstantGlobal.VALID_EMAIL;
-                String environment = ConfigManager.getEnvironment() != null ?
-                    ConfigManager.getEnvironment() : ConstantGlobal.ENV;
+                String userEmail = ConfigManager.getValidLoginEmail();
+                String environment = ConfigManager.getEnvironment();
                 String accountType = UserInfoHelper.getUserAccountType();
 
                 ExtentTestManager.getTest().info("Test User: " + userEmail);

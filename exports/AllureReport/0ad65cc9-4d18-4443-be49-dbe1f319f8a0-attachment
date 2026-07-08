@@ -1,0 +1,12 @@
+API PAYLOAD
+{
+  "title" : "non-volatile",
+  "description" : "Ipsum commodi numquam.",
+  "category" : "Sports",
+  "venue" : "Mann, Beahan and Turcotte Convention Center",
+  "city" : "Schambergerborough",
+  "eventDate" : "2026-08-07T12:00:00Z",
+  "price" : "536",
+  "totalSeats" : 76,
+  "imageUrl" : "https://example.com/images/dolor_adipisci.jpg"
+}

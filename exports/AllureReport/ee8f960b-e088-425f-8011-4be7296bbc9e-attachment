@@ -1,0 +1,17 @@
+API REQUEST
+Method: POST
+Endpoint Name: create booking
+Endpoint: /bookings
+Full URL: https://api.eventhub.rahulshettyacademy.com/api/bookings
+Headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer ******
+Payload / Query Params:
+{
+  "eventId" : 3,
+  "customerName" : "Twila",
+  "customerEmail" : "velia.oconner@yahoo.com",
+  "customerPhone" : "(472) 492-4325",
+  "quantity" : 3
+}

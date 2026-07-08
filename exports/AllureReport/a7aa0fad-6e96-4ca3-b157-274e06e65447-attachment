@@ -1,0 +1,9 @@
+RESPONSE SCHEMA VALIDATION
+API: create new booking
+Schema Type: not found
+Status Code: 404
+Body:
+{
+    "success": false,
+    "error": "Event with id 999999 not found"
+}

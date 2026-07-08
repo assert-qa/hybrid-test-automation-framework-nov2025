@@ -21,8 +21,8 @@ public class EndpointManager {
             case "BOOKINGS", "LIST_BOOKINGS" -> "/bookings";
             case "CREATE_BOOKING", "CREATE_NEW_BOOKING" -> "/bookings";
             case "GET_BOOKING", "GET_BOOKING_BY_ID" -> "/bookings/{id}";
-            case "GET_BOOKING_BY_REF", "GET_BOOKING_BY_REF_CODE" -> "/bookings/ref/{ref}";
-            case "DELETE_BOOKING", "DELETE_BOOKING_BY_ID" -> "/bookings/{id}";
+            case "GET_BOOKING_BY_REF", "GET_BOOKING_BY_REF_CODE", "GET_BOOKING_BY_REFERENCE_CODE" -> "/bookings/ref/{ref}";
+            case "DELETE_BOOKING", "DELETE_BOOKING_BY_ID", "CANCEL_BOOKING" -> "/bookings/{id}";
             default -> throw new IllegalArgumentException("Unknown endpoint: " + endpointName);
         };
     }

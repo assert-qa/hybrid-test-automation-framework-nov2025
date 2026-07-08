@@ -8,7 +8,6 @@ import utils.LogUtils;
 import factory.DriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import constants.ConstantGlobal;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -148,9 +147,9 @@ public class CucumberReportListener implements ConcurrentEventListener {
                                 String screenshotName = sanitized + "_FAIL_" + timestamp + ".png";
 
                                 // Absolute path untuk save file
-                                String screenshotPath = ConstantGlobal.SCREENSHOT_PATH + screenshotName;
+                                String screenshotPath = ConfigManager.getScreenshotPath() + screenshotName;
 
-                                File directory = new File(ConstantGlobal.SCREENSHOT_PATH);
+                                File directory = new File(ConfigManager.getScreenshotPath());
                                 if (!directory.exists()) {
                                     directory.mkdirs();
                                 }

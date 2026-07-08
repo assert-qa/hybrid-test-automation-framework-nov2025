@@ -1,0 +1,9 @@
+RESPONSE SCHEMA VALIDATION
+API: get booking by reference code
+Schema Type: error
+Status Code: 404
+Body:
+{
+    "success": false,
+    "error": "Booking with reference \"EVT-XYZ123\" not found"
+}

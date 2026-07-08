@@ -20,7 +20,7 @@ public class DriverFactory {
     }
 
     public WebDriver createDriver() {
-        WebDriver driver = setupBrowser(PropertiesHelper.getValue("BROWSER"));
+        WebDriver driver = setupBrowser(ConfigManager.getBrowser());
         DriverManager.setDriver(driver);
         return driver;
     }

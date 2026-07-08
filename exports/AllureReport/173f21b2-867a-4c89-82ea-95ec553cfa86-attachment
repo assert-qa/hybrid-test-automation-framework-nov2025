@@ -1,0 +1,10 @@
+REQUEST SCHEMA VALIDATION
+Schema: create-booking-request.schema.json
+Payload:
+{
+  "eventId" : 72254,
+  "customerName" : "Margareta",
+  "customerEmail" : "long.kertzmann@yahoo.com",
+  "customerPhone" : "(854) 768-0138",
+  "quantity" : 1
+}

@@ -1,0 +1,9 @@
+API ERROR ASSERTION
+API: get booking by reference code
+Expected Error: Booking with reference "EVT-XYZ123" not found
+Actual Error: Booking with reference "EVT-XYZ123" not found
+Body:
+{
+    "success": false,
+    "error": "Booking with reference \"EVT-XYZ123\" not found"
+}

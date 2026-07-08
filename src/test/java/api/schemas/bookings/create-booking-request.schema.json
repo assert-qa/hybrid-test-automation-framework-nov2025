@@ -9,19 +9,25 @@
   ],
   "properties": {
     "eventId": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "customerName": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "customerEmail": {
-      "type": "string"
+      "type": "string",
+      "format": "email"
     },
     "customerPhone": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "quantity": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
     }
   },
   "additionalProperties": false

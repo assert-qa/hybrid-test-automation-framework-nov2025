@@ -1,0 +1,8 @@
+API PAYLOAD
+{
+  "eventId" : 1,
+  "customerName" : "Nelson",
+  "customerEmail" : "lorenza.watsica@gmail.com",
+  "customerPhone" : "(505) 594-5309",
+  "quantity" : 1
+}

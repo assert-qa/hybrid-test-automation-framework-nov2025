@@ -1,0 +1,13 @@
+RESPONSE SCHEMA VALIDATION
+API: login
+Schema Type: success
+Status Code: 200
+Body:
+{
+    "success": true,
+    "token": "****",
+    "user": {
+        "id": 14673,
+        "email": "creola.vendervort@gmail.com"
+    }
+}

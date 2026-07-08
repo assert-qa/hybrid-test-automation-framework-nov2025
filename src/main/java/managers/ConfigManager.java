@@ -13,6 +13,7 @@ import java.util.Properties;
 public class ConfigManager {
     private static Properties config;
     private static Properties baseConfig;
+
     private static String environment;
     private static final String DEFAULT_ENV = "dev";
     private static final String BASE_CONFIG_PATH = "src/main/resources/config.properties";
@@ -134,7 +135,7 @@ public class ConfigManager {
     }
 
     public static String getLocale() {
-        return getProperty("LOCATE", "en");
+        return getProperty("LOCALE", getProperty("LOCATE", "en"));
     }
 
     public static String getValidLoginEmail() {
