@@ -1,7 +1,0 @@
-API QUERY PARAMS
-{
-  "eventId" : "1",
-  "status" : "confirmed",
-  "page" : "1",
-  "limit" : "10"
-}

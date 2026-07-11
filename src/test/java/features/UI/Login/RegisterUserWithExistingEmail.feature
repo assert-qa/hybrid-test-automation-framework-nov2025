@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Login
+@allure.label.story:DuplicateRegistration
+@allure.label.severity:normal
 Feature: User Registration with Existing Email
   As a registered user
   I want to prevent duplicate account registration

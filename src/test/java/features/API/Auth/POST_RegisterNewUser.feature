@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Authentication
+@allure.label.story:RegisterNewUser
+@allure.label.severity:critical
 Feature: Register a new user
 
   Background:

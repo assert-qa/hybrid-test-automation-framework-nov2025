@@ -1,4 +1,0 @@
-API REQUEST HEADERS
-Content-Type: application/json
-Accept: application/json
-Sensitive Headers: default RestAssured blacklist enabled

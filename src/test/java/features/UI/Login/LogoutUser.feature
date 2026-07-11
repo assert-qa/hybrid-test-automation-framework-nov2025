@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Login
+@allure.label.story:LogoutUser
+@allure.label.severity:normal
 Feature: User Logout
   As a registered user
   I want to log out from my account

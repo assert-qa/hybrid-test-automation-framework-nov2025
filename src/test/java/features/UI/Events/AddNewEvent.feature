@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Events
+@allure.label.story:AddNewEvent
+@allure.label.severity:critical
 Feature: Add New Event
   As an admin
   I want to add new events

@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Login
+@allure.label.story:RegisterUser
+@allure.label.severity:critical
 Feature: User Registration
   As a new user
   I want to register an account

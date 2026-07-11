@@ -1,9 +1,0 @@
-API ERROR ASSERTION
-API: create new booking
-Expected Error: Event with id 999999 not found
-Actual Error: Event with id 999999 not found
-Body:
-{
-    "success": false,
-    "error": "Event with id 999999 not found"
-}

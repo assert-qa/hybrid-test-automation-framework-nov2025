@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Events
+@allure.label.story:CombinationFilter
+@allure.label.severity:normal
 Feature: Combined Filters
   As a user
   I want to apply multiple filters

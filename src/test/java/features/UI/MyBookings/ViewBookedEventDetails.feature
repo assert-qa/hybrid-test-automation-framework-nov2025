@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:MyBookings
+@allure.label.story:ViewBookingDetail
+@allure.label.severity:normal
 Feature: View Booking Detail
   As a logged-in user
   I want to view the details of my booking

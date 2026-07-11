@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:MyBookings
+@allure.label.story:DeleteBooking
+@allure.label.severity:critical
 Feature: Delete Booking
   As a logged-in user
   I want to delete a booking

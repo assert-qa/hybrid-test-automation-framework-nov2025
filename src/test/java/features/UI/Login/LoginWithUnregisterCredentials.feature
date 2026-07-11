@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Login
+@allure.label.story:UnregisteredLogin
+@allure.label.severity:normal
 Feature: Login with Unregister Credentials
   As a new user
   I want to login with registered account with incorrect email and password

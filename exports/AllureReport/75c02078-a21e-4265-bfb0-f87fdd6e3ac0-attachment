@@ -1,9 +1,0 @@
-RESPONSE SCHEMA VALIDATION
-API: cancel booking
-Schema Type: error
-Status Code: 404
-Body:
-{
-    "success": false,
-    "error": "Booking with id 999999 not found"
-}

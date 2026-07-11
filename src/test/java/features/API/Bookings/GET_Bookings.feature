@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Bookings
+@allure.label.story:GetBookings
+@allure.label.severity:normal
 Feature: Get list all bookings
 
   Background:

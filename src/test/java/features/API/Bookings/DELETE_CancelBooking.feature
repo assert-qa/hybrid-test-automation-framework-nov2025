@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Bookings
+@allure.label.story:CancelBooking
+@allure.label.severity:critical
 Feature: Cancel a booking
 
   Background:

@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:MyBookings
+@allure.label.story:RefundEligibility
+@allure.label.severity:normal
 Feature: Refund Eligibility for Booked Event
   As a logged-in user
   I want to know whether my booking qualifies for a refund

@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Login
+@allure.label.story:ValidLogin
+@allure.label.severity:critical
 Feature: Login With Registered Credentials
   As a new user
   I want to login with registered account

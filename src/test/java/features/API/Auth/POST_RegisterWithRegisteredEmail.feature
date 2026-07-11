@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Authentication
+@allure.label.story:DuplicateEmailRegistration
+@allure.label.severity:normal
 Feature: Register with registered email
 
   Background:

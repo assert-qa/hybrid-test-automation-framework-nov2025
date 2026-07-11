@@ -1,8 +1,0 @@
-=== TEST RESULT SUMMARY ===
-
-Test Name: User cannot register with invalid email format and password too short via API
-Status: PASSED
-Executed By: creola.vendervort@gmail.com
-Environment: prod
-Execution Date: 08-07-2026 10:55:09
-Browser: chrome

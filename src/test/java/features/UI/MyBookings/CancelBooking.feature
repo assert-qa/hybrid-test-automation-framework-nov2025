@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:MyBookings
+@allure.label.story:CancelBooking
+@allure.label.severity:critical
 Feature: Cancel Booking
   As a logged-in user
   I want to cancel a booking

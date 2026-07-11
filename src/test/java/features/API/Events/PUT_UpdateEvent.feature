@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Events
+@allure.label.story:UpdateEvent
+@allure.label.severity:critical
 Feature: Update event
 
   Background:

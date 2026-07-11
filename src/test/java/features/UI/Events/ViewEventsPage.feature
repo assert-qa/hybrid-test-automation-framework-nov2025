@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Events
+@allure.label.story:ViewEventsPage
+@allure.label.severity:normal
 Feature: Events Page
   As a logged-in user
   I want to view my events

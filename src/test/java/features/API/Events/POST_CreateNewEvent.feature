@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Events
+@allure.label.story:CreateEvent
+@allure.label.severity:critical
 Feature: Create a new event
 
   Background:

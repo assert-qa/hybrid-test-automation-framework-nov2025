@@ -45,6 +45,7 @@ public class CucumberHooks {
 
         AllureManager.writeExecutorInfo();
         AllureManager.writeEnvironmentInfo();
+        AllureManager.writeCategoriesInfo();
     }
 
     @AfterAll

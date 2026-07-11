@@ -1,9 +1,0 @@
-API ERROR ASSERTION
-API: get event by id
-Expected Error: Event with id 99 not found
-Actual Error: Event with id 99 not found
-Body:
-{
-    "success": false,
-    "error": "Event with id 99 not found"
-}

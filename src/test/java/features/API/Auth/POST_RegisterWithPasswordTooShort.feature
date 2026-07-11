@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Authentication
+@allure.label.story:WeakPasswordRegistration
+@allure.label.severity:normal
 Feature: Register with password too short
 
   Background:

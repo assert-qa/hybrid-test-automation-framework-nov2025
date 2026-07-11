@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Bookings
+@allure.label.story:GetBookingByReferenceCode
+@allure.label.severity:normal
 Feature: Get booking by reference code
 
   Background:

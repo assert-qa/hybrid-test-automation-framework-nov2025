@@ -1,5 +1,0 @@
-API ENDPOINT
-Endpoint Name: cancel booking
-Endpoint: /bookings/{id}
-Base URL: https://api.eventhub.rahulshettyacademy.com/api
-Full URL: https://api.eventhub.rahulshettyacademy.com/api/bookings/{id}

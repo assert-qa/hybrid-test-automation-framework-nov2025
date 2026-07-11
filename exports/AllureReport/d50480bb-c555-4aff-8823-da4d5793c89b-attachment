@@ -1,8 +1,0 @@
-API PAYLOAD
-{
-  "eventId" : 3,
-  "customerName" : "Twila",
-  "customerEmail" : "velia.oconner@yahoo.com",
-  "customerPhone" : "(472) 492-4325",
-  "quantity" : 3
-}

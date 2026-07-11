@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Events
+@allure.label.story:SearchNotFound
+@allure.label.severity:normal
 Feature: Search Events
   As a user
   I want to search events

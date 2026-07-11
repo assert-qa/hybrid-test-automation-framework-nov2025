@@ -1,9 +1,0 @@
-API ERROR ASSERTION
-API: cancel booking
-Expected Error: Booking with id 999999 not found
-Actual Error: Booking with id 999999 not found
-Body:
-{
-    "success": false,
-    "error": "Booking with id 999999 not found"
-}

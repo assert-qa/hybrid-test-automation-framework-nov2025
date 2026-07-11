@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:MyBookings
+@allure.label.story:BookEvent
+@allure.label.severity:critical
 Feature: Book Event
   As a registered user
   I want to book an event

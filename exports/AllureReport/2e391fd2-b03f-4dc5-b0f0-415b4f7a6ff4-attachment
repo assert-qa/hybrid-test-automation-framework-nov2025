@@ -1,9 +1,0 @@
-RESPONSE SCHEMA VALIDATION
-API: delete event
-Schema Type: success
-Status Code: 200
-Body:
-{
-    "success": true,
-    "message": "Event deleted successfully"
-}

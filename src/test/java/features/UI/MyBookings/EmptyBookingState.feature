@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:MyBookings
+@allure.label.story:EmptyBookingState
+@allure.label.severity:normal
 Feature: My Bookings
   As a logged-in user
   I want to manage my event bookings

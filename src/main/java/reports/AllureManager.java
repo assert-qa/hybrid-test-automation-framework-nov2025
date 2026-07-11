@@ -1,5 +1,6 @@
 package reports;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import factory.DriverManager;
 import managers.ConfigManager;
@@ -9,18 +10,25 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
 public class AllureManager {
     private static final String ALLURE_RESULTS_DIRECTORY_PROPERTY = "allure.results.directory";
     private static final String DEFAULT_ALLURE_RESULTS_DIRECTORY = "exports/AllureReport";
+    private static final List<String> ALLURE_CATEGORY_RESOURCES = List.of(
+            "allure/categories/api-categories.json",
+            "allure/categories/ui-categories.json"
+    );
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     // Text attachment
@@ -114,6 +122,27 @@ public class AllureManager {
             }
         } catch (IOException e) {
             System.err.println("WARNING: Failed to write Allure environment info: " + e.getMessage());
+        }
+    }
+
+    public static void writeCategoriesInfo() {
+        if (!ConfigManager.isAllureReportEnabled()) {
+            return;
+        }
+
+        try {
+            Path resultsDirectory = getAllureResultsDirectory();
+            Files.createDirectories(resultsDirectory);
+
+            List<Map<String, Object>> categories = new ArrayList<>();
+            for (String resourcePath : ALLURE_CATEGORY_RESOURCES) {
+                loadCategories(resourcePath, categories);
+            }
+
+            OBJECT_MAPPER.writerWithDefaultPrettyPrinter()
+                    .writeValue(resultsDirectory.resolve("categories.json").toFile(), categories);
+        } catch (IOException e) {
+            System.err.println("WARNING: Failed to write Allure categories: " + e.getMessage());
         }
     }
 
@@ -237,6 +266,19 @@ public class AllureManager {
 
     private static Path getAllureResultsDirectory() {
         return Path.of(System.getProperty(ALLURE_RESULTS_DIRECTORY_PROPERTY, DEFAULT_ALLURE_RESULTS_DIRECTORY));
+    }
+
+    private static void loadCategories(String resourcePath, List<Map<String, Object>> categories) throws IOException {
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        try (InputStream inputStream = classLoader.getResourceAsStream(resourcePath)) {
+            if (inputStream == null) {
+                System.err.println("WARNING: Allure category resource not found: " + resourcePath);
+                return;
+            }
+
+            categories.addAll(OBJECT_MAPPER.readValue(inputStream, new TypeReference<>() {
+            }));
+        }
     }
 
     private static String getExecutorName() {

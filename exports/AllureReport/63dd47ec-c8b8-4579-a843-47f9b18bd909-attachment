@@ -1,8 +1,0 @@
-API QUERY PARAMS
-{
-  "category" : "Conference",
-  "city" : "Bangalore",
-  "search" : "Diwali",
-  "page" : "1",
-  "limit" : "10"
-}

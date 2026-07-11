@@ -1,3 +1,8 @@
+@ui
+@allure.label.epic:UI
+@allure.label.feature:Events
+@allure.label.story:FilterByCategory
+@allure.label.severity:normal
 Feature: Filter Events by Category
   As a user
   I want to filter events by category

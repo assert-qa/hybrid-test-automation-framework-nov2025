@@ -1,4 +1,8 @@
 @api
+@allure.label.epic:API
+@allure.label.feature:Events
+@allure.label.story:GetEventById
+@allure.label.severity:normal
 Feature: Get event by ID
 
   Background:

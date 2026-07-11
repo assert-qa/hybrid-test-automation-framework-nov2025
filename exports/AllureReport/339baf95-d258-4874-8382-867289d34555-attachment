@@ -1,9 +1,0 @@
-RESPONSE SCHEMA VALIDATION
-API: delete event
-Schema Type: error
-Status Code: 404
-Body:
-{
-    "success": false,
-    "error": "Event with id 999999 not found"
-}
