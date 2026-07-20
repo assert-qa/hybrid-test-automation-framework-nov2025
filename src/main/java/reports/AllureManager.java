@@ -84,7 +84,7 @@ public class AllureManager {
             executor.put("buildName", getBuildName());
             addIfPresent(executor, "buildUrl", getBuildUrl());
             executor.put("reportName", "Allure Report - " + valueOrNA(ConfigManager.getEnvironment()));
-            addIfPresent(executor, "reportUrl", env("ALLURE_REPORT_URL"));
+            addIfPresent(executor, "reportUrl", ConfigManager.getAllureReportUrl());
 
             OBJECT_MAPPER.writerWithDefaultPrettyPrinter()
                     .writeValue(resultsDirectory.resolve("executor.json").toFile(), executor);

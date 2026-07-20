@@ -80,6 +80,7 @@ public class CommonApiSteps {
 
         context.setResponse(response);
         ApiReportHelper.attachResponseEvidence(httpMethod, endpointName, response);
+        response.then().spec(ApiClient.responseSpec());
     }
 
     @And("the {string} API response should match {string} schema")

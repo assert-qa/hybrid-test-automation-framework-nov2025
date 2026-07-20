@@ -1,10 +1,10 @@
 package steps.ui;
 
-import constants.ConstantGlobal;
 import hooks.TestContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import keywords.WebUI;
+import managers.ConfigManager;
 import pages.LoginPage;
 
 public class StepsLogoutUser {
@@ -22,7 +22,7 @@ public class StepsLogoutUser {
 
     @Then("I should be redirected to the login page")
     public void verifyUserRedirectedToLoginPage() {
-        String actualUrl = ConstantGlobal.BASE_URL;
+        String actualUrl = ConfigManager.getBaseUrl();
         String expectedUrl = WebUI.getCurrentUrl();
 
         WebUI.verifyEquals(actualUrl, expectedUrl,

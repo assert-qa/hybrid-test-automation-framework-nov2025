@@ -1,6 +1,6 @@
 @api
-@allure.label.epic:API
-@allure.label.feature:Authentication
+@allure.label.epic:API-Test
+@allure.label.feature:Auth
 @allure.label.story:DuplicateEmailRegistration
 @allure.label.severity:normal
 Feature: Register with registered email

@@ -12,12 +12,13 @@
         <listener class-name="listeners.TestNgParameterListener"/>
         <!-- Retry Listener for Flaky Tests -->
         <listener class-name="listeners.RetryListener"/>
+        <!-- Sends final email report when REPORT.EMAIL.ENABLED=true -->
+        <listener class-name="listeners.EmailReportListener"/>
     </listeners>
 
     <test name="UI Tests">
         <classes>
-            <class name="runner.ui.TestRunnerLoginWithRegisteredCredentials"/>
-            <class name="runner.ui.TestRunnerBookEvent"/>
+            <class name="runner.ui.TestRunnerUI"/>
         </classes>
     </test>
 </suite>

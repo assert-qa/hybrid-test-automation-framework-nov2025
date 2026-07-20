@@ -1,5 +1,5 @@
 @ui
-@allure.label.epic:UI
+@allure.label.epic:UI-Test
 @allure.label.feature:Events
 @allure.label.story:AddNewEvent
 @allure.label.severity:critical

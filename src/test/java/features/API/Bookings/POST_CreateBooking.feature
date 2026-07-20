@@ -1,5 +1,5 @@
 @api
-@allure.label.epic:API
+@allure.label.epic:API-Test
 @allure.label.feature:Bookings
 @allure.label.story:CreateBooking
 @allure.label.severity:critical

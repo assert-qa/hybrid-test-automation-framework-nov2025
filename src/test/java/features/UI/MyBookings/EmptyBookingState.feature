@@ -1,5 +1,5 @@
 @ui
-@allure.label.epic:UI
+@allure.label.epic:UI-Test
 @allure.label.feature:MyBookings
 @allure.label.story:EmptyBookingState
 @allure.label.severity:normal

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Cucumber API and UI Automation Test Suite" verbose="1" parallel="false" thread-count="1">
+    <!-- If you want to change mode to open browser, just change this value to false. -->
+    <parameter name="HEADLESS" value="true"/>
+    <parameter name="BROWSER" value="chrome"/>
+
+    <listeners>
+        <!-- Allure TestNG Listener controlled by REPORT.ALLURE.ENABLED -->
+        <listener class-name="listeners.AllureReportListener"/>
+        <!-- Applies suite parameters such as HEADLESS and BROWSER to framework config -->
+        <listener class-name="listeners.TestNgParameterListener"/>
+        <!-- Retry Listener for Flaky Tests -->
+        <listener class-name="listeners.RetryListener"/>
+        <!-- Sends final email report when REPORT.EMAIL.ENABLED=true -->
+        <listener class-name="listeners.EmailReportListener"/>
+    </listeners>
+
+    <test name="API Tests">
+        <classes>
+            <class name="runner.api.TestRunnerAPI"/>
+        </classes>
+    </test>
+
+    <test name="UI Tests">
+        <classes>
+            <class name="runner.ui.TestRunnerUI"/>
+        </classes>
+    </test>
+</suite>

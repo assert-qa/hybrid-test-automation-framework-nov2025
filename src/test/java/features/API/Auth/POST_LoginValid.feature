@@ -1,6 +1,6 @@
 @api
-@allure.label.epic:API
-@allure.label.feature:Authentication
+@allure.label.epic:API-Test
+@allure.label.feature:Auth
 @allure.label.story:ValidLogin
 @allure.label.severity:critical
 Feature: Login API

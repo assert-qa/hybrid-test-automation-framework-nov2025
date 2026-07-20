@@ -122,6 +122,24 @@ public class ConfigManager {
         return getProperty("EXTENT_REPORT_PATH", "exports/ExtentReport/ExtentReport.html");
     }
 
+    public static String getExtentReportZipPath() {
+        return getProperty("EXTENT_REPORT_ZIP_PATH", "exports/ExtentReport.zip");
+    }
+
+    public static String getAllureReportUrl() {
+        String configuredUrl = getProperty("ALLURE_REPORT_URL", "");
+        if (isNotBlank(configuredUrl)) {
+            return configuredUrl.trim();
+        }
+
+        String buildUrl = System.getenv("BUILD_URL");
+        if (isNotBlank(buildUrl)) {
+            return appendPath(buildUrl, "allure");
+        }
+
+        return "";
+    }
+
     public static boolean isAllureReportEnabled() {
         return getBooleanProperty("REPORT.ALLURE.ENABLED", true);
     }
@@ -130,8 +148,43 @@ public class ConfigManager {
         return getBooleanProperty("REPORT.EXTENT.ENABLED", false);
     }
 
+    public static boolean isEmailReportEnabled() {
+        return getBooleanProperty("REPORT.EMAIL.ENABLED", getBooleanProperty("SEND_EMAIL_TO_USERS", false));
+    }
+
+    public static String getEmailSmtpHost() {
+        return getProperty("EMAIL.SMTP.HOST", "smtp.gmail.com");
+    }
+
+    public static String getEmailSmtpPort() {
+        return getProperty("EMAIL.SMTP.PORT", "587");
+    }
+
+    public static String getEmailFrom() {
+        return getProperty("EMAIL.FROM", "");
+    }
+
+    public static String getEmailPassword() {
+        return getProperty("EMAIL.PASSWORD", "");
+    }
+
+    public static String[] getEmailTo() {
+        String to = getProperty("EMAIL.TO", "");
+        if (!isNotBlank(to)) {
+            return new String[0];
+        }
+        return java.util.Arrays.stream(to.split(","))
+                .map(String::trim)
+                .filter(ConfigManager::isNotBlank)
+                .toArray(String[]::new);
+    }
+
+    public static String getReportTitle(){
+        return getProperty("REPORT_TITLE", "Report | Hybrid Automation Framework | Injas Mahendra Berutu");
+    }
+
     public static String getAuthor() {
-        return getProperty("AUTHOR", "Test Automation Team");
+        return getProperty("AUTHOR", "Injas Mahendra Berutu");
     }
 
     public static String getLocale() {
@@ -152,6 +205,13 @@ public class ConfigManager {
         if (systemValue != null) {
             return systemValue;
         }
+        String envValue = System.getenv(key);
+        if (envValue == null) {
+            envValue = System.getenv(key.replace('.', '_'));
+        }
+        if (envValue != null) {
+            return envValue;
+        }
         return config.getProperty(key);
     }
 
@@ -163,6 +223,17 @@ public class ConfigManager {
     private static boolean getBooleanProperty(String key, boolean defaultValue) {
         String value = getProperty(key);
         return value != null ? Boolean.parseBoolean(value.trim()) : defaultValue;
+    }
+
+    private static boolean isNotBlank(String value) {
+        return value != null && !value.trim().isEmpty();
+    }
+
+    private static String appendPath(String baseUrl, String path) {
+        if (baseUrl.endsWith("/")) {
+            return baseUrl + path;
+        }
+        return baseUrl + "/" + path;
     }
 
     public static void reload() {

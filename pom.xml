@@ -51,6 +51,7 @@
         <extent.report.ver>5.1.2</extent.report.ver>
         <extent.report.cucumber.ver>1.14.0</extent.report.cucumber.ver>
         <allure.ver>2.35.1</allure.ver>
+        <allure.maven.ver>2.15.2</allure.maven.ver>
         <allure.cucumber7.ver>2.33.0</allure.cucumber7.ver>
         <allure.testng.ver>2.30.0</allure.testng.ver>
         <allure.env.ver>1.0.0</allure.env.ver>
@@ -68,6 +69,7 @@
         <project.lombok.ver>1.18.42</project.lombok.ver>
         <mysql.conn.ver>9.4.0</mysql.conn.ver>
         <aspectj.weaver.ver>1.9.25.1</aspectj.weaver.ver>
+        <exec.maven.ver>3.5.0</exec.maven.ver>
         <rest.assured.ver>6.0.0</rest.assured.ver>
         <json.schema.validator.ver>6.0.0</json.schema.validator.ver>
         <suiteXmlFile>testng-api.xml</suiteXmlFile>
@@ -314,6 +316,20 @@
                     </argLine>
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure.maven.ver}</version>
+                <configuration>
+                    <resultsDirectory>${project.basedir}/exports/AllureReport</resultsDirectory>
+                    <reportDirectory>${project.basedir}/exports/AllureHtml</reportDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec.maven.ver}</version>
             </plugin>
         </plugins>
     </build>

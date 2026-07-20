@@ -1,5 +1,5 @@
 @ui
-@allure.label.epic:UI
+@allure.label.epic:UI-Test
 @allure.label.feature:Events
 @allure.label.story:ViewEventDetail
 @allure.label.severity:normal
@@ -8,7 +8,7 @@ Feature: My Events Page
   I want to view my events
   So that I can manage and review them
 
-  Scenario: User views event detail from My Events
+  Scenario Outline: User views event detail from My Events
     Given I launch the browser
     When I navigate to url "https://eventhub.rahulshettyacademy.com"
     And I enter registered email address and password

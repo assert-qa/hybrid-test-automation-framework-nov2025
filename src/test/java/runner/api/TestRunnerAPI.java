@@ -7,6 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features/API",
         glue = {"steps", "hooks"},
         tags = "@api",
+        monochrome = true,
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/api-report.html",

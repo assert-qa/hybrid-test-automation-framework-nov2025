@@ -1,6 +1,6 @@
 @api
-@allure.label.epic:API
-@allure.label.feature:Authentication
+@allure.label.epic:API-Test
+@allure.label.feature:Auth
 @allure.label.story:RegisterNewUser
 @allure.label.severity:critical
 Feature: Register a new user

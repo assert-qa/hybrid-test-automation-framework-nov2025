@@ -1,5 +1,5 @@
 @api
-@allure.label.epic:API
+@allure.label.epic:API-Test
 @allure.label.feature:Events
 @allure.label.story:GetEventById
 @allure.label.severity:normal

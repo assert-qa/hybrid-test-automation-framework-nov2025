@@ -1,5 +1,5 @@
 @ui
-@allure.label.epic:UI
+@allure.label.epic:UI-Test
 @allure.label.feature:Login
 @allure.label.story:ValidLogin
 @allure.label.severity:critical
