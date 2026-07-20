@@ -11,7 +11,9 @@ public class TestContext {
     private static final ThreadLocal<EventBookDetailDataObject> bookingData = new ThreadLocal<>();
     private static final ThreadLocal<String> selectedEventName = new ThreadLocal<>();
     private static final ThreadLocal<Integer> selectedEventPrice = new ThreadLocal<>();
+    private static final ThreadLocal<Integer> selectedEventAvailableSeats = new ThreadLocal<>();
     private static final ThreadLocal<String> notedBookedEventName = new ThreadLocal<>();
+    private static final ThreadLocal<String> notedBookingCardText = new ThreadLocal<>();
 
     private LoginPage loginPage;
     private RegisterPage registerPage;
@@ -55,6 +57,14 @@ public class TestContext {
         selectedEventPrice.set(price);
     }
 
+    public Integer getSelectedEventAvailableSeats() {
+        return selectedEventAvailableSeats.get();
+    }
+
+    public void setSelectedEventAvailableSeats(Integer seats) {
+        selectedEventAvailableSeats.set(seats);
+    }
+
     public String getNotedBookedEventName() {
         return notedBookedEventName.get();
     }
@@ -63,10 +73,20 @@ public class TestContext {
         notedBookedEventName.set(eventName);
     }
 
+    public String getNotedBookingCardText() {
+        return notedBookingCardText.get();
+    }
+
+    public void setNotedBookingCardText(String bookingCardText) {
+        notedBookingCardText.set(bookingCardText);
+    }
+
     public static void reset() {
         bookingData.remove();
         selectedEventName.remove();
         selectedEventPrice.remove();
+        selectedEventAvailableSeats.remove();
         notedBookedEventName.remove();
+        notedBookingCardText.remove();
     }
 }

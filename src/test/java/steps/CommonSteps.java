@@ -83,7 +83,10 @@ public class CommonSteps {
             case "confirm booking" -> myBookingPage.clickConfirmBookingButton();
             case "view details" -> myBookingPage.clickViewDetailsButton();
             case "clear all bookings" -> myBookingPage.clickClearAllBookingsTextButton();
-            case "cancel booking" -> myBookingPage.clickCancelButton();
+            case "cancel booking" -> {
+                testContext.setNotedBookingCardText(myBookingPage.getFirstBookedEventCardText());
+                myBookingPage.clickCancelButton();
+            }
             case "yes, cancel it" -> myBookingPage.clickConfirmBookingCancellationButton();
             case "check eligibility for refund?" -> myBookingPage.clickCheckEligible();
             default -> throw new IllegalArgumentException("Unsupported button in common step: " + buttonName);
@@ -127,6 +130,11 @@ public class CommonSteps {
 
     @Then("I should see the {string} message")
     public void i_should_see_the_message(String message) {
+        if ("No bookings yet".equalsIgnoreCase(message.trim())) {
+            myBookingPage.clearAllBookingsIfPresent();
+            myBookingPage.waitForEmptyStateDisplayed();
+        }
+
         WebUI.verifyTextVisible(message);
     }
 
@@ -134,22 +142,36 @@ public class CommonSteps {
     @Given("I have an existing booking")
     public void i_have_an_existing_booking(){
         Random genTicketNum = new Random();
-        i_have_an_existing_booking_with_ticket(genTicketNum.nextInt(9) + 2); // 2 - 10 tickets
+        eventPage.goToEventPage();
+        SelectedEventDataObject selectedEvent = eventPage.clickAnyAvailableEventAndGetData(2);
+        setSelectedEventContext(selectedEvent);
+
+        int maxTickets = Math.min(10, selectedEvent.getAvailableSeats());
+        int tickets = genTicketNum.nextInt(maxTickets - 1) + 2; // 2 - max tickets
+        createAndFillBookingInformation(tickets);
+
+        myBookingPage.clickConfirmBookingButton();
+        WebUI.verifyEquals(myBookingPage.verifyBookingSuccess(), "Your tickets are reserved.");
     }
 
     @Given("I have an existing booking with {int} ticket\\(s)")
     public void i_have_an_existing_booking_with_ticket(int tickets) {
         eventPage.goToEventPage();
-        SelectedEventDataObject selectedEvent = eventPage.clickAnyAvailableEventAndGetData();
-
-        // get selected event and it's price in TestContext
-        testContext.setSelectedEventName(selectedEvent.getEventName());
-        testContext.setSelectedEventPrice(selectedEvent.getEventPrice());
+        SelectedEventDataObject selectedEvent = eventPage.clickAnyAvailableEventAndGetData(tickets);
+        setSelectedEventContext(selectedEvent);
 
         createAndFillBookingInformation(tickets);
 
         myBookingPage.clickConfirmBookingButton();
         WebUI.verifyEquals(myBookingPage.verifyBookingSuccess(), "Your tickets are reserved.");
+    }
+
+    private void setSelectedEventContext(SelectedEventDataObject selectedEvent) {
+
+        // get selected event and it's price in TestContext
+        testContext.setSelectedEventName(selectedEvent.getEventName());
+        testContext.setSelectedEventPrice(selectedEvent.getEventPrice());
+        testContext.setSelectedEventAvailableSeats(selectedEvent.getAvailableSeats());
     }
 
     private void createAndFillBookingInformation(int tickets) {
@@ -161,6 +183,15 @@ public class CommonSteps {
 
     @Then("no booked event should no longer appear in My Bookings")
     public void no_booked_event_should_no_longer_appear_in_my_bookings() {
+        String notedBookingCardText = testContext.getNotedBookingCardText();
+
+        if (notedBookingCardText != null) {
+            myBookingPage.waitUntilBookedEventCardDisappears(notedBookingCardText);
+            WebUI.verifyFalse(myBookingPage.isBookedEventCardDisplayed(notedBookingCardText),
+                    "Cancelled booking is still displayed.");
+            return;
+        }
+
         myBookingPage.waitUntilBookingsCleared();
 
         WebUI.verifyTrue(myBookingPage.getBookingList().isEmpty(),

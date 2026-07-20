@@ -35,16 +35,25 @@ public class StepsBookEvent {
 
     @And("I click on any available event card")
     public void i_click_on_any_available_event_card() {
-       SelectedEventDataObject selectedEvent = eventPage.clickAnyAvailableEventAndGetData();
+       SelectedEventDataObject selectedEvent = eventPage.clickAnyAvailableEventAndGetData(2);
        testContext.setSelectedEventName(selectedEvent.getEventName());
+       testContext.setSelectedEventPrice(selectedEvent.getEventPrice());
+       testContext.setSelectedEventAvailableSeats(selectedEvent.getAvailableSeats());
        myBookingPage.waitForBookingFormDisplayed();
     }
 
     @And("I enter booking information")
     public void i_enter_booking_information() {
         Random genTicketNum = new Random();
+        Integer availableSeats = testContext.getSelectedEventAvailableSeats();
+        int maxTickets = Math.min(10, availableSeats == null ? 10 : availableSeats);
+
+        if (maxTickets < 2) {
+            throw new IllegalStateException("Selected event does not have enough seats for non-eligible booking.");
+        }
+
         // non-eligible is when booking more than 1 ticket
-        bookingData = BookingDataFactory.createBooking(genTicketNum.nextInt(9) + 2);
+        bookingData = BookingDataFactory.createBooking(genTicketNum.nextInt(maxTickets - 1) + 2);
         testContext.setBookingData(bookingData);
         myBookingPage.fillBookingInformation(bookingData);
     }

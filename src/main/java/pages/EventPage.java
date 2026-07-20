@@ -9,6 +9,8 @@ import pages.dto.NewEventDataObject;
 import utils.LogUtils;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import pages.dto.SelectedEventDataObject;
 
 import static helpers.PropertiesHelper.loadAllFiles;
@@ -20,12 +22,6 @@ public class EventPage extends DriverFactory {
     }
 
     private static final Random RANDOM = new Random();
-
-    private static final List<String> AVAILABLE_EVENTS = List.of(
-            "Dilli Diwali Mela",
-            "Hollywood Monsoon Night — Los Angeles",
-            "World Tech Summit"
-    );
 
     String eventPage = setUp.getProperty("NAVIGATE_TO_EVENT_PAGE");
     String searchEvent = setUp.getProperty("SEARCH_EVENT_INPUT");
@@ -80,23 +76,32 @@ public class EventPage extends DriverFactory {
 //        clickAnyAvailableEventAndGetName();
 //    }
     public SelectedEventDataObject clickAnyAvailableEventAndGetData() {
-        String selectedEvent = AVAILABLE_EVENTS.get(
-                RANDOM.nextInt(AVAILABLE_EVENTS.size())
-        );
+        return clickAnyAvailableEventAndGetData(1);
+    }
 
-        for (WebElement card : getEvents()){
-            String actualEventName = card.findElement(By.tagName("h3")).getText().trim();
+    public SelectedEventDataObject clickAnyAvailableEventAndGetData(int requiredTickets) {
+        List<WebElement> candidates = new ArrayList<>();
 
-            if (actualEventName.equalsIgnoreCase(selectedEvent)){
-                String priceText = card.findElement(By.cssSelector("p.text-lg.font-bold.text-indigo-700")).getText();
-                int eventPrice = Integer.parseInt(priceText.replaceAll("[^\\d]", ""));
-
-                card.findElement(By.xpath(bookNowButton)).click();
-                LogUtils.info("Selected event for booking: " + actualEventName);
-                return new SelectedEventDataObject(actualEventName, eventPrice);
+        for (WebElement card : getEvents()) {
+            if (isBookNowButtonAvailable(card) && getAvailableSeats(card) >= requiredTickets) {
+                candidates.add(card);
             }
         }
-        throw new IllegalStateException("No available event card found for selected event: " + selectedEvent);
+
+        if (candidates.isEmpty()) {
+            throw new IllegalStateException("No bookable event found with at least " + requiredTickets + " seat(s).");
+        }
+
+        WebElement selectedCard = candidates.get(RANDOM.nextInt(candidates.size()));
+        String eventName = selectedCard.findElement(By.tagName("h3")).getText().trim();
+        int eventPrice = getEventPrice(selectedCard);
+        int availableSeats = getAvailableSeats(selectedCard);
+
+        WebElement bookNow = selectedCard.findElement(By.xpath(bookNowButton));
+        WebUI.scrollToElement(bookNow);
+        bookNow.click();
+        LogUtils.info("Selected event for booking: " + eventName);
+        return new SelectedEventDataObject(eventName, eventPrice, availableSeats);
     }
 
     public int getAnyEventPrice(String eventName) {
@@ -104,11 +109,43 @@ public class EventPage extends DriverFactory {
             String actualEvent = card.findElement(By.tagName("h3")).getText().trim();
 
             if (actualEvent.equalsIgnoreCase(eventName)) {
-                String priceText = card.findElement(By.tagName("p")).getText().replaceAll("[^\\d]", "");
-                return Integer.parseInt(priceText);
+                return getEventPrice(card);
             }
         }
         throw new NoSuchElementException("Event not found: " + eventName);
+    }
+
+    private boolean isBookNowButtonAvailable(WebElement card) {
+        List<WebElement> buttons = card.findElements(By.xpath(bookNowButton));
+        return !buttons.isEmpty() && buttons.get(0).isDisplayed() && buttons.get(0).isEnabled();
+    }
+
+    private int getEventPrice(WebElement card) {
+        String priceText = card.findElement(By.cssSelector("p.text-lg.font-bold.text-indigo-700")).getText();
+        String numericText = priceText.replaceAll("[^\\d]", "");
+
+        if (numericText.isEmpty()) {
+            throw new IllegalStateException("Event price is not numeric: " + priceText);
+        }
+
+        return Integer.parseInt(numericText);
+    }
+
+    private int getAvailableSeats(WebElement card) {
+        String cardText = card.getText();
+
+        if (cardText.toLowerCase(Locale.ROOT).contains("sold out")) {
+            return 0;
+        }
+
+        Matcher seatMatcher = Pattern.compile("(\\d+)\\s+seats?\\s+(left|available)", Pattern.CASE_INSENSITIVE)
+                .matcher(cardText);
+
+        if (seatMatcher.find()) {
+            return Integer.parseInt(seatMatcher.group(1));
+        }
+
+        return Integer.MAX_VALUE;
     }
 
     // Event Information
@@ -152,7 +189,7 @@ public class EventPage extends DriverFactory {
     }
 
     public void createEventPage(){
-        WebUI.verifyTrue(WebUI.isElementDisplayed(By.xpath(createEventPage)));
+        WebUI.waitForElementVisible(By.xpath(createEventPage));
     }
 
     public void clickAddEventButton(){

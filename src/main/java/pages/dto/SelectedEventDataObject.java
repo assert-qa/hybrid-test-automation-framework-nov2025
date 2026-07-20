@@ -8,4 +8,5 @@ import lombok.Data;
 public class SelectedEventDataObject {
     private String eventName;
     private int eventPrice;
+    private int availableSeats;
 }

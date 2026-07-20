@@ -49,6 +49,7 @@ public class MyBookingPage extends DriverFactory {
 
     public void goToMyBookingPage(){
         WebUI.clickElement(By.xpath(bookingPage));
+        waitForMyBookingsLoaded();
     }
 
     public String bookingEmptyStateLabel(){
@@ -129,6 +130,14 @@ public class MyBookingPage extends DriverFactory {
         return WebUI.getWebElements(By.cssSelector(listOfBookedEvents));
     }
 
+    public void waitForMyBookingsLoaded() {
+        By bookingCardLocator = By.cssSelector(listOfBookedEvents);
+
+        new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigManager.getExplicitWaitTimeout()))
+                .until(driver -> !driver.findElements(bookingCardLocator).isEmpty()
+                        || WebUI.isElementDisplayed(By.xpath(emptyStateLabel)));
+    }
+
     public Map<String, String> getEventInformation(List<String> expectedFields){
         return getInformation(expectedFields);
     }
@@ -187,11 +196,26 @@ public class MyBookingPage extends DriverFactory {
                         || WebUI.isElementDisplayed(By.xpath(emptyStateLabel)));
     }
 
+    public void waitForEmptyStateDisplayed(){
+        WebUI.waitForElementVisible(By.xpath(emptyStateLabel));
+    }
+
+    public void clearAllBookingsIfPresent(){
+        if (!isClearAllBookingsTextButtonDisplayed()) {
+            return;
+        }
+
+        clickClearAllBookingsTextButton();
+        confirmBookingDeletion();
+        waitUntilBookingsCleared();
+    }
+
     public boolean isClearAllBookingsTextButtonDisplayed(){
         return WebUI.isElementDisplayed(By.xpath(clearAllBookingsTextButton));
     }
 
     public String getFirstBookedEventName(){
+        waitForMyBookingsLoaded();
         List<WebElement> bookings = getBookingList();
 
         if (bookings.isEmpty()) {
@@ -201,10 +225,33 @@ public class MyBookingPage extends DriverFactory {
         return bookings.get(0).findElement(By.tagName("h3")).getText().trim();
     }
 
-//    public boolean isBookedEventDisplayed(String bookedEventName){
-//        return getBookingList().stream()
-//                .anyMatch(booking -> booking.getText().contains(bookedEventName));
-//    }
+    public String getFirstBookedEventCardText(){
+        waitForMyBookingsLoaded();
+        List<WebElement> bookings = getBookingList();
+
+        if (bookings.isEmpty()) {
+            throw new IllegalStateException("No booked events are displayed.");
+        }
+
+        return bookings.get(0).getText().trim();
+    }
+
+    public boolean isBookedEventCardDisplayed(String bookedEventCardText){
+        return getBookingList().stream()
+                .map(WebElement::getText)
+                .map(String::trim)
+                .anyMatch(bookedEventCardText::equals);
+    }
+
+    public void waitUntilBookedEventCardDisappears(String bookedEventCardText){
+        By bookingCardLocator = By.cssSelector(listOfBookedEvents);
+
+        new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigManager.getExplicitWaitTimeout()))
+                .until(driver -> driver.findElements(bookingCardLocator).stream()
+                        .map(WebElement::getText)
+                        .map(String::trim)
+                        .noneMatch(bookedEventCardText::equals));
+    }
 
     public void clickCancelButton(){
         WebUI.clickElement(By.xpath(cancelBookingButton));

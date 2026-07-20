@@ -26,9 +26,9 @@ public class EmailSendUtils {
             return;
         }
 
-        System.out.println("****************************************");
+        System.out.println("*******************************");
         System.out.println("Send Email - START");
-        System.out.println("****************************************");
+        System.out.println("*******************************");
 
         List<String> attachments = getExtentReportAttachments();
         String messageBody = getTestCasesCountInFormat(
@@ -43,10 +43,10 @@ public class EmailSendUtils {
             EmailAttachmentsSender.sendEmailWithAttachments(SERVER, PORT, FROM, PASSWORD, TO, SUBJECT, messageBody,
                     attachments.toArray(new String[0]));
 
-            System.out.println("****************************************");
+            System.out.println("*******************************");
             System.out.println("Email sent successfully.");
             System.out.println("Send Email - END");
-            System.out.println("****************************************");
+            System.out.println("*******************************");
         } catch (MessagingException e) {
             e.printStackTrace();
         }
