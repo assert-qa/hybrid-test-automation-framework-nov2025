@@ -55,6 +55,7 @@ public class ExtentReportManager {
                 // Use environment from ConfigManager
                 String environment = valueOrNA(ConfigManager.getEnvironment());
                 extentReports.setSystemInfo("Environment", environment);
+                extentReports.setSystemInfo("Test Suite", ConfigManager.getTestSuiteName());
                 extentReports.setSystemInfo("Version", "1.0");
 
                 // User Information from ConfigManager

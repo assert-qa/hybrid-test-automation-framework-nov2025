@@ -2,6 +2,9 @@ package runner.ui;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import managers.ConfigManager;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
 
 @CucumberOptions(
         features = "src/test/java/features/UI",
@@ -16,4 +19,10 @@ import io.cucumber.testng.CucumberOptions;
         }
 )
 public class TestRunnerUI extends AbstractTestNGCucumberTests {
+    @Override
+    @BeforeClass(alwaysRun = true)
+    public void setUpClass(ITestContext context) {
+        ConfigManager.configureCucumberTagsForRunner("@ui");
+        super.setUpClass(context);
+    }
 }

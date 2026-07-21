@@ -16,6 +16,7 @@ public class ConfigManager {
 
     private static String environment;
     private static final String DEFAULT_ENV = "dev";
+    private static final String DEFAULT_TEST_SUITE = "Regression Suite";
     private static final String BASE_CONFIG_PATH = "src/main/resources/config.properties";
     private static final String ENV_CONFIG_PATH = "src/main/resources/env/";
 
@@ -179,8 +180,44 @@ public class ConfigManager {
                 .toArray(String[]::new);
     }
 
-    public static String getReportTitle(){
-        return getProperty("REPORT_TITLE", "Report | Hybrid Automation Framework | Injas Mahendra Berutu");
+    public static String getReportTitle() {
+        String title = getProperty("REPORT_TITLE", "Automation Test Execution Report - {suite}");
+        String suiteName = getTestSuiteName();
+        return title.replace("{suite}", suiteName).replace("${suite}", suiteName);
+    }
+
+    public static String getTestSuiteName() {
+        String suiteName = getProperty("TEST_SUITE", DEFAULT_TEST_SUITE);
+        return isNotBlank(suiteName) ? suiteName.trim() : DEFAULT_TEST_SUITE;
+    }
+
+    public static String getTestSuiteTag() {
+        String configuredTag = getProperty("TEST_SUITE_TAG", "");
+        if (isNotBlank(configuredTag)) {
+            return normalizeCucumberTag(configuredTag);
+        }
+
+        String suiteKey = normalizeSuiteKey(getTestSuiteName());
+        String mappedTag = getProperty("TEST_SUITE_TAG." + suiteKey, "");
+        if (isNotBlank(mappedTag)) {
+            return normalizeCucumberTag(mappedTag);
+        }
+
+        return switch (suiteKey) {
+            case "SIT" -> "@sit";
+            case "STAGING" -> "@staging";
+            case "SANITY" -> "@sanity";
+            case "UAT" -> "@uat";
+            case "PRODUCTION" -> "@production";
+            default -> "@regression";
+        };
+    }
+
+    public static void configureCucumberTagsForRunner(String runnerTag) {
+        String normalizedRunnerTag = normalizeCucumberTag(runnerTag);
+        String tagExpression = normalizedRunnerTag + " and " + getTestSuiteTag();
+        System.setProperty("cucumber.filter.tags", tagExpression);
+        System.out.println("Cucumber tag filter applied: " + tagExpression);
     }
 
     public static String getAuthor() {
@@ -227,6 +264,19 @@ public class ConfigManager {
 
     private static boolean isNotBlank(String value) {
         return value != null && !value.trim().isEmpty();
+    }
+
+    private static String normalizeCucumberTag(String tag) {
+        String normalizedTag = tag.trim();
+        return normalizedTag.startsWith("@") ? normalizedTag : "@" + normalizedTag;
+    }
+
+    private static String normalizeSuiteKey(String suiteName) {
+        String normalizedSuiteName = suiteName.trim().toUpperCase();
+        if (normalizedSuiteName.endsWith(" SUITE")) {
+            normalizedSuiteName = normalizedSuiteName.substring(0, normalizedSuiteName.length() - " SUITE".length());
+        }
+        return normalizedSuiteName.replaceAll("[^A-Z0-9]+", "_");
     }
 
     private static String appendPath(String baseUrl, String path) {

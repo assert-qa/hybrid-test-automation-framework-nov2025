@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import utils.BrowserInfoUtils;
 import utils.LogUtils;
 
 import java.util.HashMap;
@@ -41,6 +42,7 @@ public class DriverFactory {
                 yield initChromeDriver();
             }
         };
+        BrowserInfoUtils.captureBrowserInfo(driver);
         return driver;
     }
 

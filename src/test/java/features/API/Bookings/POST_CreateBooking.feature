@@ -1,4 +1,5 @@
 @api
+@sit @staging @sanity @uat @production @regression
 @allure.label.epic:API-Test
 @allure.label.feature:Bookings
 @allure.label.story:CreateBooking

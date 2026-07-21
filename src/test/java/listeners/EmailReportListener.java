@@ -17,6 +17,12 @@ public class EmailReportListener implements ISuiteListener, ITestListener {
     private static final int SKIPPED = ITestResult.SKIP;
 
     private final Map<String, Integer> scenarioResults = new ConcurrentHashMap<>();
+    private long suiteStartMillis;
+
+    @Override
+    public void onStart(ISuite suite) {
+        suiteStartMillis = System.currentTimeMillis();
+    }
 
     @Override
     public void onTestSuccess(ITestResult result) {
@@ -49,7 +55,8 @@ public class EmailReportListener implements ISuiteListener, ITestListener {
                 + ", passed=" + passed
                 + ", failed=" + failed
                 + ", skipped=" + skipped);
-        EmailSendUtils.sendEmail(total, passed, failed, skipped);
+        long durationMillis = Math.max(0, System.currentTimeMillis() - suiteStartMillis);
+        EmailSendUtils.sendEmail(total, passed, failed, skipped, durationMillis);
     }
 
     private int count(int status) {

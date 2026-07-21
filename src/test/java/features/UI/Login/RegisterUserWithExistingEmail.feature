@@ -1,4 +1,5 @@
 @ui
+@sit @staging @sanity @uat @production @regression
 @allure.label.epic:UI-Test
 @allure.label.feature:Login
 @allure.label.story:DuplicateRegistration
